@@ -130,7 +130,7 @@ section{padding:6rem 5%;}
 
 /* OFFERS */
 .offers{background:linear-gradient(160deg,#0c0c0c 0%,#111 100%);}
-.offers-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;align-items:end;margin-top:1rem;}
+.offers-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:end;margin-top:1rem;}
 /* BASE CARD */
 .offer-card{border-radius:20px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:transform .3s;overflow:hidden;}
 .offer-card:hover{transform:translateY(-6px);}
@@ -773,390 +773,57 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
       <button class="offer-btn dark" onclick="openModal('mensuel')">Choisir le Mensuel</button>
     </div>
 
-    <!-- VIP BROKER -->
+    <!-- BROKER AFFILIÉ -->
     <div class="offer-card vip">
-      <div class="offer-ribbon">👑 VIP<br>EXCLUSIF</div>
+      <div class="offer-ribbon vip-b">👑 VIP EXCLUSIF</div>
       <div class="offer-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
-      <div class="offer-name">Room VIP · Broker Affilié</div>
-      <div class="offer-price-wrap">
-        <div class="price-big" style="font-size:1.7rem;line-height:1.2;color:var(--gold);">Dépôt<br>Broker Affilié</div>
+      <div class="offer-name">Dépôt Broker Affilié</div>
+      <div class="offer-tagline">Dépose chez l'un de nos brokers partenaires et accède immédiatement à la YASKA ROOM VIP. Sans abonnement supplémentaire.</div>
+      <div style="margin-bottom:1.2rem;">
+        <div class="price-big" style="font-size:1.55rem;color:var(--gold);line-height:1.3;">Dépôt<br>Broker Affilié</div>
+        <div class="price-alt">Dépôt min. requis · <strong>Accès VIP offert</strong></div>
       </div>
-      <div class="price-alt">Dépôt min. requis · Accès VIP offert</div>
-      <div class="offer-trial">Accès immédiat</div>
-      <hr class="offer-divider">
+      <div class="offer-divider"></div>
       <ul class="offer-feats">
         <li><span class="feat-icon on">✓</span>Accès YASKA ROOM VIP complet</li>
         <li><span class="feat-icon on">✓</span>Signaux premium avant tout le monde</li>
-        <li><span class="feat-icon on">✓</span>Calls privés membres VIP uniquement</li>
-        <li><span class="feat-icon on">✓</span>Analyses détaillées pré-session</li>
         <li><span class="feat-icon on">✓</span>Accès direct à YASKA (DM illimité)</li>
         <li><span class="feat-icon on">✓</span>Salon Discord VIP ultra-privé</li>
+        <li><span class="feat-icon on">✓</span>Calls privés membres VIP</li>
         <li><span class="feat-icon on">✓</span>Webinaires exclusifs mensuels</li>
-        <li><span class="feat-icon on">✓</span>Débriefs live des trades en direct</li>
       </ul>
-      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" class="offer-btn vip-btn">Déposer sur PU Prime</a>
-    </div>
-  </div>
-
-  <div class="broker-note">
-    <div class="broker-icon">🏦</div>
-    <div>
-      <h4>Deux façons d'accéder à la YASKA ROOM VIP gratuitement</h4>
-      <p>
-        <strong style="color:var(--text);">🏦 Via PU Prime (broker affilié)</strong> — Ouvre un compte et effectue un dépôt minimum. Accès VIP offert immédiatement. <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">Ouvrir un compte PU Prime →</a>
-        <br><br>
-        <strong style="color:#1e90ff;">🐋 Via Whales Capital Funding (prop firm)</strong> — Passe un challenge CFD dès 200k$ avec <strong>-30%</strong> grâce au code <strong style="background:rgba(30,144,255,.12);color:#1e90ff;padding:.1rem .4rem;border-radius:3px;">PROMO30</strong>. Accès VIP offert dès validation du challenge. <a href="https://portal.whalescapitalfunding.com/buy-challenge/?referral=ac03f90f" target="_blank" style="color:#1e90ff;">Passer le challenge Whales Capital →</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div id="step-plan">
-      <div class="modal-head">
-        <h3>Rejoindre la YASKA ROOM</h3>
-        <p>Choisis ton accès et commence à trader le Gold &amp; NQ avec la room.</p>
+      <!-- Choix direct broker -->
+      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:auto;">
+        <p style="font-size:.72rem;color:var(--muted);text-align:center;letter-spacing:.04em;text-transform:uppercase;font-weight:600;">Choisis ton broker :</p>
+        <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank"
+           style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:rgba(201,168,76,0.08);border:0.5px solid var(--border2);border-radius:8px;padding:.75rem 1rem;text-decoration:none;transition:all .2s;"
+           onmouseover="this.style.background='rgba(201,168,76,0.15)';this.style.borderColor='var(--gold)'"
+           onmouseout="this.style.background='rgba(201,168,76,0.08)';this.style.borderColor='var(--border2)'">
+          <div style="display:flex;align-items:center;gap:.6rem;">
+            <span style="font-size:1rem;">🏦</span>
+            <div>
+              <div style="font-family:Syne,sans-serif;font-weight:700;font-size:.82rem;color:var(--text);">PU Prime</div>
+              <div style="font-size:.68rem;color:var(--muted);">Forex · Gold · NQ</div>
+            </div>
+          </div>
+          <span style="color:var(--gold);font-weight:700;font-size:.8rem;">→</span>
+        </a>
+        <a href="https://vigco.co/la-com-inv/14EEhSsp" target="_blank"
+           style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:rgba(220,50,50,0.08);border:0.5px solid rgba(220,50,50,.3);border-radius:8px;padding:.75rem 1rem;text-decoration:none;transition:all .2s;"
+           onmouseover="this.style.background='rgba(220,50,50,0.15)';this.style.borderColor='#e74c3c'"
+           onmouseout="this.style.background='rgba(220,50,50,0.08)';this.style.borderColor='rgba(220,50,50,.3)'">
+          <div style="display:flex;align-items:center;gap:.6rem;">
+            <span style="font-size:1rem;">📈</span>
+            <div>
+              <div style="font-family:Syne,sans-serif;font-weight:700;font-size:.82rem;color:var(--text);">VT Markets</div>
+              <div style="font-size:.68rem;color:var(--muted);">Broker réglementé</div>
+            </div>
+          </div>
+          <span style="color:#e74c3c;font-weight:700;font-size:.8rem;">→</span>
+        </a>
       </div>
-      <div class="plan-cards">
-        <div class="plan-card selected" id="plan-mensuel" onclick="selectPlan('mensuel')">
-          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
-          <div class="plan-info">
-            <div class="plan-name">Abonnement Mensuel</div>
-            <div class="plan-desc">Discord privé · Formations · Signaux live · Lives hebdo · Sans engagement</div>
-          </div>
-          <div class="plan-price">99€<small>/mois</small></div>
-        </div>
-        <div class="plan-card featured-plan" id="plan-lifetime" onclick="selectPlan('lifetime')">
-          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
-          <div class="plan-info">
-            <div class="plan-name">Accès à Vie &nbsp;<span class="plan-badge-mini">⭐ Meilleure valeur</span></div>
-            <div class="plan-desc">Tout inclus pour toujours · Futures formations incluses · Statut Membre Fondateur</div>
-          </div>
-          <div class="plan-price">999€<small>paiement unique</small></div>
-        </div>
-        <div class="plan-card" id="plan-vip" onclick="selectPlan('vip')">
-          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
-          <div class="plan-info">
-            <div class="plan-name">Room VIP &nbsp;<span class="plan-badge-vip">👑 VIP</span></div>
-            <div class="plan-desc">Dépôt sur broker affilié PU Prime = accès VIP offert · Signaux premium · Salon privé</div>
-          </div>
-          <div class="plan-price" style="color:var(--gold);">Dépôt<small>PU Prime</small></div>
-        </div>
-        <div class="plan-card" id="plan-whales" onclick="selectPlan('whales')" style="border-color:rgba(30,144,255,.3);">
-          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
-          <div class="plan-info">
-            <div class="plan-name">🐋 Whales Capital &nbsp;<span class="plan-badge-vip" style="background:linear-gradient(90deg,#1e90ff,#00bfff);">PROP FIRM</span></div>
-            <div class="plan-desc">Challenge CFD 200k$ min · Code PROMO30 = -30% · Accès YASKA ROOM VIP offert</div>
-          </div>
-          <div class="plan-price" style="color:#1e90ff;">Challenge<small>dès 200k$</small></div>
-        </div>
-      </div>
-      <button class="modal-next" onclick="goToForm()">CONTINUER →</button>
-      <p class="modal-note">✓ Réponse sous 24h · Aucun spam · 100% confidentiel</p>
     </div>
-    <div id="step-form" class="modal-form">
-      <button class="modal-back" onclick="goBack()">← Modifier mon choix</button>
-      <div class="modal-selected-plan" id="selected-plan-recap"></div>
-      <div class="modal-field"><label>Prénom *</label><input type="text" id="modal-name" placeholder="Ton prénom"></div>
-      <div class="modal-field"><label>Email *</label><input type="email" id="modal-email" placeholder="ton@email.com"></div>
-      <div class="modal-field"><label>Telegram / Instagram (optionnel)</label><input type="text" id="modal-contact" placeholder="@ton_pseudo"></div>
-      <div class="modal-field" id="modal-msg-wrap" style="display:none;"><label>Message (optionnel)</label><textarea id="modal-msg" rows="3" placeholder="Tes questions, ton niveau..."></textarea></div>
-      <button class="modal-submit" id="modal-btn" onclick="submitModal()">ENVOYER MA DEMANDE →</button>
-      <p class="modal-note">✓ Réponse sous 24h · Aucun spam · Données confidentielles</p>
-    </div>
-  </div>
-</div>
 
-<script>
-let currentPlan = 'mensuel';
-const PLANS = {
-  mensuel: { name:'Abonnement Mensuel', price:'99€/mois', submitLabel:'ENVOYER MA DEMANDE →', vip:false },
-  lifetime: { name:'Accès à Vie', price:'999€ paiement unique', submitLabel:'ENVOYER MA DEMANDE →', vip:false },
-  vip: { name:'Room VIP — Broker affilié', price:'Dépôt PU Prime', submitLabel:'RECEVOIR LES INFOS BROKER →', vip:true },
-  whales: { name:'Whales Capital Funding', price:'Challenge dès 200k$ (-30% code PROMO30)', submitLabel:'ACCÉDER AU CHALLENGE WHALES →', vip:true, url:'https://portal.whalescapitalfunding.com/buy-challenge/?referral=ac03f90f' }
-};
-function selectPlan(plan){
-  currentPlan = plan;
-  document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));
-  document.getElementById('plan-'+plan).classList.add('selected');
-}
-function goToForm(){
-  const p = PLANS[currentPlan];
-  document.getElementById('selected-plan-recap').innerHTML = '<span class="msp-name">'+p.name+'</span><span class="msp-price">'+p.price+'</span>';
-  document.getElementById('modal-msg-wrap').style.display = p.vip ? 'block' : 'none';
-  const btn = document.getElementById('modal-btn');
-  btn.textContent = p.submitLabel;
-  btn.className = 'modal-submit' + (p.vip ? ' vip-submit' : '');
-  document.getElementById('step-plan').style.display = 'none';
-  document.getElementById('step-form').classList.add('active');
-  ['modal-name','modal-email','modal-contact','modal-msg'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
-  btn.style.background=''; btn.style.color='';
-}
-function goBack(){
-  document.getElementById('step-plan').style.display = 'block';
-  document.getElementById('step-form').classList.remove('active');
-}
-function openModal(type){
-  document.getElementById('step-plan').style.display = 'block';
-  document.getElementById('step-form').classList.remove('active');
-  const planKey = (type==='lifetime'||type==='vip'||type==='mensuel'||type==='whales') ? type : 'mensuel';
-  selectPlan(planKey);
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
-function closeModalOutside(e){ if(e.target===document.getElementById('modal')) closeModal(); }
-function submitModal(){
-  const name=document.getElementById('modal-name').value.trim();
-  const email=document.getElementById('modal-email').value.trim();
-  if(!name||!email){ alert('Merci de renseigner ton prénom et ton email.'); return; }
-  const btn=document.getElementById('modal-btn');
-  btn.textContent='✓ Demande envoyée avec succès !';
-  btn.style.background='#1a5c1a'; btn.style.color='#fff';
-  setTimeout(closeModal, 2800);
-}
-function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
-function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
-function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
-
-
-
-// ══════════════════════════════════════════════════
-// HERO CANVAS — Advanced Trading Background
-// ══════════════════════════════════════════════════
-(function(){
-  const canvas = document.getElementById('heroCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let W, H, candles = [], priceLine = [], time = 0;
-  const GOLD = [201,168,76];
-  const GREEN = [80,200,120];
-  const RED = [220,80,80];
-  const CANDLE_W = 14;
-  const CANDLE_GAP = 8;
-  const STEP = CANDLE_W + CANDLE_GAP;
-
-  function rgba(c, a){ return `rgba(${c[0]},${c[1]},${c[2]},${a})`; }
-
-  function generateCandle(prev, i){
-    const trend = Math.sin(i * 0.18) * 0.6 + (Math.random()-0.44)*0.8;
-    const range = Math.random()*32 + 10;
-    const body = range * (0.3 + Math.random()*0.5);
-    const bull = trend > 0;
-    const open = prev;
-    const close = open + (bull ? 1 : -1) * body;
-    const high = Math.max(open,close) + Math.random()*range*0.3;
-    const low  = Math.min(open,close) - Math.random()*range*0.3;
-    return { open, close, high, low, bull };
-  }
-
-  function buildCandles(){
-    candles = [];
-    priceLine = [];
-    let price = H * 0.52;
-    const count = Math.ceil(W / STEP) + 4;
-    for(let i = 0; i < count; i++){
-      const c = generateCandle(price, i);
-      // clamp
-      const mid = (c.open+c.close)/2;
-      const shift = mid < H*0.18 ? H*0.18 - mid : mid > H*0.82 ? H*0.82 - mid : 0;
-      c.open+=shift; c.close+=shift; c.high+=shift; c.low+=shift;
-      price = c.close;
-      candles.push(c);
-      priceLine.push((c.open+c.close)/2);
-    }
-  }
-
-  function drawScene(offset){
-    ctx.clearRect(0,0,W,H);
-
-    // ── Background subtle glow spots ──
-    const gr1 = ctx.createRadialGradient(W*0.5,0,0,W*0.5,0,H*0.7);
-    gr1.addColorStop(0, rgba(GOLD,0.06));
-    gr1.addColorStop(1, rgba(GOLD,0));
-    ctx.fillStyle = gr1; ctx.fillRect(0,0,W,H);
-
-    // ── Horizontal grid lines ──
-    ctx.setLineDash([3,10]);
-    ctx.lineWidth = 0.6;
-    for(let i=1;i<6;i++){
-      const y = H*i/6;
-      ctx.beginPath();
-      ctx.moveTo(0,y); ctx.lineTo(W,y);
-      ctx.strokeStyle = rgba(GOLD, 0.07);
-      ctx.stroke();
-    }
-    ctx.setLineDash([]);
-
-    // ── Price line (smooth curve under candles) ──
-    ctx.beginPath();
-    priceLine.forEach((py, i)=>{
-      const x = i*STEP - offset + CANDLE_W/2;
-      if(i===0) ctx.moveTo(x,py); else ctx.lineTo(x,py);
-    });
-    // Fill under
-    ctx.lineTo(priceLine.length*STEP - offset + CANDLE_W/2, H);
-    ctx.lineTo(-offset, H);
-    ctx.closePath();
-    const fillGrad = ctx.createLinearGradient(0,0,0,H);
-    fillGrad.addColorStop(0, rgba(GOLD,0.06));
-    fillGrad.addColorStop(1, rgba(GOLD,0));
-    ctx.fillStyle = fillGrad;
-    ctx.fill();
-
-    // Stroke the line
-    ctx.beginPath();
-    priceLine.forEach((py, i)=>{
-      const x = i*STEP - offset + CANDLE_W/2;
-      if(i===0) ctx.moveTo(x,py); else ctx.lineTo(x,py);
-    });
-    ctx.strokeStyle = rgba(GOLD,0.18);
-    ctx.lineWidth = 1.2;
-    ctx.stroke();
-
-    // ── Draw candles ──
-    candles.forEach((c, i)=>{
-      const x = i*STEP - offset;
-      if(x > W+STEP || x < -STEP) return;
-
-      const color = c.bull ? GREEN : RED;
-      const bodyTop = Math.min(c.open,c.close);
-      const bodyH = Math.max(Math.abs(c.close-c.open), 2);
-      const cx = x + CANDLE_W/2;
-
-      // Glow behind candle body
-      const glowSize = bodyH + 16;
-      const glowGr = ctx.createRadialGradient(cx, bodyTop+bodyH/2, 0, cx, bodyTop+bodyH/2, glowSize);
-      glowGr.addColorStop(0, rgba(color, 0.12));
-      glowGr.addColorStop(1, rgba(color, 0));
-      ctx.fillStyle = glowGr;
-      ctx.fillRect(cx-glowSize, bodyTop+bodyH/2-glowSize, glowSize*2, glowSize*2);
-
-      // Wick
-      ctx.beginPath();
-      ctx.moveTo(cx, c.high);
-      ctx.lineTo(cx, c.low);
-      ctx.strokeStyle = rgba(color, 0.55);
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-
-      // Body with gradient
-      const bodyGrad = ctx.createLinearGradient(x, bodyTop, x+CANDLE_W, bodyTop+bodyH);
-      bodyGrad.addColorStop(0, rgba(color, 0.85));
-      bodyGrad.addColorStop(1, rgba(color, 0.5));
-      ctx.fillStyle = bodyGrad;
-      // Rounded rect candle body
-      const r = 2;
-      ctx.beginPath();
-      ctx.moveTo(x+r, bodyTop);
-      ctx.lineTo(x+CANDLE_W-r, bodyTop);
-      ctx.quadraticCurveTo(x+CANDLE_W, bodyTop, x+CANDLE_W, bodyTop+r);
-      ctx.lineTo(x+CANDLE_W, bodyTop+bodyH-r);
-      ctx.quadraticCurveTo(x+CANDLE_W, bodyTop+bodyH, x+CANDLE_W-r, bodyTop+bodyH);
-      ctx.lineTo(x+r, bodyTop+bodyH);
-      ctx.quadraticCurveTo(x, bodyTop+bodyH, x, bodyTop+bodyH-r);
-      ctx.lineTo(x, bodyTop+r);
-      ctx.quadraticCurveTo(x, bodyTop, x+r, bodyTop);
-      ctx.closePath();
-      ctx.fill();
-
-      // Candle border
-      ctx.strokeStyle = rgba(color, 0.35);
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-    });
-
-    // ── Moving average line ──
-    const MA = 5;
-    ctx.beginPath();
-    priceLine.forEach((py, i)=>{
-      if(i < MA) return;
-      const avg = priceLine.slice(i-MA,i).reduce((a,b)=>a+b,0)/MA;
-      const x = i*STEP - offset + CANDLE_W/2;
-      if(i===MA) ctx.moveTo(x,avg); else ctx.lineTo(x,avg);
-    });
-    ctx.strokeStyle = rgba(GOLD, 0.35);
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([6,4]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    // ── Price labels on right ──
-    const labelPrices = [2280, 2300, 2320, 2340, 2360];
-    ctx.font = '500 10px DM Sans, sans-serif';
-    ctx.fillStyle = rgba(GOLD,0.3);
-    labelPrices.forEach((p,i)=>{
-      const y = H*0.15 + i*(H*0.6/4);
-      ctx.fillText(p.toFixed(0), W-36, y+4);
-      // tick
-      ctx.beginPath();
-      ctx.moveTo(W-42,y); ctx.lineTo(W-38,y);
-      ctx.strokeStyle = rgba(GOLD,0.2);
-      ctx.lineWidth=0.7;
-      ctx.stroke();
-    });
-  }
-
-  let offset = 0;
-  let rafId;
-  function animate(){
-    offset += 0.4;
-    // When scrolled past one full candle, shift candles left and regenerate
-    if(offset >= STEP){
-      offset -= STEP;
-      candles.shift(); priceLine.shift();
-      const last = candles[candles.length-1];
-      const nc = generateCandle(last.close, candles.length);
-      candles.push(nc);
-      priceLine.push((nc.open+nc.close)/2);
-    }
-    drawScene(offset);
-    time++;
-    rafId = requestAnimationFrame(animate);
-  }
-
-  function resize(){
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    W = canvas.width; H = canvas.height;
-    buildCandles();
-    drawScene(0);
-  }
-
-  window.addEventListener('resize', ()=>{ cancelAnimationFrame(rafId); resize(); animate(); });
-  resize();
-  animate();
-})();
-
-// ── HERO PARTICLES (golden dots floating up) ──────────────────────────────────
-(function(){
-  const container = document.getElementById('heroParticles');
-  if(!container) return;
-  for(let i=0;i<35;i++){
-    const s = document.createElement('span');
-    const size = Math.random()*2.5+0.8;
-    s.style.cssText = [
-      'width:'+size+'px',
-      'height:'+size+'px',
-      'left:'+Math.random()*100+'%',
-      'bottom:'+(Math.random()*50)+'%',
-      'animation-duration:'+(Math.random()*10+6)+'s',
-      'animation-delay:'+(Math.random()*10)+'s',
-      'opacity:0'
-    ].join(';');
-    container.appendChild(s);
-  }
-})();
-
-
-window.addEventListener('scroll', closeMenu);
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
-</script>
-</body>
-</html>
+>
