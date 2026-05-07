@@ -33,9 +33,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-menu .mm-cta{border:none;margin-top:.8rem;background:var(--gold);color:#000;text-align:center;padding:.85rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.05em;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 5% 6rem;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(201,168,76,0.09) 0%,transparent 65%);pointer-events:none;}
-.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,0.025) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,0.025) 80px);pointer-events:none;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 5% 6rem;position:relative;overflow:hidden;background:#0A0A0A;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,0.12) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 80% 80%,rgba(201,168,76,0.04) 0%,transparent 70%),radial-gradient(ellipse 40% 30% at 20% 70%,rgba(201,168,76,0.04) 0%,transparent 70%);pointer-events:none;z-index:0;}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(201,168,76,0.03) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(201,168,76,0.03) 60px);pointer-events:none;z-index:0;}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.hero-particles span{position:absolute;border-radius:50%;background:var(--gold);animation:floatDot linear infinite;opacity:0;}
+@keyframes floatDot{0%{transform:translateY(0) scale(1);opacity:.5}60%{opacity:.15}100%{transform:translateY(-140px) scale(.3);opacity:0}}
+.hero-float{position:absolute;z-index:2;pointer-events:none;}
+.hero-float-card{background:rgba(20,20,20,0.92);border:0.5px solid var(--border2);border-radius:6px;padding:.6rem 1rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:.5rem;backdrop-filter:blur(10px);white-space:nowrap;}
+.fc-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.fc-dot.green{background:#50c878;}
+.fc-dot.red{background:#e05050;}
+.fc-dot.gold{background:var(--gold);}
+.hero-float-left{bottom:22%;left:3%;animation:floatCard 5s ease-in-out infinite;}
+.hero-float-right{bottom:28%;right:3%;animation:floatCard 6.5s ease-in-out infinite reverse;}
+.hero-float-top{top:20%;right:6%;animation:floatCard 7s ease-in-out infinite 1s;}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:0.5px solid var(--border2);border-radius:20px;padding:.38rem 1.1rem;font-size:.75rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2rem;background:rgba(201,168,76,0.06);position:relative;z-index:1;}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
@@ -50,14 +64,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
 /* DISCORD + TELEGRAM BANNER */
-.community-bar{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:1.2rem 5%;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
-.comm-item{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--muted);}
-.comm-item strong{color:var(--text);font-weight:500;}
-.comm-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1.1rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.05em;transition:opacity .2s;cursor:pointer;}
-.comm-btn:hover{opacity:.82;}
-.comm-discord{background:#5865F2;color:#fff;}
-.comm-telegram{background:#229ED9;color:#fff;}
-.comm-sep{width:0.5px;height:30px;background:var(--border);display:block;}
+.community-bar{background:linear-gradient(135deg,#0f0f0f 0%,#141414 100%);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:2rem 5%;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+.comm-card{display:flex;align-items:center;gap:1rem;background:var(--dark2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.4rem;transition:all .25s;text-decoration:none;flex:1;min-width:240px;max-width:360px;position:relative;overflow:hidden;}
+.comm-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;border-radius:12px;}
+.comm-card.dc::before{background:linear-gradient(135deg,rgba(88,101,242,.12),transparent);}
+.comm-card.tg::before{background:linear-gradient(135deg,rgba(34,158,217,.12),transparent);}
+.comm-card:hover::before{opacity:1;}
+.comm-card:hover{transform:translateY(-3px);}
+.comm-card.dc:hover{border-color:rgba(88,101,242,.5);box-shadow:0 8px 30px rgba(88,101,242,.15);}
+.comm-card.tg:hover{border-color:rgba(34,158,217,.5);box-shadow:0 8px 30px rgba(34,158,217,.15);}
+.comm-icon-wrap{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
+.comm-icon-wrap.dc{background:linear-gradient(135deg,#4752c4,#5865F2);}
+.comm-icon-wrap.tg{background:linear-gradient(135deg,#0088cc,#229ED9);}
+.comm-icon-wrap svg{width:24px;height:24px;fill:#fff;}
+.comm-info{flex:1;position:relative;z-index:1;}
+.comm-info strong{display:block;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.15rem;}
+.comm-info span{font-size:.75rem;color:var(--muted);}
+.comm-arrow{font-size:.8rem;color:var(--muted);flex-shrink:0;position:relative;z-index:1;transition:transform .2s,color .2s;}
+.comm-card:hover .comm-arrow{transform:translateX(3px);}
+.comm-card.dc:hover .comm-arrow{color:#7289da;}
+.comm-card.tg:hover .comm-arrow{color:#229ED9;}
+.comm-free-badge{background:rgba(80,200,120,.15);border:0.5px solid rgba(80,200,120,.3);color:#50c878;font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.1rem .4rem;border-radius:3px;margin-left:.4rem;}
 
 /* TICKER */
 .ticker-wrap{background:var(--gold);overflow:hidden;padding:.48rem 0;}
@@ -136,7 +163,7 @@ section{padding:6rem 5%;}
 /* YASKA ROOM VIP */
 .vip-room{background:var(--black);position:relative;overflow:hidden;}
 .vip-room::before{content:'';position:absolute;top:-150px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);pointer-events:none;}
-.vip-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.vip-inner{display:grid;grid-template-columns:1fr;gap:3rem;max-width:720px;}
 .vip-features{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
 .vip-feat{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem;border:0.5px solid var(--border);border-radius:4px;background:var(--dark2);transition:border-color .2s;}
 .vip-feat:hover{border-color:var(--border2);}
@@ -214,18 +241,58 @@ section{padding:6rem 5%;}
 .faq-item.open .faq-a{display:block;}
 
 /* SOCIALS */
-.socials-section{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:3.5rem 5%;}
-.socials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:2.5rem;}
-.social-card{background:var(--dark3);border:0.5px solid var(--border);border-radius:4px;padding:1.5rem 1rem;text-align:center;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:center;gap:.6rem;}
-.social-card:hover{border-color:var(--border2);transform:translateY(-3px);}
-.social-card .s-icon{font-size:1.6rem;}
-.social-card .s-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.05em;}
-.social-card .s-handle{font-size:.75rem;color:var(--muted);}
-.social-card .s-cta{font-size:.72rem;color:var(--gold);font-weight:500;margin-top:.2rem;}
-.social-card.discord-card{border-color:rgba(88,101,242,.3);}
-.social-card.discord-card:hover{border-color:rgba(88,101,242,.6);}
-.social-card.telegram-card{border-color:rgba(34,158,217,.3);}
-.social-card.telegram-card:hover{border-color:rgba(34,158,217,.6);}
+.socials-section{background:linear-gradient(180deg,#0f0f0f 0%,var(--dark2) 100%);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:5rem 5%;}
+.socials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin-top:3rem;}
+.social-card{border-radius:16px;padding:2rem 1.2rem;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:.7rem;position:relative;overflow:hidden;text-decoration:none;}
+.social-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;border-radius:0 0 16px 16px;transition:opacity .3s;}
+.social-card:hover{transform:translateY(-6px);}
+.s-icon-wrap{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:.3rem;transition:transform .3s;}
+.social-card:hover .s-icon-wrap{transform:scale(1.1);}
+.s-icon-wrap svg{width:28px;height:28px;fill:#fff;}
+.s-icon-wrap img{width:28px;height:28px;object-fit:contain;}
+.social-card .s-name{font-family:'Syne',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.04em;}
+.social-card .s-handle{font-size:.74rem;opacity:.6;}
+.social-card .s-cta{font-size:.72rem;font-weight:600;margin-top:.1rem;display:flex;align-items:center;gap:.3rem;}
+/* Discord */
+.sc-discord{background:linear-gradient(145deg,#3c4370,#1e2140);border:0.5px solid rgba(88,101,242,.4);}
+.sc-discord:hover{border-color:rgba(88,101,242,.8);box-shadow:0 16px 40px rgba(88,101,242,.2);}
+.sc-discord::after{background:#5865F2;}
+.sc-discord .s-icon-wrap{background:linear-gradient(135deg,#4752c4,#5865F2);}
+.sc-discord .s-name{color:#fff;}
+.sc-discord .s-handle{color:rgba(255,255,255,.5);}
+.sc-discord .s-cta{color:#7289da;}
+/* Telegram */
+.sc-telegram{background:linear-gradient(145deg,#0d2a3a,#0a1e2e);border:0.5px solid rgba(34,158,217,.4);}
+.sc-telegram:hover{border-color:rgba(34,158,217,.8);box-shadow:0 16px 40px rgba(34,158,217,.2);}
+.sc-telegram::after{background:#229ED9;}
+.sc-telegram .s-icon-wrap{background:linear-gradient(135deg,#0088cc,#229ED9);}
+.sc-telegram .s-name{color:#fff;}
+.sc-telegram .s-handle{color:rgba(255,255,255,.5);}
+.sc-telegram .s-cta{color:#54b3e0;}
+/* Instagram */
+.sc-instagram{background:linear-gradient(145deg,#2d1a2e,#1a0f1f);border:0.5px solid rgba(225,48,108,.3);}
+.sc-instagram:hover{border-color:rgba(225,48,108,.7);box-shadow:0 16px 40px rgba(225,48,108,.15);}
+.sc-instagram::after{background:linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.sc-instagram .s-icon-wrap{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);}
+.sc-instagram .s-name{color:#fff;}
+.sc-instagram .s-handle{color:rgba(255,255,255,.5);}
+.sc-instagram .s-cta{color:#e1306c;}
+/* TikTok */
+.sc-tiktok{background:linear-gradient(145deg,#1a0a0a,#0f0f0f);border:0.5px solid rgba(254,44,85,.3);}
+.sc-tiktok:hover{border-color:rgba(254,44,85,.7);box-shadow:0 16px 40px rgba(254,44,85,.15);}
+.sc-tiktok::after{background:linear-gradient(90deg,#69C9D0,#EE1D52);}
+.sc-tiktok .s-icon-wrap{background:linear-gradient(135deg,#010101,#1a1a1a);border:1px solid rgba(254,44,85,.4);}
+.sc-tiktok .s-name{color:#fff;}
+.sc-tiktok .s-handle{color:rgba(255,255,255,.5);}
+.sc-tiktok .s-cta{color:#EE1D52;}
+/* Broker */
+.sc-broker{background:linear-gradient(145deg,#1a1500,#111000);border:0.5px solid var(--border2);}
+.sc-broker:hover{border-color:var(--gold);box-shadow:0 16px 40px rgba(201,168,76,.15);}
+.sc-broker::after{background:var(--gold);}
+.sc-broker .s-icon-wrap{background:linear-gradient(135deg,var(--gold-dark),var(--gold));}
+.sc-broker .s-name{color:var(--gold);}
+.sc-broker .s-handle{color:var(--muted);}
+.sc-broker .s-cta{color:var(--gold-light);}
 
 /* CTA FINAL */
 .cta-final{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);text-align:center;padding:8rem 5%;position:relative;overflow:hidden;}
@@ -302,9 +369,162 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
 .modal-next{width:100%;background:var(--gold);color:#000;border:none;padding:.88rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.05em;cursor:pointer;transition:background .2s;}
 .modal-next:hover{background:var(--gold-light);}
 
-/* RESPONSIVE */
-@media(max-width:1100px){.vip-inner,.about-inner{grid-template-columns:1fr;}.vip-visual{order:-1;}.footer-top{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.stat-item{padding:.8rem 1rem;}.process-step{border-right:0.5px solid var(--border);}.footer-top{grid-template-columns:1fr;}.about-inner{grid-template-columns:1fr;}.about-stats{grid-template-columns:1fr 1fr;}.community-bar{gap:1rem;}}
+/* ═══════════ RESPONSIVE MOBILE-FIRST ═══════════ */
+@media(max-width:1100px){
+  .vip-inner,.about-inner{grid-template-columns:1fr;}
+  .vip-visual{order:-1;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+
+@media(max-width:768px){
+  /* NAV */
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  nav{padding:.9rem 5%;}
+
+  /* HERO */
+  .hero{padding:7rem 5% 4rem;min-height:100svh;}
+  .hero h1{font-size:clamp(2.2rem,9vw,3.5rem);line-height:1.05;margin-bottom:1.2rem;}
+  .hero-sub{font-size:1rem;}
+  .hero p{font-size:.92rem;margin-bottom:2rem;}
+  .hero-btns{flex-direction:column;align-items:stretch;gap:.75rem;width:100%;max-width:340px;}
+  .btn-gold,.btn-outline{width:100%;text-align:center;padding:.95rem 1rem;font-size:.9rem;}
+  .hero-badge{font-size:.65rem;padding:.3rem .85rem;}
+  .hero-float{display:none;}
+
+  /* COMMUNITY BAR */
+  .community-bar{flex-direction:column;align-items:stretch;gap:.75rem;padding:1.5rem 5%;}
+  .comm-card{min-width:unset;max-width:100%;}
+  .comm-info strong{font-size:.85rem;}
+  .comm-icon-wrap{width:42px;height:42px;border-radius:10px;}
+  /* SOCIALS */
+  .socials-grid{grid-template-columns:1fr 1fr;gap:.9rem;}
+  .social-card{padding:1.5rem .9rem;border-radius:12px;}
+  .s-icon-wrap{width:46px;height:46px;border-radius:11px;}
+  .s-icon-wrap svg{width:22px;height:22px;}
+
+  /* TICKER */
+  .ticker-item{font-size:.68rem;padding:0 1.5rem;}
+
+  /* STATS */
+  .stats-bar{padding:1.2rem 5%;}
+  .stat-item{padding:.7rem .8rem;min-width:80px;}
+  .stat-num{font-size:1.6rem;}
+  .stat-label{font-size:.6rem;}
+
+  /* SECTIONS */
+  section{padding:4rem 5%;}
+  .s-title{font-size:clamp(1.5rem,6vw,2.2rem);}
+  .s-sub{font-size:.88rem;margin-bottom:2.5rem;}
+
+  /* PROOF GRID */
+  .proof-grid{grid-template-columns:1fr 1fr;}
+  .proof-card{aspect-ratio:1;}
+
+  /* OFFERS */
+  .offers-wrap{grid-template-columns:1fr;gap:2rem;}
+  .offer-card{padding:2rem 1.5rem;}
+  .offer-card.featured{margin-top:1rem;}
+  .price-big{font-size:2rem;}
+  .offer-feats li{font-size:.82rem;}
+
+  /* BROKER NOTE */
+  .broker-note{flex-direction:column;gap:.8rem;padding:1.2rem;}
+
+  /* VIP ROOM */
+  .vip-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .vip-visual{order:-1;}
+  .vip-card{padding:1.5rem;}
+  .signal-item{padding:.5rem .7rem;}
+  .signal-pair{font-size:.78rem;min-width:50px;}
+  .signal-pips{font-size:.76rem;}
+  .discord-section{flex-direction:column;gap:.5rem;}
+
+  /* PROGRAMME */
+  .prog-grid{grid-template-columns:1fr;}
+  .prog-item{padding:1.5rem;}
+
+  /* PROCESS */
+  .process-steps{grid-template-columns:1fr;}
+  .process-step{border-right:0.5px solid var(--border);border-bottom:none;}
+  .process-step:last-child{border-bottom:0.5px solid var(--border);}
+
+  /* ABOUT */
+  .about-inner{grid-template-columns:1fr;gap:2.5rem;}
+  .about-img{aspect-ratio:4/3;max-height:300px;}
+  .about-stats{grid-template-columns:1fr 1fr;gap:.75rem;}
+  .about-stat .n{font-size:1.4rem;}
+
+  /* TESTIMONIALS */
+  .testi-grid{grid-template-columns:1fr;}
+
+  /* SOCIALS */
+  .socials-grid{grid-template-columns:1fr 1fr;}
+  .social-card{padding:1.2rem .8rem;}
+
+  /* FAQ */
+  .faq-q{font-size:.88rem;padding:1.2rem 0;}
+  .faq-a{font-size:.83rem;}
+
+  /* CTA FINAL */
+  .cta-final{padding:5rem 5%;}
+  .cta-final h2{font-size:clamp(1.7rem,7vw,2.5rem);}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:.75rem;}
+  .cta-btns .btn-gold,.cta-btns .btn-outline,.cta-btns .btn-vip{width:100%;text-align:center;padding:.9rem 1rem;}
+
+  /* FOOTER */
+  .footer-top{grid-template-columns:1fr;gap:2rem;padding:3rem 5% 2rem;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem;}
+  .footer-links{gap:1rem;}
+
+  /* MODAL */
+  .modal{padding:1.8rem 1.4rem;border-radius:8px 8px 0 0;position:fixed;bottom:0;left:0;right:0;max-width:100%;margin:0;max-height:90vh;}
+  .modal-overlay{align-items:flex-end;padding:0;}
+  .modal-head h3{font-size:1.1rem;}
+  .plan-card{padding:.9rem 1rem;gap:.75rem;}
+  .plan-name{font-size:.85rem;flex-wrap:wrap;}
+  .plan-desc{font-size:.72rem;}
+  .plan-price{font-size:1rem;}
+  .modal-next,.modal-submit{padding:.9rem;font-size:.88rem;}
+  .modal-field input,.modal-field textarea{font-size:16px;} /* prevent zoom on iOS */
+}
+
+@media(max-width:380px){
+  .hero h1{font-size:2rem;}
+  .proof-grid{grid-template-columns:1fr;}
+  .socials-grid{grid-template-columns:1fr;}
+  .about-stats{grid-template-columns:1fr 1fr;}
+}
+
+/* GLOBAL VISUAL UPGRADES */
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%,rgba(201,168,76,0.025) 0%,transparent 70%);pointer-events:none;z-index:0;}
+/* Glow on section titles */
+.s-title em{text-shadow:0 0 40px rgba(201,168,76,0.3);}
+.hero h1 em{text-shadow:0 0 60px rgba(201,168,76,0.35);}
+/* Card hover glow */
+.offer-card:hover{box-shadow:0 0 30px rgba(201,168,76,0.07);}
+.offer-card.featured{box-shadow:0 0 40px rgba(201,168,76,0.1);}
+.testi-card:hover{box-shadow:0 0 20px rgba(201,168,76,0.05);}
+/* Stat numbers glow */
+.stat-num{text-shadow:0 0 30px rgba(201,168,76,0.4);}
+/* Section alternating bg with subtle noise */
+.results{background:linear-gradient(180deg,var(--dark) 0%,#0f0f0f 100%);}
+.offers{background:linear-gradient(180deg,var(--black) 0%,#0c0c0c 100%);}
+.program{background:linear-gradient(180deg,var(--dark) 0%,#101010 100%);}
+/* Progress line decoration */
+.section-line{display:block;width:40px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:1rem;}
+/* Candle decoration on sides */
+.cta-final{background:linear-gradient(135deg,#111 0%,#0d0d0d 50%,#111 100%);}
+/* Glowing border on VIP card */
+.vip-card{box-shadow:0 0 60px rgba(201,168,76,0.08),inset 0 0 40px rgba(201,168,76,0.02);}
+/* Proof grid glow */
+.proof-grid{box-shadow:0 0 40px rgba(201,168,76,0.05);}
+/* Nav glow */
+nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
+/* Ticker shadow */
+.ticker-wrap{box-shadow:0 4px 20px rgba(201,168,76,0.15);}
+/* Float cards on mobile hidden */
+@media(max-width:900px){.hero-float{display:none;}}
 </style>
 </head>
 <body>
@@ -338,7 +558,22 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-particles" id="heroParticles"></div>
+
+  <!-- Floating cards -->
+  <div class="hero-float hero-float-left">
+    <div class="hero-float-card"><div class="fc-dot green"></div>GOLD BUY +78 pips ✅</div>
+  </div>
+  <div class="hero-float hero-float-right">
+    <div class="hero-float-card"><div class="fc-dot gold"></div>NQ SELL +150 pips ✅</div>
+  </div>
+  <div class="hero-float hero-float-top">
+    <div class="hero-float-card"><div class="fc-dot green"></div>42 membres actifs 🔴</div>
+  </div>
+
   <div class="hero-badge">Gold · NQ · Résultats prouvés · 42 membres actifs</div>
   <h1>90% des traders perdent.<br><em>Tu n'es pas obligé<br>d'en faire partie.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
@@ -351,17 +586,26 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
 
 <!-- COMMUNITY BAR -->
 <div class="community-bar">
-  <div class="comm-item">
-    <span>💬</span>
-    <div><strong>Discord YASKA ROOM</strong> — Salons privés VIP + formations</div>
-  </div>
-  <a href="https://discord.gg/FP3urjgj" target="_blank" class="comm-btn comm-discord">Rejoindre le Discord</a>
-  <div class="comm-sep"></div>
-  <div class="comm-item">
-    <span>✈️</span>
-    <div><strong>Telegram gratuit</strong> — Annonces &amp; aperçus de signaux</div>
-  </div>
-  <a href="https://t.me/yaskaroom" target="_blank" class="comm-btn comm-telegram">Rejoindre Telegram</a>
+  <a href="https://discord.gg/FP3urjgj" target="_blank" class="comm-card dc">
+    <div class="comm-icon-wrap dc">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
+    </div>
+    <div class="comm-info">
+      <strong>Discord YASKA ROOM</strong>
+      <span>Salons VIP · Signaux · Lives · Formations</span>
+    </div>
+    <span class="comm-arrow">→</span>
+  </a>
+  <a href="https://t.me/yaskaroom" target="_blank" class="comm-card tg">
+    <div class="comm-icon-wrap tg">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </div>
+    <div class="comm-info">
+      <strong>Telegram <span class="comm-free-badge">Gratuit</span></strong>
+      <span>Aperçus signaux · Annonces · Alertes</span>
+    </div>
+    <span class="comm-arrow">→</span>
+  </a>
 </div>
 
 <!-- TICKER -->
@@ -514,47 +758,6 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
       <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
         <button class="btn-vip" onclick="openModal('vip')">👑 ACCÉDER À LA ROOM VIP</button>
         <a href="https://t.me/yaskaroom" target="_blank" class="btn-outline">Telegram gratuit ✈️</a>
-      </div>
-    </div>
-    <div>
-      <div class="vip-card">
-        <div class="vip-card-header">
-          <div class="vip-logo-badge">YR</div>
-          <div><div class="vip-card-title">YASKA ROOM VIP</div><div class="vip-card-sub">Discord · Salon #signaux-vip</div></div>
-        </div>
-        <div class="live-indicator"><span class="live-dot"></span>LIVE — Session New York ouverte</div>
-        <div class="signal-list">
-          <div class="signal-item">
-            <span class="signal-pair">GOLD</span>
-            <span class="signal-dir buy">BUY</span>
-            <span class="signal-tp">TP +80 pips</span>
-            <span class="signal-pips">✅ +78 pips</span>
-          </div>
-          <div class="signal-item">
-            <span class="signal-pair">NQ</span>
-            <span class="signal-dir sell">SELL</span>
-            <span class="signal-tp">TP +150 pips</span>
-            <span class="signal-pips">🔄 En cours</span>
-          </div>
-          <div class="signal-item">
-            <span class="signal-pair">GOLD</span>
-            <span class="signal-dir sell">SELL</span>
-            <span class="signal-tp">TP +80 pips</span>
-            <span class="signal-pips">✅ +83 pips</span>
-          </div>
-          <div class="signal-item">
-            <span class="signal-pair">NQ</span>
-            <span class="signal-dir buy">BUY</span>
-            <span class="signal-tp">TP +150 pips</span>
-            <span class="signal-pips">✅ +152 pips</span>
-          </div>
-        </div>
-        <div style="margin-top:1.2rem;font-size:.73rem;color:var(--muted);border-top:0.5px solid var(--border);padding-top:.9rem;">💬 YASKA — <span style="color:var(--gold);">« Gold réagit bien sur la zone 2318, setup valide »</span></div>
-        <div style="margin-top:.5rem;font-size:.7rem;color:var(--muted);">👥 42 membres actifs · Aujourd'hui 14:47</div>
-        <div class="discord-section">
-          <div class="dc-icon">🎮</div>
-          <p>Rejoins le <strong style="color:var(--text);">Discord YASKA ROOM</strong> — salons privés, signaux, formations et voice calls. <a >Obtenir l'accès →</a></p>
-        </div>
       </div>
     </div>
   </div>
@@ -712,39 +915,55 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   <div class="center">
     <div class="s-tag">Communauté &amp; réseaux</div>
     <h2 class="s-title">Rejoins-nous <em>partout</em></h2>
-    <p class="s-sub" style="margin-bottom:0;">Discord, Telegram, Instagram, TikTok — la YASKA ROOM est partout où les traders sérieux se retrouvent.</p>
+    <p class="s-sub" style="margin-bottom:0;">La YASKA ROOM est là où les traders sérieux se retrouvent. Rejoins la communauté.</p>
   </div>
   <div class="socials-grid">
-    <a class="social-card discord-card" href="https://discord.gg/FP3urjgj" target="_blank">
-      <div class="s-icon">🎮</div>
+
+    <a class="social-card sc-discord" href="https://discord.gg/FP3urjgj" target="_blank">
+      <div class="s-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
+      </div>
       <div class="s-name">Discord VIP</div>
       <div class="s-handle">YASKA ROOM</div>
-      <div class="s-cta">Salons privés · Signaux · Lives →</div>
+      <div class="s-cta">Salons privés · Lives <span>→</span></div>
     </a>
-    <a class="social-card telegram-card" href="https://t.me/yaskaroom" target="_blank">
-      <div class="s-icon">✈️</div>
-      <div class="s-name">Telegram Gratuit</div>
+
+    <a class="social-card sc-telegram" href="https://t.me/yaskaroom" target="_blank">
+      <div class="s-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </div>
+      <div class="s-name">Telegram <span style="background:rgba(80,200,120,.2);color:#50c878;font-size:.6rem;padding:.1rem .4rem;border-radius:3px;font-weight:700;">FREE</span></div>
       <div class="s-handle">@yaskaroom</div>
-      <div class="s-cta">Accès gratuit · Rejoindre →</div>
+      <div class="s-cta">Signaux aperçu · Alertes <span>→</span></div>
     </a>
-    <a class="social-card" href="https://www.instagram.com/yaskafx?igsh=OXFtb213dDI1cHI1&utm_source=qr" target="_blank">
-      <div class="s-icon">📷</div>
+
+    <a class="social-card sc-instagram" href="https://www.instagram.com/yaskafx?igsh=OXFtb213dDI1cHI1&utm_source=qr" target="_blank">
+      <div class="s-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </div>
       <div class="s-name">Instagram</div>
       <div class="s-handle">@yaskafx</div>
-      <div class="s-cta">Analyses &amp; résultats →</div>
+      <div class="s-cta">Analyses &amp; résultats <span>→</span></div>
     </a>
-    <a class="social-card" href="https://www.tiktok.com/@yaska.fx" target="_blank">
-      <div class="s-icon">🎵</div>
+
+    <a class="social-card sc-tiktok" href="https://www.tiktok.com/@yaska.fx" target="_blank">
+      <div class="s-icon-wrap">
+        <svg viewBox="0 0 24 24"><path fill="#69C9D0" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/><path fill="#EE1D52" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" opacity=".5"/></svg>
+      </div>
       <div class="s-name">TikTok</div>
       <div class="s-handle">@yaska.fx</div>
-      <div class="s-cta">Contenu gratuit →</div>
+      <div class="s-cta">Contenu gratuit <span>→</span></div>
     </a>
-    <a class="social-card" href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">
-      <div class="s-icon">🏦</div>
+
+    <a class="social-card sc-broker" href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">
+      <div class="s-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 6h4v12H3zm6 0h4v12H9zm6 0h4v12h-4z" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 21h22" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
       <div class="s-name">Broker Affilié</div>
       <div class="s-handle">PU Prime</div>
-      <div class="s-cta">Accès VIP offert →</div>
+      <div class="s-cta">Accès VIP offert <span>→</span></div>
     </a>
+
   </div>
 </section>
 
@@ -966,6 +1185,122 @@ function submitModal(){
 function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
 function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
 function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+
+// ── HERO CANVAS (candlestick chart) ──────────────────────────────────────────
+(function(){
+  const canvas = document.getElementById('heroCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const GOLD = 'rgba(201,168,76,';
+  const GREEN = 'rgba(80,200,120,';
+  const RED = 'rgba(220,80,80,';
+
+  function resize(){
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    draw();
+  }
+
+  function draw(){
+    const W = canvas.width, H = canvas.height;
+    ctx.clearRect(0,0,W,H);
+
+    // Generate fake OHLC candles
+    const N = Math.floor(W / 28);
+    const prices = [];
+    let p = H * 0.55;
+    for(let i=0;i<N+4;i++){
+      p += (Math.random()-0.48)*18;
+      p = Math.max(H*0.2, Math.min(H*0.82, p));
+      const range = Math.random()*28+8;
+      const body = Math.random()*range*0.7;
+      const o = p;
+      const c = p + (Math.random()>0.5?1:-1)*body;
+      const h = Math.min(o,c) - Math.random()*range*0.25;
+      const l = Math.max(o,c) + Math.random()*range*0.25;
+      prices.push({o,c,h,l});
+    }
+
+    // Draw price line glow underneath
+    ctx.beginPath();
+    prices.forEach((pr,i)=>{
+      const x = i*(W/(N+3));
+      const mid = (pr.o+pr.c)/2;
+      if(i===0) ctx.moveTo(x,mid); else ctx.lineTo(x,mid);
+    });
+    ctx.strokeStyle = GOLD+'0.12)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Fill under line
+    ctx.lineTo(W, H); ctx.lineTo(0, H); ctx.closePath();
+    const grad = ctx.createLinearGradient(0,0,0,H);
+    grad.addColorStop(0, GOLD+'0.06)');
+    grad.addColorStop(1, GOLD+'0)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Draw candles
+    prices.forEach((pr,i)=>{
+      const x = i*(W/(N+3));
+      const bull = pr.c < pr.o; // price going up = bullish (c < o because Y inverted)
+      const color = bull ? GREEN : RED;
+      const cw = 10;
+
+      // Wick
+      ctx.beginPath();
+      ctx.moveTo(x, pr.h);
+      ctx.lineTo(x, pr.l);
+      ctx.strokeStyle = color+'0.5)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Body
+      const bodyTop = Math.min(pr.o,pr.c);
+      const bodyH = Math.abs(pr.o-pr.c) || 2;
+      ctx.fillStyle = color+'0.7)';
+      ctx.fillRect(x-cw/2, bodyTop, cw, bodyH);
+    });
+
+    // Horizontal price levels (dashed)
+    [0.3, 0.5, 0.7].forEach(pct=>{
+      const y = H*pct;
+      ctx.beginPath();
+      ctx.setLineDash([4,8]);
+      ctx.moveTo(0,y); ctx.lineTo(W,y);
+      ctx.strokeStyle = GOLD+'0.06)';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+      ctx.setLineDash([]);
+    });
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Gentle re-draw every 3s for animation feel
+  setInterval(()=>{ draw(); }, 3000);
+})();
+
+// ── HERO PARTICLES ────────────────────────────────────────────────────────────
+(function(){
+  const container = document.getElementById('heroParticles');
+  if(!container) return;
+  for(let i=0;i<28;i++){
+    const s = document.createElement('span');
+    const size = Math.random()*3+1;
+    s.style.cssText = [
+      'width:'+size+'px',
+      'height:'+size+'px',
+      'left:'+Math.random()*100+'%',
+      'bottom:'+(Math.random()*60)+'%',
+      'animation-duration:'+(Math.random()*8+5)+'s',
+      'animation-delay:'+(Math.random()*8)+'s',
+      'opacity:0'
+    ].join(';');
+    container.appendChild(s);
+  }
+})();
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
 </script>
