@@ -130,7 +130,7 @@ section{padding:6rem 5%;}
 
 /* OFFERS */
 .offers{background:linear-gradient(160deg,#0c0c0c 0%,#111 100%);}
-.offers-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:end;margin-top:1rem;}
+.offers-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;align-items:end;margin-top:1rem;}
 /* BASE CARD */
 .offer-card{border-radius:20px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:transform .3s;overflow:hidden;}
 .offer-card:hover{transform:translateY(-6px);}
@@ -206,7 +206,11 @@ section{padding:6rem 5%;}
 .broker-note a{color:var(--gold);font-weight:500;}
 
 /* RESPONSIVE OFFERS */
-@media(max-width:900px){
+@media(max-width:1200px){
+  .offers-wrap{grid-template-columns:repeat(2,1fr);}
+  .offer-card.featured{transform:none;}
+}
+@media(max-width:700px){
   .offers-wrap{grid-template-columns:1fr;}
   .offer-card.featured{transform:none;}
   .offer-card.featured:hover{transform:translateY(-6px);}
@@ -799,8 +803,12 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <div class="broker-note">
     <div class="broker-icon">🏦</div>
     <div>
-      <h4>Comment fonctionne l'accès VIP via broker affilié ?</h4>
-      <p>Ouvre un compte chez notre broker partenaire <strong>PU Prime</strong> via notre lien affilié et effectue un dépôt minimum (contacte-nous pour le montant exact). En retour, tu accèdes immédiatement à la YASKA ROOM VIP sans abonnement mensuel. Tu trades avec ton propre capital sur une plateforme réglementée. <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">Ouvrir un compte PU Prime →</a> ou <a onclick="openModal('vip')">nous contacter pour plus d'infos →</a></p>
+      <h4>Deux façons d'accéder à la YASKA ROOM VIP gratuitement</h4>
+      <p>
+        <strong style="color:var(--text);">🏦 Via PU Prime (broker affilié)</strong> — Ouvre un compte et effectue un dépôt minimum. Accès VIP offert immédiatement. <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">Ouvrir un compte PU Prime →</a>
+        <br><br>
+        <strong style="color:#1e90ff;">🐋 Via Whales Capital Funding (prop firm)</strong> — Passe un challenge CFD dès 200k$ avec <strong>-30%</strong> grâce au code <strong style="background:rgba(30,144,255,.12);color:#1e90ff;padding:.1rem .4rem;border-radius:3px;">PROMO30</strong>. Accès VIP offert dès validation du challenge. <a href="https://portal.whalescapitalfunding.com/buy-challenge/?referral=ac03f90f" target="_blank" style="color:#1e90ff;">Passer le challenge Whales Capital →</a>
+      </p>
     </div>
   </div>
 </section>
@@ -837,7 +845,15 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
             <div class="plan-name">Room VIP &nbsp;<span class="plan-badge-vip">👑 VIP</span></div>
             <div class="plan-desc">Dépôt sur broker affilié PU Prime = accès VIP offert · Signaux premium · Salon privé</div>
           </div>
-          <div class="plan-price" style="color:var(--gold);">Dépôt<small>broker affilié</small></div>
+          <div class="plan-price" style="color:var(--gold);">Dépôt<small>PU Prime</small></div>
+        </div>
+        <div class="plan-card" id="plan-whales" onclick="selectPlan('whales')" style="border-color:rgba(30,144,255,.3);">
+          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
+          <div class="plan-info">
+            <div class="plan-name">🐋 Whales Capital &nbsp;<span class="plan-badge-vip" style="background:linear-gradient(90deg,#1e90ff,#00bfff);">PROP FIRM</span></div>
+            <div class="plan-desc">Challenge CFD 200k$ min · Code PROMO30 = -30% · Accès YASKA ROOM VIP offert</div>
+          </div>
+          <div class="plan-price" style="color:#1e90ff;">Challenge<small>dès 200k$</small></div>
         </div>
       </div>
       <button class="modal-next" onclick="goToForm()">CONTINUER →</button>
@@ -861,7 +877,8 @@ let currentPlan = 'mensuel';
 const PLANS = {
   mensuel: { name:'Abonnement Mensuel', price:'99€/mois', submitLabel:'ENVOYER MA DEMANDE →', vip:false },
   lifetime: { name:'Accès à Vie', price:'999€ paiement unique', submitLabel:'ENVOYER MA DEMANDE →', vip:false },
-  vip: { name:'Room VIP — Broker affilié', price:'Dépôt PU Prime', submitLabel:'RECEVOIR LES INFOS BROKER →', vip:true }
+  vip: { name:'Room VIP — Broker affilié', price:'Dépôt PU Prime', submitLabel:'RECEVOIR LES INFOS BROKER →', vip:true },
+  whales: { name:'Whales Capital Funding', price:'Challenge dès 200k$ (-30% code PROMO30)', submitLabel:'ACCÉDER AU CHALLENGE WHALES →', vip:true, url:'https://portal.whalescapitalfunding.com/buy-challenge/?referral=ac03f90f' }
 };
 function selectPlan(plan){
   currentPlan = plan;
@@ -887,7 +904,7 @@ function goBack(){
 function openModal(type){
   document.getElementById('step-plan').style.display = 'block';
   document.getElementById('step-form').classList.remove('active');
-  const planKey = (type==='lifetime'||type==='vip'||type==='mensuel') ? type : 'mensuel';
+  const planKey = (type==='lifetime'||type==='vip'||type==='mensuel'||type==='whales') ? type : 'mensuel';
   selectPlan(planKey);
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
