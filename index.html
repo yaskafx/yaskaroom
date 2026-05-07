@@ -19,6 +19,7 @@ img{display:block;max-width:100%;}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.1rem 5%;background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);}
 nav .nav-links{display:flex;gap:1.8rem;justify-content:flex-start;}
 nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end;}
+nav .logo{text-align:center;}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.06em;cursor:pointer;display:flex;align-items:center;gap:.4rem;}
 .logo em{font-style:normal;color:var(--gold);}
 .nav-links{list-style:none;display:flex;gap:1.8rem;}
@@ -27,8 +28,8 @@ nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end
 .nav-right{display:flex;align-items:center;gap:1rem;}
 .nav-cta{background:var(--gold);color:#000;padding:.5rem 1.3rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.06em;transition:background .2s;cursor:pointer;border:none;white-space:nowrap;}
 .nav-cta:hover{background:var(--gold-light);}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-.hamburger span{width:24px;height:1.5px;background:var(--text);transition:all .3s;}
+.hamburger{display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:6px;width:36px;height:36px;border-radius:8px;border:0.5px solid var(--border);}
+.hamburger span{width:4px;height:4px;border-radius:50%;background:var(--text);transition:all .3s;}
 .mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:rgba(10,10,10,0.99);border-bottom:0.5px solid var(--border);padding:1.5rem 5%;flex-direction:column;z-index:199;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{color:var(--muted);font-size:.95rem;padding:.9rem 0;border-bottom:0.5px solid var(--border);}
@@ -441,8 +442,18 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   /* NAV */
   .nav-links,.nav-cta{display:none;}
   .hamburger{display:flex;}
-  nav{padding:.9rem 5%;grid-template-columns:auto 1fr auto;}
-  nav .logo{text-align:center;}
+  nav{
+    padding:.9rem 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  nav .logo{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:1.1rem;
+  }
 
   /* HERO */
   .hero{padding:7rem 5% 4rem;min-height:100svh;}
