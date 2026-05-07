@@ -43,11 +43,16 @@ nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end
 .hero-particles span{position:absolute;border-radius:50%;background:var(--gold);animation:floatDot linear infinite;opacity:0;}
 @keyframes floatDot{0%{transform:translateY(0) scale(1);opacity:.5}60%{opacity:.15}100%{transform:translateY(-140px) scale(.3);opacity:0}}
 .hero-float{position:absolute;z-index:2;pointer-events:none;}
-.hero-float-card{background:rgba(20,20,20,0.92);border:0.5px solid var(--border2);border-radius:6px;padding:.6rem 1rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:.5rem;backdrop-filter:blur(10px);white-space:nowrap;}
+.hero-float-card{background:rgba(15,15,15,0.95);border:0.5px solid var(--border2);border-radius:10px;padding:.7rem 1rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:.75rem;backdrop-filter:blur(16px);white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.5);}
 .fc-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .fc-dot.green{background:#50c878;}
 .fc-dot.red{background:#e05050;}
 .fc-dot.gold{background:var(--gold);}
+.payout-card{border-color:rgba(201,168,76,.25);}
+.payout-logo{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.65rem;color:#000;letter-spacing:.03em;flex-shrink:0;}
+.payout-info{display:flex;flex-direction:column;gap:.05rem;}
+.payout-amount{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#50c878;line-height:1;}
+.payout-label{font-size:.62rem;color:var(--muted);font-weight:400;letter-spacing:.03em;}
 .hero-float-left{bottom:22%;left:3%;animation:floatCard 5s ease-in-out infinite;}
 .hero-float-right{bottom:28%;right:3%;animation:floatCard 6.5s ease-in-out infinite reverse;}
 .hero-float-top{top:20%;right:6%;animation:floatCard 7s ease-in-out infinite 1s;}
