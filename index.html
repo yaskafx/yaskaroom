@@ -16,9 +16,7 @@ a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.1rem 5%;background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);}
-nav .nav-links{display:flex;gap:1.8rem;justify-content:flex-start;}
-nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5%;background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border);}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.06em;cursor:pointer;display:flex;align-items:center;gap:.4rem;}
 .logo em{font-style:normal;color:var(--gold);}
 .nav-links{list-style:none;display:flex;gap:1.8rem;}
@@ -35,28 +33,13 @@ nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end
 .mobile-menu .mm-cta{border:none;margin-top:.8rem;background:var(--gold);color:#000;text-align:center;padding:.85rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.05em;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 5% 6rem;position:relative;overflow:hidden;background:#0A0A0A;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,0.12) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 80% 80%,rgba(201,168,76,0.04) 0%,transparent 70%),radial-gradient(ellipse 40% 30% at 20% 70%,rgba(201,168,76,0.04) 0%,transparent 70%);pointer-events:none;z-index:0;}
-.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(201,168,76,0.03) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(201,168,76,0.03) 60px);pointer-events:none;z-index:0;}
-#heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.7;}
-.hero-particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
-.hero-particles span{position:absolute;border-radius:50%;background:var(--gold);animation:floatDot linear infinite;opacity:0;}
-@keyframes floatDot{0%{transform:translateY(0) scale(1);opacity:.5}60%{opacity:.15}100%{transform:translateY(-140px) scale(.3);opacity:0}}
-.hero-float{position:absolute;z-index:2;pointer-events:none;}
-.hero-float-card{background:rgba(20,20,20,0.92);border:0.5px solid var(--border2);border-radius:6px;padding:.6rem 1rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:.5rem;backdrop-filter:blur(10px);white-space:nowrap;}
-.fc-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.fc-dot.green{background:#50c878;}
-.fc-dot.red{background:#e05050;}
-.fc-dot.gold{background:var(--gold);}
-.hero-float-left{bottom:22%;left:3%;animation:floatCard 5s ease-in-out infinite;}
-.hero-float-right{bottom:28%;right:3%;animation:floatCard 6.5s ease-in-out infinite reverse;}
-.hero-float-top{top:20%;right:6%;animation:floatCard 7s ease-in-out infinite 1s;}
-@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-.hero-content-wrap{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 5% 6rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(201,168,76,0.09) 0%,transparent 65%);pointer-events:none;}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,0.025) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,0.025) 80px);pointer-events:none;}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:0.5px solid var(--border2);border-radius:20px;padding:.38rem 1.1rem;font-size:.75rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2rem;background:rgba(201,168,76,0.06);position:relative;z-index:1;}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-size:clamp(2.8rem,7.5vw,6.8rem);font-weight:800;line-height:1.02;letter-spacing:-0.028em;margin-bottom:1.6rem;max-width:900px;position:relative;z-index:1;text-shadow:0 0 60px rgba(0,0,0,0.8);}
+.hero h1{font-size:clamp(2.8rem,7.5vw,6.8rem);font-weight:800;line-height:1.02;letter-spacing:-0.028em;margin-bottom:1.6rem;max-width:900px;position:relative;z-index:1;}
 .hero h1 em{font-style:normal;color:var(--gold);}
 .hero-sub{font-size:1.25rem;font-family:'Syne',sans-serif;font-weight:700;color:var(--text);letter-spacing:.04em;margin-bottom:.9rem;position:relative;z-index:1;}
 .hero p{font-size:1rem;color:var(--muted);max-width:540px;line-height:1.82;margin-bottom:2.8rem;font-weight:300;position:relative;z-index:1;}
@@ -67,27 +50,14 @@ nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end
 .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
 /* DISCORD + TELEGRAM BANNER */
-.community-bar{background:linear-gradient(135deg,#0f0f0f 0%,#141414 100%);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:2rem 5%;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
-.comm-card{display:flex;align-items:center;gap:1rem;background:var(--dark2);border:0.5px solid var(--border);border-radius:12px;padding:1rem 1.4rem;transition:all .25s;text-decoration:none;flex:1;min-width:240px;max-width:360px;position:relative;overflow:hidden;}
-.comm-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;border-radius:12px;}
-.comm-card.dc::before{background:linear-gradient(135deg,rgba(88,101,242,.12),transparent);}
-.comm-card.tg::before{background:linear-gradient(135deg,rgba(34,158,217,.12),transparent);}
-.comm-card:hover::before{opacity:1;}
-.comm-card:hover{transform:translateY(-3px);}
-.comm-card.dc:hover{border-color:rgba(88,101,242,.5);box-shadow:0 8px 30px rgba(88,101,242,.15);}
-.comm-card.tg:hover{border-color:rgba(34,158,217,.5);box-shadow:0 8px 30px rgba(34,158,217,.15);}
-.comm-icon-wrap{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
-.comm-icon-wrap.dc{background:linear-gradient(135deg,#4752c4,#5865F2);}
-.comm-icon-wrap.tg{background:linear-gradient(135deg,#0088cc,#229ED9);}
-.comm-icon-wrap svg{width:24px;height:24px;fill:#fff;}
-.comm-info{flex:1;position:relative;z-index:1;}
-.comm-info strong{display:block;font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:var(--text);margin-bottom:.15rem;}
-.comm-info span{font-size:.75rem;color:var(--muted);}
-.comm-arrow{font-size:.8rem;color:var(--muted);flex-shrink:0;position:relative;z-index:1;transition:transform .2s,color .2s;}
-.comm-card:hover .comm-arrow{transform:translateX(3px);}
-.comm-card.dc:hover .comm-arrow{color:#7289da;}
-.comm-card.tg:hover .comm-arrow{color:#229ED9;}
-.comm-free-badge{background:rgba(80,200,120,.15);border:0.5px solid rgba(80,200,120,.3);color:#50c878;font-family:'Syne',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.1rem .4rem;border-radius:3px;margin-left:.4rem;}
+.community-bar{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:1.2rem 5%;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+.comm-item{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--muted);}
+.comm-item strong{color:var(--text);font-weight:500;}
+.comm-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1.1rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:.05em;transition:opacity .2s;cursor:pointer;}
+.comm-btn:hover{opacity:.82;}
+.comm-discord{background:#5865F2;color:#fff;}
+.comm-telegram{background:#229ED9;color:#fff;}
+.comm-sep{width:0.5px;height:30px;background:var(--border);display:block;}
 
 /* TICKER */
 .ticker-wrap{background:var(--gold);overflow:hidden;padding:.48rem 0;}
@@ -129,93 +99,44 @@ section{padding:6rem 5%;}
 .proof-overlay .p-profit{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;}
 
 /* OFFERS */
-.offers{background:linear-gradient(160deg,#0c0c0c 0%,#111 100%);}
-.offers-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:end;margin-top:1rem;}
-/* BASE CARD */
-.offer-card{border-radius:20px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:transform .3s;overflow:hidden;}
-.offer-card:hover{transform:translateY(-6px);}
-/* MENSUEL */
-.offer-card.plan-mensuel{background:#1a1a1a;border:1px solid rgba(201,168,76,.2);}
-.offer-card.plan-mensuel:hover{border-color:rgba(201,168,76,.5);box-shadow:0 20px 60px rgba(0,0,0,.4);}
-/* FEATURED / LIFETIME */
-.offer-card.featured{background:linear-gradient(145deg,#C9A84C 0%,#E8D08A 40%,#C9A84C 100%);border:none;transform:scale(1.04);z-index:2;box-shadow:0 30px 80px rgba(201,168,76,.35);}
-.offer-card.featured:hover{transform:scale(1.04) translateY(-6px);}
-/* VIP */
-.offer-card.vip{background:#1a1a1a;border:1px solid rgba(201,168,76,.2);}
-.offer-card.vip:hover{border-color:rgba(201,168,76,.5);box-shadow:0 20px 60px rgba(0,0,0,.4);}
-/* Corner ribbon */
-.offer-ribbon{position:absolute;top:0;right:0;background:#000;color:var(--gold);font-family:'Syne',sans-serif;font-weight:800;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem .7rem;border-radius:0 20px 0 12px;line-height:1.3;text-align:center;}
-.offer-ribbon.white{background:#fff;color:#C9A84C;}
-/* Icon */
-.offer-icon{width:52px;height:52px;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;border-radius:14px;}
-.offer-icon svg{width:32px;height:32px;}
-.plan-mensuel .offer-icon{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);}
-.featured .offer-icon{background:rgba(0,0,0,.15);}
-.vip .offer-icon{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);}
-/* Name */
-.offer-name{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem;}
-.plan-mensuel .offer-name,.vip .offer-name{color:var(--muted);}
-.featured .offer-name{color:rgba(0,0,0,.6);}
-/* Price */
-.offer-price-wrap{margin-bottom:.4rem;}
-.price-big{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;line-height:1;}
-.price-big sup{font-size:1.2rem;vertical-align:super;font-weight:700;}
-.price-big sub{font-size:.85rem;font-weight:400;}
-.plan-mensuel .price-big,.vip .price-big{color:var(--text);}
-.featured .price-big{color:#000;}
-.price-alt{font-size:.76rem;margin-top:.3rem;margin-bottom:1.2rem;}
-.plan-mensuel .price-alt,.vip .price-alt{color:var(--muted);}
-.featured .price-alt{color:rgba(0,0,0,.55);}
-/* Free trial badge */
-.offer-trial{display:inline-block;padding:.35rem .9rem;border-radius:6px;font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.04em;margin-bottom:1.4rem;}
-.plan-mensuel .offer-trial,.vip .offer-trial{background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.3);}
-.featured .offer-trial{background:#000;color:var(--gold);}
-/* Divider */
-.offer-divider{height:1px;margin:0 0 1.2rem;border:none;}
-.plan-mensuel .offer-divider,.vip .offer-divider{background:rgba(255,255,255,.06);}
-.featured .offer-divider{background:rgba(0,0,0,.15);}
-/* Features */
-.offer-feats{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:2rem;flex:1;}
-.offer-feats li{font-size:.84rem;display:flex;gap:.7rem;align-items:flex-start;}
-.offer-feats li .feat-icon{flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;margin-top:.1rem;}
-.offer-feats li .feat-icon.on{background:rgba(201,168,76,.15);color:var(--gold);}
-.offer-feats li .feat-icon.off{background:rgba(255,255,255,.04);color:var(--muted);}
-.featured .offer-feats li .feat-icon.on{background:rgba(0,0,0,.15);color:#000;}
-.featured .offer-feats li .feat-icon.off{background:rgba(0,0,0,.08);color:rgba(0,0,0,.4);}
-.plan-mensuel .offer-feats li,.vip .offer-feats li{color:var(--text);}
-.featured .offer-feats li{color:#000;}
-.plan-mensuel .offer-feats li.dim,.vip .offer-feats li.dim{color:var(--muted);}
-.featured .offer-feats li.dim{color:rgba(0,0,0,.45);}
-/* Button */
-.offer-btn{display:block;width:100%;text-align:center;padding:.9rem;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.04em;cursor:pointer;border:none;transition:all .2s;margin-top:auto;}
-.offer-btn.dark{background:#000;color:var(--gold);}
-.offer-btn.dark:hover{background:#111;}
-.offer-btn.outline-gold{background:transparent;border:1.5px solid rgba(201,168,76,.4);color:var(--gold);}
-.offer-btn.outline-gold:hover{background:rgba(201,168,76,.08);border-color:var(--gold);}
-.offer-btn.vip-btn{background:linear-gradient(135deg,#C9A84C,#E8D08A);color:#000;}
+.offers{background:var(--black);}
+.offers-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1.5rem;align-items:stretch;}
+.offer-card{background:var(--dark2);border:0.5px solid var(--border);border-radius:4px;padding:2.5rem 2rem;display:flex;flex-direction:column;position:relative;transition:border-color .25s,transform .2s;}
+.offer-card:hover{border-color:var(--border2);transform:translateY(-4px);}
+.offer-card.featured{border-color:var(--gold);background:linear-gradient(150deg,rgba(201,168,76,.07) 0%,var(--dark2) 55%);}
+.offer-card.vip{border-color:rgba(201,168,76,.45);}
+.offer-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem 1rem;border-radius:2px;white-space:nowrap;}
+.offer-badge.vip-b{background:linear-gradient(90deg,#C9A84C,#E8D08A);}
+.offer-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
+.offer-tagline{font-size:.83rem;color:var(--muted);line-height:1.65;margin-bottom:1.8rem;}
+.price-big{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;line-height:1;color:var(--text);}
+.price-big sup{font-size:1rem;vertical-align:super;}
+.price-big sub{font-size:.8rem;font-weight:400;color:var(--muted);}
+.price-alt{font-size:.76rem;color:var(--muted);margin-top:.35rem;}
+.price-alt strong{color:var(--gold-light);}
+.offer-divider{height:0.5px;background:var(--border);margin:1.2rem 0;}
+.offer-feats{list-style:none;display:flex;flex-direction:column;gap:.62rem;margin-bottom:2rem;flex:1;}
+.offer-feats li{font-size:.84rem;color:var(--text);display:flex;gap:.6rem;align-items:flex-start;}
+.offer-feats li::before{content:'✦';color:var(--gold);font-size:.56rem;flex-shrink:0;margin-top:.22rem;}
+.offer-feats li.dim{color:var(--muted);}
+.offer-feats li.dim::before{color:rgba(201,168,76,.25);}
+.offer-btn{display:block;width:100%;text-align:center;padding:.85rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.83rem;letter-spacing:.05em;cursor:pointer;border:none;transition:all .2s;margin-top:auto;}
+.offer-btn.gold{background:var(--gold);color:#000;}
+.offer-btn.gold:hover{background:var(--gold-light);}
+.offer-btn.outline{background:transparent;border:0.5px solid var(--border2);color:var(--text);}
+.offer-btn.outline:hover{border-color:var(--gold);color:var(--gold);}
+.offer-btn.vip-btn{background:linear-gradient(90deg,#C9A84C,#E8D08A);color:#000;}
 .offer-btn.vip-btn:hover{opacity:.88;}
-/* Tagline */
-.offer-tagline{font-size:.82rem;margin-bottom:1.2rem;}
-.plan-mensuel .offer-tagline,.vip .offer-tagline{color:var(--muted);}
-.featured .offer-tagline{color:rgba(0,0,0,.6);}
-/* BROKER NOTE */
-.broker-note{margin-top:2.5rem;background:var(--dark2);border:0.5px solid var(--border);border-radius:12px;padding:1.5rem 2rem;display:flex;gap:1.2rem;align-items:flex-start;}
+.broker-note{margin-top:2.5rem;background:var(--dark2);border:0.5px solid var(--border);border-radius:4px;padding:1.5rem 2rem;display:flex;gap:1.2rem;align-items:flex-start;}
 .broker-icon{font-size:1.4rem;flex-shrink:0;}
 .broker-note h4{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:.3rem;}
 .broker-note p{font-size:.81rem;color:var(--muted);line-height:1.65;}
 .broker-note a{color:var(--gold);font-weight:500;}
 
-/* RESPONSIVE OFFERS */
-@media(max-width:900px){
-  .offers-wrap{grid-template-columns:1fr;}
-  .offer-card.featured{transform:none;}
-  .offer-card.featured:hover{transform:translateY(-6px);}
-}
-
 /* YASKA ROOM VIP */
 .vip-room{background:var(--black);position:relative;overflow:hidden;}
 .vip-room::before{content:'';position:absolute;top:-150px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);pointer-events:none;}
-.vip-inner{display:grid;grid-template-columns:1fr;gap:3rem;max-width:720px;}
+.vip-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 .vip-features{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
 .vip-feat{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem;border:0.5px solid var(--border);border-radius:4px;background:var(--dark2);transition:border-color .2s;}
 .vip-feat:hover{border-color:var(--border2);}
@@ -293,58 +214,18 @@ section{padding:6rem 5%;}
 .faq-item.open .faq-a{display:block;}
 
 /* SOCIALS */
-.socials-section{background:linear-gradient(180deg,#0f0f0f 0%,var(--dark2) 100%);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:5rem 5%;}
-.socials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem;margin-top:3rem;}
-.social-card{border-radius:16px;padding:2rem 1.2rem;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:.7rem;position:relative;overflow:hidden;text-decoration:none;}
-.social-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;border-radius:0 0 16px 16px;transition:opacity .3s;}
-.social-card:hover{transform:translateY(-6px);}
-.s-icon-wrap{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:.3rem;transition:transform .3s;}
-.social-card:hover .s-icon-wrap{transform:scale(1.1);}
-.s-icon-wrap svg{width:28px;height:28px;fill:#fff;}
-.s-icon-wrap img{width:28px;height:28px;object-fit:contain;}
-.social-card .s-name{font-family:'Syne',sans-serif;font-weight:800;font-size:.88rem;letter-spacing:.04em;}
-.social-card .s-handle{font-size:.74rem;opacity:.6;}
-.social-card .s-cta{font-size:.72rem;font-weight:600;margin-top:.1rem;display:flex;align-items:center;gap:.3rem;}
-/* Discord */
-.sc-discord{background:linear-gradient(145deg,#3c4370,#1e2140);border:0.5px solid rgba(88,101,242,.4);}
-.sc-discord:hover{border-color:rgba(88,101,242,.8);box-shadow:0 16px 40px rgba(88,101,242,.2);}
-.sc-discord::after{background:#5865F2;}
-.sc-discord .s-icon-wrap{background:linear-gradient(135deg,#4752c4,#5865F2);}
-.sc-discord .s-name{color:#fff;}
-.sc-discord .s-handle{color:rgba(255,255,255,.5);}
-.sc-discord .s-cta{color:#7289da;}
-/* Telegram */
-.sc-telegram{background:linear-gradient(145deg,#0d2a3a,#0a1e2e);border:0.5px solid rgba(34,158,217,.4);}
-.sc-telegram:hover{border-color:rgba(34,158,217,.8);box-shadow:0 16px 40px rgba(34,158,217,.2);}
-.sc-telegram::after{background:#229ED9;}
-.sc-telegram .s-icon-wrap{background:linear-gradient(135deg,#0088cc,#229ED9);}
-.sc-telegram .s-name{color:#fff;}
-.sc-telegram .s-handle{color:rgba(255,255,255,.5);}
-.sc-telegram .s-cta{color:#54b3e0;}
-/* Instagram */
-.sc-instagram{background:linear-gradient(145deg,#2d1a2e,#1a0f1f);border:0.5px solid rgba(225,48,108,.3);}
-.sc-instagram:hover{border-color:rgba(225,48,108,.7);box-shadow:0 16px 40px rgba(225,48,108,.15);}
-.sc-instagram::after{background:linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
-.sc-instagram .s-icon-wrap{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);}
-.sc-instagram .s-name{color:#fff;}
-.sc-instagram .s-handle{color:rgba(255,255,255,.5);}
-.sc-instagram .s-cta{color:#e1306c;}
-/* TikTok */
-.sc-tiktok{background:linear-gradient(145deg,#1a0a0a,#0f0f0f);border:0.5px solid rgba(254,44,85,.3);}
-.sc-tiktok:hover{border-color:rgba(254,44,85,.7);box-shadow:0 16px 40px rgba(254,44,85,.15);}
-.sc-tiktok::after{background:linear-gradient(90deg,#69C9D0,#EE1D52);}
-.sc-tiktok .s-icon-wrap{background:linear-gradient(135deg,#010101,#1a1a1a);border:1px solid rgba(254,44,85,.4);}
-.sc-tiktok .s-name{color:#fff;}
-.sc-tiktok .s-handle{color:rgba(255,255,255,.5);}
-.sc-tiktok .s-cta{color:#EE1D52;}
-/* Broker */
-.sc-broker{background:linear-gradient(145deg,#1a1500,#111000);border:0.5px solid var(--border2);}
-.sc-broker:hover{border-color:var(--gold);box-shadow:0 16px 40px rgba(201,168,76,.15);}
-.sc-broker::after{background:var(--gold);}
-.sc-broker .s-icon-wrap{background:linear-gradient(135deg,var(--gold-dark),var(--gold));}
-.sc-broker .s-name{color:var(--gold);}
-.sc-broker .s-handle{color:var(--muted);}
-.sc-broker .s-cta{color:var(--gold-light);}
+.socials-section{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:3.5rem 5%;}
+.socials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:2.5rem;}
+.social-card{background:var(--dark3);border:0.5px solid var(--border);border-radius:4px;padding:1.5rem 1rem;text-align:center;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:center;gap:.6rem;}
+.social-card:hover{border-color:var(--border2);transform:translateY(-3px);}
+.social-card .s-icon{font-size:1.6rem;}
+.social-card .s-name{font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.05em;}
+.social-card .s-handle{font-size:.75rem;color:var(--muted);}
+.social-card .s-cta{font-size:.72rem;color:var(--gold);font-weight:500;margin-top:.2rem;}
+.social-card.discord-card{border-color:rgba(88,101,242,.3);}
+.social-card.discord-card:hover{border-color:rgba(88,101,242,.6);}
+.social-card.telegram-card{border-color:rgba(34,158,217,.3);}
+.social-card.telegram-card:hover{border-color:rgba(34,158,217,.6);}
 
 /* CTA FINAL */
 .cta-final{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);text-align:center;padding:8rem 5%;position:relative;overflow:hidden;}
@@ -421,170 +302,17 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
 .modal-next{width:100%;background:var(--gold);color:#000;border:none;padding:.88rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.05em;cursor:pointer;transition:background .2s;}
 .modal-next:hover{background:var(--gold-light);}
 
-/* ═══════════ RESPONSIVE MOBILE-FIRST ═══════════ */
-@media(max-width:1100px){
-  .vip-inner,.about-inner{grid-template-columns:1fr;}
-  .vip-visual{order:-1;}
-  .footer-top{grid-template-columns:1fr 1fr;}
-}
-
-@media(max-width:768px){
-  /* NAV */
-  .nav-links,.nav-cta{display:none;}
-  .hamburger{display:flex;}
-  nav{padding:.9rem 5%;grid-template-columns:auto 1fr auto;}
-  nav .logo{text-align:center;}
-
-  /* HERO */
-  .hero{padding:7rem 5% 4rem;min-height:100svh;}
-  .hero h1{font-size:clamp(2.2rem,9vw,3.5rem);line-height:1.05;margin-bottom:1.2rem;}
-  .hero-sub{font-size:1rem;}
-  .hero p{font-size:.92rem;margin-bottom:2rem;}
-  .hero-btns{flex-direction:column;align-items:stretch;gap:.75rem;width:100%;max-width:340px;}
-  .btn-gold,.btn-outline{width:100%;text-align:center;padding:.95rem 1rem;font-size:.9rem;}
-  .hero-badge{font-size:.65rem;padding:.3rem .85rem;}
-  .hero-float{display:none;}
-
-  /* COMMUNITY BAR */
-  .community-bar{flex-direction:column;align-items:stretch;gap:.75rem;padding:1.5rem 5%;}
-  .comm-card{min-width:unset;max-width:100%;}
-  .comm-info strong{font-size:.85rem;}
-  .comm-icon-wrap{width:42px;height:42px;border-radius:10px;}
-  /* SOCIALS */
-  .socials-grid{grid-template-columns:1fr 1fr;gap:.9rem;}
-  .social-card{padding:1.5rem .9rem;border-radius:12px;}
-  .s-icon-wrap{width:46px;height:46px;border-radius:11px;}
-  .s-icon-wrap svg{width:22px;height:22px;}
-
-  /* TICKER */
-  .ticker-item{font-size:.68rem;padding:0 1.5rem;}
-
-  /* STATS */
-  .stats-bar{padding:1.2rem 5%;}
-  .stat-item{padding:.7rem .8rem;min-width:80px;}
-  .stat-num{font-size:1.6rem;}
-  .stat-label{font-size:.6rem;}
-
-  /* SECTIONS */
-  section{padding:4rem 5%;}
-  .s-title{font-size:clamp(1.5rem,6vw,2.2rem);}
-  .s-sub{font-size:.88rem;margin-bottom:2.5rem;}
-
-  /* PROOF GRID */
-  .proof-grid{grid-template-columns:1fr 1fr;}
-  .proof-card{aspect-ratio:1;}
-
-  /* OFFERS */
-  .offers-wrap{grid-template-columns:1fr;gap:2rem;}
-  .offer-card{padding:2rem 1.5rem;}
-  .offer-card.featured{margin-top:1rem;}
-  .price-big{font-size:2rem;}
-  .offer-feats li{font-size:.82rem;}
-
-  /* BROKER NOTE */
-  .broker-note{flex-direction:column;gap:.8rem;padding:1.2rem;}
-
-  /* VIP ROOM */
-  .vip-inner{grid-template-columns:1fr;gap:2.5rem;}
-  .vip-visual{order:-1;}
-  .vip-card{padding:1.5rem;}
-  .signal-item{padding:.5rem .7rem;}
-  .signal-pair{font-size:.78rem;min-width:50px;}
-  .signal-pips{font-size:.76rem;}
-  .discord-section{flex-direction:column;gap:.5rem;}
-
-  /* PROGRAMME */
-  .prog-grid{grid-template-columns:1fr;}
-  .prog-item{padding:1.5rem;}
-
-  /* PROCESS */
-  .process-steps{grid-template-columns:1fr;}
-  .process-step{border-right:0.5px solid var(--border);border-bottom:none;}
-  .process-step:last-child{border-bottom:0.5px solid var(--border);}
-
-  /* ABOUT */
-  .about-inner{grid-template-columns:1fr;gap:2.5rem;}
-  .about-img{aspect-ratio:4/3;max-height:300px;}
-  .about-stats{grid-template-columns:1fr 1fr;gap:.75rem;}
-  .about-stat .n{font-size:1.4rem;}
-
-  /* TESTIMONIALS */
-  .testi-grid{grid-template-columns:1fr;}
-
-  /* SOCIALS */
-  .socials-grid{grid-template-columns:1fr 1fr;}
-  .social-card{padding:1.2rem .8rem;}
-
-  /* FAQ */
-  .faq-q{font-size:.88rem;padding:1.2rem 0;}
-  .faq-a{font-size:.83rem;}
-
-  /* CTA FINAL */
-  .cta-final{padding:5rem 5%;}
-  .cta-final h2{font-size:clamp(1.7rem,7vw,2.5rem);}
-  .cta-btns{flex-direction:column;align-items:stretch;gap:.75rem;}
-  .cta-btns .btn-gold,.cta-btns .btn-outline,.cta-btns .btn-vip{width:100%;text-align:center;padding:.9rem 1rem;}
-
-  /* FOOTER */
-  .footer-top{grid-template-columns:1fr;gap:2rem;padding:3rem 5% 2rem;}
-  .footer-bottom{flex-direction:column;align-items:flex-start;gap:.5rem;}
-  .footer-links{gap:1rem;}
-
-  /* MODAL */
-  .modal{padding:1.8rem 1.4rem;border-radius:8px 8px 0 0;position:fixed;bottom:0;left:0;right:0;max-width:100%;margin:0;max-height:90vh;}
-  .modal-overlay{align-items:flex-end;padding:0;}
-  .modal-head h3{font-size:1.1rem;}
-  .plan-card{padding:.9rem 1rem;gap:.75rem;}
-  .plan-name{font-size:.85rem;flex-wrap:wrap;}
-  .plan-desc{font-size:.72rem;}
-  .plan-price{font-size:1rem;}
-  .modal-next,.modal-submit{padding:.9rem;font-size:.88rem;}
-  .modal-field input,.modal-field textarea{font-size:16px;} /* prevent zoom on iOS */
-}
-
-@media(max-width:380px){
-  .hero h1{font-size:2rem;}
-  .proof-grid{grid-template-columns:1fr;}
-  .socials-grid{grid-template-columns:1fr;}
-  .about-stats{grid-template-columns:1fr 1fr;}
-}
-
-/* GLOBAL VISUAL UPGRADES */
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%,rgba(201,168,76,0.025) 0%,transparent 70%);pointer-events:none;z-index:0;}
-/* Glow on section titles */
-.s-title em{text-shadow:0 0 40px rgba(201,168,76,0.3);}
-.hero h1 em{text-shadow:0 0 60px rgba(201,168,76,0.35);}
-/* Card hover glow */
-.offer-card:hover{box-shadow:0 0 30px rgba(201,168,76,0.07);}
-.offer-card.featured{box-shadow:0 0 40px rgba(201,168,76,0.1);}
-.testi-card:hover{box-shadow:0 0 20px rgba(201,168,76,0.05);}
-/* Stat numbers glow */
-.stat-num{text-shadow:0 0 30px rgba(201,168,76,0.4);}
-/* Section alternating bg with subtle noise */
-.results{background:linear-gradient(180deg,var(--dark) 0%,#0f0f0f 100%);}
-.offers{background:linear-gradient(180deg,var(--black) 0%,#0c0c0c 100%);}
-.program{background:linear-gradient(180deg,var(--dark) 0%,#101010 100%);}
-/* Progress line decoration */
-.section-line{display:block;width:40px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:1rem;}
-/* Candle decoration on sides */
-.cta-final{background:linear-gradient(135deg,#111 0%,#0d0d0d 50%,#111 100%);}
-/* Glowing border on VIP card */
-.vip-card{box-shadow:0 0 60px rgba(201,168,76,0.08),inset 0 0 40px rgba(201,168,76,0.02);}
-/* Proof grid glow */
-.proof-grid{box-shadow:0 0 40px rgba(201,168,76,0.05);}
-/* Nav glow */
-nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
-/* Ticker shadow */
-.ticker-wrap{box-shadow:0 4px 20px rgba(201,168,76,0.15);}
-/* Float cards on mobile hidden */
-@media(max-width:900px){.hero-float{display:none;}}
+/* RESPONSIVE */
+@media(max-width:1100px){.vip-inner,.about-inner{grid-template-columns:1fr;}.vip-visual{order:-1;}.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.stat-item{padding:.8rem 1rem;}.process-step{border-right:0.5px solid var(--border);}.footer-top{grid-template-columns:1fr;}.about-inner{grid-template-columns:1fr;}.about-stats{grid-template-columns:1fr 1fr;}.community-bar{gap:1rem;}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <ul class="nav-links" id="nav-left">
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">YASKA <em>ROOM</em></div>
+  <ul class="nav-links">
     <li><a href="#resultats">Résultats</a></li>
     <li><a href="#offres">Offres</a></li>
     <li><a href="#vip">La Room</a></li>
@@ -592,7 +320,6 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <li><a href="#about">À propos</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">YASKA <em>ROOM</em></div>
   <div class="nav-right">
     <button class="nav-cta" onclick="openModal('lifetime')">REJOINDRE</button>
     <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -611,22 +338,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-particles" id="heroParticles"></div>
-
-  <!-- Floating signal cards -->
-  <div class="hero-float hero-float-left">
-    <div class="hero-float-card"><div class="fc-dot green"></div>GOLD BUY&nbsp;&nbsp;+78 pips ✅</div>
-  </div>
-  <div class="hero-float hero-float-right">
-    <div class="hero-float-card"><div class="fc-dot gold"></div>NQ SELL&nbsp;&nbsp;+150 pips ✅</div>
-  </div>
-  <div class="hero-float hero-float-top">
-    <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;42 membres actifs</div>
-  </div>
-
+  <div class="hero-bg"></div><div class="hero-grid"></div>
   <div class="hero-badge">Gold · NQ · Résultats prouvés · 42 membres actifs</div>
   <h1>90% des traders perdent.<br><em>Tu n'es pas obligé<br>d'en faire partie.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
@@ -639,26 +351,17 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 
 <!-- COMMUNITY BAR -->
 <div class="community-bar">
-  <a href="https://discord.gg/FP3urjgj" target="_blank" class="comm-card dc">
-    <div class="comm-icon-wrap dc">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
-    </div>
-    <div class="comm-info">
-      <strong>Discord YASKA ROOM</strong>
-      <span>Salons VIP · Signaux · Lives · Formations</span>
-    </div>
-    <span class="comm-arrow">→</span>
-  </a>
-  <a href="https://t.me/yaskaroom" target="_blank" class="comm-card tg">
-    <div class="comm-icon-wrap tg">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-    </div>
-    <div class="comm-info">
-      <strong>Telegram <span class="comm-free-badge">Gratuit</span></strong>
-      <span>Aperçus signaux · Annonces · Alertes</span>
-    </div>
-    <span class="comm-arrow">→</span>
-  </a>
+  <div class="comm-item">
+    <span>💬</span>
+    <div><strong>Discord YASKA ROOM</strong> — Salons privés VIP + formations</div>
+  </div>
+  <a href="https://discord.gg/FP3urjgj" target="_blank" class="comm-btn comm-discord">Rejoindre le Discord</a>
+  <div class="comm-sep"></div>
+  <div class="comm-item">
+    <span>✈️</span>
+    <div><strong>Telegram gratuit</strong> — Annonces &amp; aperçus de signaux</div>
+  </div>
+  <a href="https://t.me/yaskaroom" target="_blank" class="comm-btn comm-telegram">Rejoindre Telegram</a>
 </div>
 
 <!-- TICKER -->
@@ -716,84 +419,74 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
   <div class="offers-wrap">
 
-
-    <!-- ACCÈS À VIE -->
-    <div class="offer-card plan-mensuel">
-      <div class="offer-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <!-- MENSUEL -->
+    <div class="offer-card">
+      <div class="offer-name">Abonnement Mensuel</div>
+      <div class="offer-tagline">Accès complet à la YASKA ROOM — groupe privé Discord, formations, stratégies et sessions live. Résiliable à tout moment.</div>
+      <div style="margin-bottom:1.8rem;">
+        <div class="price-big"><sup>€</sup>99<sub>/mois</sub></div>
+        <div class="price-alt">Sans engagement · Résiliation libre à tout moment</div>
       </div>
-      <div class="offer-name">Accès à Vie</div>
-      <div class="offer-price-wrap">
-        <div class="price-big"><sup>€</sup>999<sub> unique</sub></div>
-      </div>
-      <div class="price-alt">Accès illimité · Toutes mises à jour à vie</div>
-      <div class="offer-trial">Paiement unique · Accès immédiat</div>
-      <hr class="offer-divider">
+      <div class="offer-divider"></div>
       <ul class="offer-feats">
-        <li><span class="feat-icon on">✓</span>Tout ce qui est dans le mensuel</li>
-        <li><span class="feat-icon on">✓</span>Accès à vie — zéro frais récurrents</li>
-        <li><span class="feat-icon on">✓</span>Toutes futures formations incluses</li>
-        <li><span class="feat-icon on">✓</span>Toutes futures stratégies incluses</li>
-        <li><span class="feat-icon on">✓</span>Accès prioritaire aux nouveaux contenus</li>
-        <li><span class="feat-icon on">✓</span>Statut "Membre Fondateur" permanent</li>
-        <li><span class="feat-icon on">✓</span>Support direct prioritaire</li>
-        <li><span class="feat-icon on">✓</span>Coaching 1:1 disponible (tarif membre)</li>
+        <li>Accès Discord YASKA ROOM (salons privés)</li>
+        <li>Formations complètes Gold &amp; NQ</li>
+        <li>Stratégies exclusives avec setups précis</li>
+        <li>Signaux live quotidiens (Gold &amp; NQ)</li>
+        <li>Sessions live hebdomadaires avec YASKA</li>
+        <li>Analyses de marché chaque matin</li>
+        <li>Mises à jour permanentes incluses</li>
+        <li>Accès Telegram groupe privé</li>
       </ul>
-      <button class="offer-btn outline-gold" onclick="openModal('lifetime')">Choisir l'Accès à Vie</button>
+      <button class="offer-btn outline" onclick="openModal('mensuel')">COMMENCER L'ABONNEMENT</button>
     </div>
 
-    <!-- MENSUEL -->
+    <!-- À VIE -->
     <div class="offer-card featured">
-      <div class="offer-ribbon white">⭐ PLUS<br>POPULAIRE</div>
-      <div class="offer-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <div class="offer-badge">⭐ MEILLEURE VALEUR</div>
+      <div class="offer-name">Accès à Vie</div>
+      <div class="offer-tagline">Un seul paiement de 999€ pour un accès illimité et permanent à tout le contenu de la YASKA ROOM. Pour toujours.</div>
+      <div style="margin-bottom:1.8rem;">
+        <div class="price-big"><sup>€</sup>999<sub> une fois</sub></div>
+        <div class="price-alt">Accès illimité · <strong>Toutes mises à jour à vie incluses</strong></div>
       </div>
-      <div class="offer-name">Abonnement Mensuel</div>
-      <div class="offer-price-wrap">
-        <div class="price-big"><sup>€</sup>99<sub>/mois</sub></div>
-      </div>
-      <div class="price-alt">Sans engagement · Résiliation libre</div>
-      <div class="offer-trial">Sans engagement</div>
-      <hr class="offer-divider">
+      <div class="offer-divider"></div>
       <ul class="offer-feats">
-        <li><span class="feat-icon on">✓</span>Accès Discord YASKA ROOM (salons privés)</li>
-        <li><span class="feat-icon on">✓</span>Formations complètes Gold &amp; NQ</li>
-        <li><span class="feat-icon on">✓</span>Stratégies exclusives avec setups précis</li>
-        <li><span class="feat-icon on">✓</span>Signaux live quotidiens (Gold &amp; NQ)</li>
-        <li><span class="feat-icon on">✓</span>Sessions live hebdomadaires</li>
-        <li><span class="feat-icon on">✓</span>Analyses de marché chaque matin</li>
-        <li><span class="feat-icon on">✓</span>Mises à jour permanentes incluses</li>
-        <li><span class="feat-icon off">✗</span><span class="dim">Futures formations (non inclus)</span></li>
-        <li><span class="feat-icon off">✗</span><span class="dim">YASKA ROOM VIP (non inclus)</span></li>
+        <li>Tout ce qui est dans l'abonnement mensuel</li>
+        <li>Accès à vie — zéro frais récurrents jamais</li>
+        <li>Toutes futures formations incluses</li>
+        <li>Toutes futures stratégies incluses</li>
+        <li>Accès prioritaire aux nouveaux contenus</li>
+        <li>Statut "Membre Fondateur" permanent</li>
+        <li>Support direct prioritaire</li>
+        <li>Coaching 1:1 au tarif membre réduit</li>
       </ul>
-      <button class="offer-btn dark" onclick="openModal('mensuel')">Choisir le Mensuel</button>
+      <button class="offer-btn gold" onclick="openModal('lifetime')">OBTENIR L'ACCÈS À VIE — 999€</button>
     </div>
 
     <!-- VIP BROKER -->
     <div class="offer-card vip">
-      <div class="offer-ribbon">👑 VIP<br>EXCLUSIF</div>
-      <div class="offer-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <div class="offer-badge vip-b">👑 ROOM VIP · BROKER AFFILIÉ</div>
+      <div class="offer-name">Accès VIP Broker</div>
+      <div class="offer-tagline">Dépose sur notre broker partenaire via notre lien affilié = accès immédiat à la YASKA ROOM VIP. Sans abonnement supplémentaire.</div>
+      <div style="margin-bottom:1.8rem;">
+        <div class="price-big" style="font-size:1.55rem;color:var(--gold);line-height:1.3;">Dépôt sur<br>broker affilié</div>
+        <div class="price-alt">Montant min. requis · <strong>Accès VIP offert</strong></div>
       </div>
-      <div class="offer-name">Room VIP · Broker Affilié</div>
-      <div class="offer-price-wrap">
-        <div class="price-big" style="font-size:1.7rem;line-height:1.2;color:var(--gold);">Dépôt<br>Broker Affilié</div>
-      </div>
-      <div class="price-alt">Dépôt min. requis · Accès VIP offert</div>
-      <div class="offer-trial">Accès immédiat</div>
-      <hr class="offer-divider">
+      <div class="offer-divider"></div>
       <ul class="offer-feats">
-        <li><span class="feat-icon on">✓</span>Accès YASKA ROOM VIP complet</li>
-        <li><span class="feat-icon on">✓</span>Signaux premium avant tout le monde</li>
-        <li><span class="feat-icon on">✓</span>Calls privés membres VIP uniquement</li>
-        <li><span class="feat-icon on">✓</span>Analyses détaillées pré-session</li>
-        <li><span class="feat-icon on">✓</span>Accès direct à YASKA (DM illimité)</li>
-        <li><span class="feat-icon on">✓</span>Salon Discord VIP ultra-privé</li>
-        <li><span class="feat-icon on">✓</span>Webinaires exclusifs mensuels</li>
-        <li><span class="feat-icon on">✓</span>Débriefs live des trades en direct</li>
+        <li>Accès YASKA ROOM VIP complet</li>
+        <li>Signaux premium avant tout le monde</li>
+        <li>Calls privés membres VIP uniquement</li>
+        <li>Analyses détaillées pré-session</li>
+        <li>Accès direct à YASKA (DM illimité)</li>
+        <li>Salon Discord VIP ultra-privé</li>
+        <li>Webinaires exclusifs mensuels</li>
+        <li>Débriefs live des trades en direct</li>
       </ul>
-      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" class="offer-btn vip-btn">Déposer sur PU Prime</a>
+      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" class="offer-btn vip-btn">DÉPOSER SUR LE BROKER PARTENAIRE</a>
     </div>
+
   </div>
 
   <div class="broker-note">
@@ -805,230 +498,476 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
 </section>
 
-// ══════════════════════════════════════════════════
-// HERO CANVAS — Advanced Trading Background
-// ══════════════════════════════════════════════════
-(function(){
-  const canvas = document.getElementById('heroCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
+<!-- LA ROOM VIP -->
+<section class="vip-room" id="vip" style="padding:6rem 5%;">
+  <div class="vip-inner">
+    <div>
+      <div class="s-tag">La Room privée</div>
+      <h2 class="s-title">La <em>YASKA ROOM VIP</em></h2>
+      <p style="color:var(--muted);font-size:.93rem;line-height:1.85;max-width:500px;">Un espace réservé aux traders sérieux. Signaux premium sur le Gold et le NQ, analyses avant session, accès direct à YASKA. Une vraie salle de trading — pas un simple groupe Telegram.</p>
+      <div class="vip-features">
+        <div class="vip-feat"><div class="vip-feat-icon">📡</div><div><h4>Signaux Gold &amp; NQ en temps réel</h4><p>Entrées, TP (80 pips Gold / 150 pips NQ) et SL précis dès que le setup se forme. Zéro délai.</p></div></div>
+        <div class="vip-feat"><div class="vip-feat-icon">🎙️</div><div><h4>Calls &amp; analyses live</h4><p>Sessions vocales sur Discord où YASKA analyse le marché avant et pendant les sessions New York &amp; Londres.</p></div></div>
+        <div class="vip-feat"><div class="vip-feat-icon">🧠</div><div><h4>Accès direct à YASKA</h4><p>Pose tes questions directement dans le salon dédié. Réponses rapides, sans intermédiaire.</p></div></div>
+        <div class="vip-feat"><div class="vip-feat-icon">📊</div><div><h4>Débriefs &amp; journal de trades</h4><p>Analyse collective des trades de la semaine avec les erreurs identifiées et les points d'amélioration.</p></div></div>
+      </div>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <button class="btn-vip" onclick="openModal('vip')">👑 ACCÉDER À LA ROOM VIP</button>
+        <a href="https://t.me/yaskaroom" target="_blank" class="btn-outline">Telegram gratuit ✈️</a>
+      </div>
+    </div>
+    <div>
+      <div class="vip-card">
+        <div class="vip-card-header">
+          <div class="vip-logo-badge">YR</div>
+          <div><div class="vip-card-title">YASKA ROOM VIP</div><div class="vip-card-sub">Discord · Salon #signaux-vip</div></div>
+        </div>
+        <div class="live-indicator"><span class="live-dot"></span>LIVE — Session New York ouverte</div>
+        <div class="signal-list">
+          <div class="signal-item">
+            <span class="signal-pair">GOLD</span>
+            <span class="signal-dir buy">BUY</span>
+            <span class="signal-tp">TP +80 pips</span>
+            <span class="signal-pips">✅ +78 pips</span>
+          </div>
+          <div class="signal-item">
+            <span class="signal-pair">NQ</span>
+            <span class="signal-dir sell">SELL</span>
+            <span class="signal-tp">TP +150 pips</span>
+            <span class="signal-pips">🔄 En cours</span>
+          </div>
+          <div class="signal-item">
+            <span class="signal-pair">GOLD</span>
+            <span class="signal-dir sell">SELL</span>
+            <span class="signal-tp">TP +80 pips</span>
+            <span class="signal-pips">✅ +83 pips</span>
+          </div>
+          <div class="signal-item">
+            <span class="signal-pair">NQ</span>
+            <span class="signal-dir buy">BUY</span>
+            <span class="signal-tp">TP +150 pips</span>
+            <span class="signal-pips">✅ +152 pips</span>
+          </div>
+        </div>
+        <div style="margin-top:1.2rem;font-size:.73rem;color:var(--muted);border-top:0.5px solid var(--border);padding-top:.9rem;">💬 YASKA — <span style="color:var(--gold);">« Gold réagit bien sur la zone 2318, setup valide »</span></div>
+        <div style="margin-top:.5rem;font-size:.7rem;color:var(--muted);">👥 42 membres actifs · Aujourd'hui 14:47</div>
+        <div class="discord-section">
+          <div class="dc-icon">🎮</div>
+          <p>Rejoins le <strong style="color:var(--text);">Discord YASKA ROOM</strong> — salons privés, signaux, formations et voice calls. <a >Obtenir l'accès →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  let W, H, candles = [], priceLine = [], time = 0;
-  const GOLD = [201,168,76];
-  const GREEN = [80,200,120];
-  const RED = [220,80,80];
-  const CANDLE_W = 14;
-  const CANDLE_GAP = 8;
-  const STEP = CANDLE_W + CANDLE_GAP;
+<!-- PROGRAMME -->
+<section class="program" id="programme">
+  <div class="s-tag">Le programme</div>
+  <h2 class="s-title">Ce que tu vas <em>maîtriser</em></h2>
+  <p class="s-sub">Un cursus complet axé sur le Gold et le NQ pour devenir autonome et profitable sur ces deux marchés.</p>
+  <div class="prog-grid">
+    <div class="prog-item"><div class="prog-num">MODULE 01</div><div class="prog-title">Fondamentaux Gold &amp; NQ</div><div class="prog-desc">Comprendre la spécificité du Gold (XAUUSD) et du NQ100 : sessions, corrélations, volumes et comportements récurrents.</div></div>
+    <div class="prog-item"><div class="prog-num">MODULE 02</div><div class="prog-title">Analyse technique avancée</div><div class="prog-desc">Price action, structures de marché, order blocks, fair value gaps, BOS/CHoCH et concepts SMC appliqués au Gold et NQ.</div></div>
+    <div class="prog-item"><div class="prog-num">MODULE 03</div><div class="prog-title">Gestion du risque</div><div class="prog-desc">Risk/reward, taille de position, gestion du drawdown. Règles strictes pour protéger son capital sur des actifs volatils.</div></div>
+    <div class="prog-item"><div class="prog-num">MODULE 04</div><div class="prog-title">Setups &amp; stratégies</div><div class="prog-desc">Les setups exacts de YASKA avec entrées précises, TP de 80 pips sur Gold et 150 pips sur NQ, SL documentés.</div></div>
+    <div class="prog-item"><div class="prog-num">MODULE 05</div><div class="prog-title">Psychologie du trader</div><div class="prog-desc">Gérer les émotions sur des actifs volatils, construire une routine, éliminer les trades de revanche et rester discipliné.</div></div>
+    <div class="prog-item"><div class="prog-num">MODULE 06</div><div class="prog-title">Prop Firms &amp; payout</div><div class="prog-desc">Passer un challenge avec le Gold et le NQ, respecter les règles, gérer un compte financé et obtenir ses premiers payouts.</div></div>
+  </div>
+</section>
 
-  function rgba(c, a){ return `rgba(${c[0]},${c[1]},${c[2]},${a})`; }
+<!-- PROCESSUS -->
+<section style="background:var(--black);padding:6rem 5%;">
+  <div class="center">
+    <div class="s-tag">Comment ça marche</div>
+    <h2 class="s-title">Rejoindre la YASKA ROOM en <em>4 étapes</em></h2>
+    <p class="s-sub" style="margin-bottom:2.5rem;">Simple et rapide.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step"><div class="step-num">01</div><div class="step-title">Tu choisis ton accès</div><div class="step-desc">Mensuel, accès à vie à 999€, ou YASKA ROOM VIP via dépôt broker affilié PU Prime. À toi de choisir.</div></div>
+    <div class="process-step"><div class="step-num">02</div><div class="step-title">Accès immédiat</div><div class="step-desc">Dès confirmation, tu reçois ton invitation Discord avec accès aux salons privés, formations et signaux.</div></div>
+    <div class="process-step"><div class="step-num">03</div><div class="step-title">Tu appliques</div><div class="step-desc">Tu suis les formations Gold &amp; NQ, tu rejoins les lives, tu prends les signaux et tu poses tes questions en direct.</div></div>
+    <div class="process-step"><div class="step-num">04</div><div class="step-title">Tu deviens profitable</div><div class="step-desc">Avec les signaux quotidiens, les débriefs et le suivi communautaire, tu construis ta consistance trade après trade.</div></div>
+  </div>
+</section>
 
-  function generateCandle(prev, i){
-    const trend = Math.sin(i * 0.18) * 0.6 + (Math.random()-0.44)*0.8;
-    const range = Math.random()*32 + 10;
-    const body = range * (0.3 + Math.random()*0.5);
-    const bull = trend > 0;
-    const open = prev;
-    const close = open + (bull ? 1 : -1) * body;
-    const high = Math.max(open,close) + Math.random()*range*0.3;
-    const low  = Math.min(open,close) - Math.random()*range*0.3;
-    return { open, close, high, low, bull };
-  }
+<!-- À PROPOS -->
+<section class="about" id="about" style="background:var(--dark);">
+  <div class="about-inner">
+    <div class="about-img">
+      <!-- <img src="ta_photo.jpg" alt="YASKA"> -->
+      <div class="about-img-ph">
+        <div style="font-size:3rem;opacity:.25;">👤</div>
+        <span>Ta photo ici</span>
+        <span style="font-size:.68rem;opacity:.4;">&lt;img src="photo.jpg"&gt;</span>
+      </div>
+    </div>
+    <div>
+      <div class="s-tag">À propos</div>
+      <h2 class="s-title">Qui est <em>YASKA</em> ?</h2>
+      <p style="color:var(--muted);font-size:.92rem;line-height:1.88;margin-bottom:1rem;">Trader depuis 2 ans, spécialisé exclusivement sur le <strong style="color:var(--text);">Gold (XAUUSD)</strong> et le <strong style="color:var(--text);">NQ100</strong>. J'ai choisi la spécialisation plutôt que la dispersion — deux marchés maîtrisés à fond valent mieux que dix marchés survolés.</p>
+      <p style="color:var(--muted);font-size:.92rem;line-height:1.88;margin-bottom:1rem;">J'ai commencé comme tout le monde — sans méthode claire, en brûlant du capital. Aujourd'hui j'ai une approche structurée, des setups répétables et des résultats documentés. La YASKA ROOM c'est tout ce que j'aurais voulu avoir à mes débuts.</p>
+      <p style="color:var(--muted);font-size:.92rem;line-height:1.88;">Pas de bullshit, pas de "lifestyle" Instagram. Que du concret : des signaux, des formations et une vraie communauté qui progresse ensemble.</p>
+      <div class="about-stats">
+        <div class="about-stat"><div class="n">+19</div><div class="l">Membres formés</div></div>
+        <div class="about-stat"><div class="n">2 ans</div><div class="l">D'expérience active</div></div>
+        <div class="about-stat"><div class="n">Gold &amp; NQ</div><div class="l">Marchés exclusifs</div></div>
+        <div class="about-stat"><div class="n">42</div><div class="l">Membres actifs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  function buildCandles(){
-    candles = [];
-    priceLine = [];
-    let price = H * 0.52;
-    const count = Math.ceil(W / STEP) + 4;
-    for(let i = 0; i < count; i++){
-      const c = generateCandle(price, i);
-      // clamp
-      const mid = (c.open+c.close)/2;
-      const shift = mid < H*0.18 ? H*0.18 - mid : mid > H*0.82 ? H*0.82 - mid : 0;
-      c.open+=shift; c.close+=shift; c.high+=shift; c.low+=shift;
-      price = c.close;
-      candles.push(c);
-      priceLine.push((c.open+c.close)/2);
-    }
-  }
+<!-- TÉMOIGNAGES -->
+<section style="background:var(--black);padding:6rem 5%;" id="temoignages">
+  <div class="center">
+    <div class="s-tag">Témoignages</div>
+    <h2 class="s-title">Ce que disent nos <em>membres</em></h2>
+    <p class="s-sub">Des retours réels, non filtrés, de membres de la YASKA ROOM.</p>
+  </div>
+  <div class="testi-grid">
 
-  function drawScene(offset){
-    ctx.clearRect(0,0,W,H);
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"J'attendais ce moment depuis des mois. Grâce aux signaux Gold de la room j'ai enfin réalisé mon premier payout sur ma prop firm. YASKA m'a aidé à rester discipliné sur les règles du compte. Merci vraiment."</div>
+      <div class="testi-author">
+        <div class="testi-av">RB</div>
+        <div>
+          <div class="testi-name">Rayan B.</div>
+          <div class="testi-role">Membre YASKA ROOM · Gold</div>
+          <div class="testi-result">✦ Premier payout prop firm réalisé</div>
+        </div>
+      </div>
+    </div>
 
-    // ── Background subtle glow spots ──
-    const gr1 = ctx.createRadialGradient(W*0.5,0,0,W*0.5,0,H*0.7);
-    gr1.addColorStop(0, rgba(GOLD,0.06));
-    gr1.addColorStop(1, rgba(GOLD,0));
-    ctx.fillStyle = gr1; ctx.fillRect(0,0,W,H);
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Le NQ c'est un marché que je trouvais trop rapide pour moi. Les formations et les lives de YASKA m'ont appris à le lire différemment. Maintenant j'ai 3 trades gagnants sur 4 sur le NQ cette semaine."</div>
+      <div class="testi-author">
+        <div class="testi-av">MK</div>
+        <div>
+          <div class="testi-name">Mohamed K.</div>
+          <div class="testi-role">Accès à vie · NQ100</div>
+          <div class="testi-result">✦ +3 trades win sur 4 cette semaine</div>
+        </div>
+      </div>
+    </div>
 
-    // ── Horizontal grid lines ──
-    ctx.setLineDash([3,10]);
-    ctx.lineWidth = 0.6;
-    for(let i=1;i<6;i++){
-      const y = H*i/6;
-      ctx.beginPath();
-      ctx.moveTo(0,y); ctx.lineTo(W,y);
-      ctx.strokeStyle = rgba(GOLD, 0.07);
-      ctx.stroke();
-    }
-    ctx.setLineDash([]);
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"J'ai rejoint via le broker affilié et l'accès VIP est vraiment différent. Les signaux arrivent avant que le move parte, les explications sont claires. En un mois j'ai récupéré largement mon dépôt."</div>
+      <div class="testi-author">
+        <div class="testi-av">TL</div>
+        <div>
+          <div class="testi-name">Thomas L.</div>
+          <div class="testi-role">Room VIP broker · Gold &amp; NQ</div>
+          <div class="testi-result">✦ Capital récupéré en 1 mois</div>
+        </div>
+      </div>
+    </div>
 
-    // ── Price line (smooth curve under candles) ──
-    ctx.beginPath();
-    priceLine.forEach((py, i)=>{
-      const x = i*STEP - offset + CANDLE_W/2;
-      if(i===0) ctx.moveTo(x,py); else ctx.lineTo(x,py);
-    });
-    // Fill under
-    ctx.lineTo(priceLine.length*STEP - offset + CANDLE_W/2, H);
-    ctx.lineTo(-offset, H);
-    ctx.closePath();
-    const fillGrad = ctx.createLinearGradient(0,0,0,H);
-    fillGrad.addColorStop(0, rgba(GOLD,0.06));
-    fillGrad.addColorStop(1, rgba(GOLD,0));
-    ctx.fillStyle = fillGrad;
-    ctx.fill();
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Avant j'étais partout — forex, crypto, indices. Rien ne marchait vraiment. Depuis que je me concentre uniquement sur le Gold avec les setups de YASKA, ma courbe de capital est enfin dans le bon sens."</div>
+      <div class="testi-author">
+        <div class="testi-av">AS</div>
+        <div>
+          <div class="testi-name">Adam S.</div>
+          <div class="testi-role">Abonnement mensuel · Gold</div>
+          <div class="testi-result">✦ Consistent sur le Gold depuis 6 semaines</div>
+        </div>
+      </div>
+    </div>
 
-    // Stroke the line
-    ctx.beginPath();
-    priceLine.forEach((py, i)=>{
-      const x = i*STEP - offset + CANDLE_W/2;
-      if(i===0) ctx.moveTo(x,py); else ctx.lineTo(x,py);
-    });
-    ctx.strokeStyle = rgba(GOLD,0.18);
-    ctx.lineWidth = 1.2;
-    ctx.stroke();
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Le Discord est très actif. YASKA poste ses analyses chaque matin avant la session, répond aux questions en voice et fait des débriefs après les moves. C'est un vrai suivi, pas juste des signaux envoyés dans le vide."</div>
+      <div class="testi-author">
+        <div class="testi-av">KD</div>
+        <div>
+          <div class="testi-name">Karim D.</div>
+          <div class="testi-role">Accès à vie · Gold &amp; NQ</div>
+          <div class="testi-result">✦ +2 challengers en cours</div>
+        </div>
+      </div>
+    </div>
 
-    // ── Draw candles ──
-    candles.forEach((c, i)=>{
-      const x = i*STEP - offset;
-      if(x > W+STEP || x < -STEP) return;
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"999€ pour un accès à vie c'est vraiment pas cher quand tu réalises la qualité du contenu. Le module sur la psychologie et la gestion du risque sur le NQ vaut à lui seul bien plus que ça."</div>
+      <div class="testi-author">
+        <div class="testi-av">NB</div>
+        <div>
+          <div class="testi-name">Nour B.</div>
+          <div class="testi-role">Accès à vie · NQ100</div>
+          <div class="testi-result">✦ Premier compte financé validé</div>
+        </div>
+      </div>
+    </div>
 
-      const color = c.bull ? GREEN : RED;
-      const bodyTop = Math.min(c.open,c.close);
-      const bodyH = Math.max(Math.abs(c.close-c.open), 2);
-      const cx = x + CANDLE_W/2;
+  </div>
+</section>
 
-      // Glow behind candle body
-      const glowSize = bodyH + 16;
-      const glowGr = ctx.createRadialGradient(cx, bodyTop+bodyH/2, 0, cx, bodyTop+bodyH/2, glowSize);
-      glowGr.addColorStop(0, rgba(color, 0.12));
-      glowGr.addColorStop(1, rgba(color, 0));
-      ctx.fillStyle = glowGr;
-      ctx.fillRect(cx-glowSize, bodyTop+bodyH/2-glowSize, glowSize*2, glowSize*2);
+<!-- SOCIALS -->
+<section class="socials-section" id="socials">
+  <div class="center">
+    <div class="s-tag">Communauté &amp; réseaux</div>
+    <h2 class="s-title">Rejoins-nous <em>partout</em></h2>
+    <p class="s-sub" style="margin-bottom:0;">Discord, Telegram, Instagram, TikTok — la YASKA ROOM est partout où les traders sérieux se retrouvent.</p>
+  </div>
+  <div class="socials-grid">
+    <a class="social-card discord-card" href="https://discord.gg/FP3urjgj" target="_blank">
+      <div class="s-icon">🎮</div>
+      <div class="s-name">Discord VIP</div>
+      <div class="s-handle">YASKA ROOM</div>
+      <div class="s-cta">Salons privés · Signaux · Lives →</div>
+    </a>
+    <a class="social-card telegram-card" href="https://t.me/yaskaroom" target="_blank">
+      <div class="s-icon">✈️</div>
+      <div class="s-name">Telegram Gratuit</div>
+      <div class="s-handle">@yaskaroom</div>
+      <div class="s-cta">Accès gratuit · Rejoindre →</div>
+    </a>
+    <a class="social-card" href="https://www.instagram.com/yaskafx?igsh=OXFtb213dDI1cHI1&utm_source=qr" target="_blank">
+      <div class="s-icon">📷</div>
+      <div class="s-name">Instagram</div>
+      <div class="s-handle">@yaskafx</div>
+      <div class="s-cta">Analyses &amp; résultats →</div>
+    </a>
+    <a class="social-card" href="https://www.tiktok.com/@yaska.fx" target="_blank">
+      <div class="s-icon">🎵</div>
+      <div class="s-name">TikTok</div>
+      <div class="s-handle">@yaska.fx</div>
+      <div class="s-cta">Contenu gratuit →</div>
+    </a>
+    <a class="social-card" href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">
+      <div class="s-icon">🏦</div>
+      <div class="s-name">Broker Affilié</div>
+      <div class="s-handle">PU Prime</div>
+      <div class="s-cta">Accès VIP offert →</div>
+    </a>
+  </div>
+</section>
 
-      // Wick
-      ctx.beginPath();
-      ctx.moveTo(cx, c.high);
-      ctx.lineTo(cx, c.low);
-      ctx.strokeStyle = rgba(color, 0.55);
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
+<!-- FAQ -->
+<section class="faq" id="faq" style="background:var(--dark);">
+  <div class="center">
+    <div class="s-tag">FAQ</div>
+    <h2 class="s-title">Questions <em>fréquentes</em></h2>
+    <p class="s-sub" style="margin-bottom:3rem;">Tout ce que tu dois savoir avant de rejoindre.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Sur quels marchés tradez-vous dans la YASKA ROOM ?</span><span class="faq-icon">+</span></div><div class="faq-a">Exclusivement sur le <strong>Gold (XAUUSD)</strong> et le <strong>NQ100 (Nasdaq)</strong>. Ce choix de spécialisation permet une maîtrise réelle de ces marchés plutôt qu'une dispersion inefficace. Les TP visés sont 80 pips sur le Gold et 150 pips sur le NQ.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Quelle est la différence entre le mensuel et l'accès à vie à 999€ ?</span><span class="faq-icon">+</span></div><div class="faq-a">L'abonnement mensuel à 99€/mois donne accès à tout le contenu de la room — résiliable quand tu veux. L'accès à vie à 999€ c'est le même accès complet, sans jamais repayer. Toutes les futures formations et stratégies sont incluses pour toujours. En moins de 11 mois tu es rentabilisé, et après tu as tout gratuitement à vie.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Comment fonctionne l'accès VIP via le broker affilié PU Prime ?</span><span class="faq-icon">+</span></div><div class="faq-a">Tu ouvres un compte sur PU Prime via notre lien affilié et tu effectues un dépôt minimum. En échange, tu obtiens l'accès à la YASKA ROOM VIP sans abonnement mensuel supplémentaire. Tu trades avec ton propre capital sur une plateforme réglementée, et nous percevons une commission sur les spreads. C'est un win-win : tu accèdes à la room VIP, tu gardes ton capital.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Comment se passe concrètement le Discord YASKA ROOM ?</span><span class="faq-icon">+</span></div><div class="faq-a">Le Discord a plusieurs salons : analyses du matin, signaux live, voice calls pendant les sessions, formations, et salon VIP réservé aux membres premium. YASKA est actif tous les jours de trading avec des analyses avant l'ouverture de New York et des débriefs après les moves importants.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Faut-il avoir de l'expérience pour rejoindre ?</span><span class="faq-icon">+</span></div><div class="faq-a">Non. Les formations partent des bases du Gold et du NQ et montent progressivement. Que tu sois débutant complet ou trader avec quelques mois d'expérience, le programme est conçu pour s'adapter à ton niveau de départ.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Peut-on résilier l'abonnement mensuel à tout moment ?</span><span class="faq-icon">+</span></div><div class="faq-a">Oui, sans condition, sans frais, sans justification. Tu résiles quand tu veux. L'accès reste actif jusqu'à la fin de la période déjà payée.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Y a-t-il une garantie sur l'accès à vie ?</span><span class="faq-icon">+</span></div><div class="faq-a">Oui, je propose une garantie satisfaction de 7 jours sur l'accès à vie. Si tu n'es pas satisfait dans les 7 premiers jours suivant ton accès, je te rembourse intégralement sur simple demande.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>La YASKA ROOM est-elle adaptée pour les prop firms ?</span><span class="faq-icon">+</span></div><div class="faq-a">Absolument. Un module entier est dédié aux prop firms avec le Gold et le NQ : choix de la firme, règles à respecter, gestion du drawdown journalier, et comment obtenir son premier payout. Plusieurs membres ont déjà validé des challenges grâce aux setups de la room.</div></div>
+  </div>
+</section>
 
-      // Body with gradient
-      const bodyGrad = ctx.createLinearGradient(x, bodyTop, x+CANDLE_W, bodyTop+bodyH);
-      bodyGrad.addColorStop(0, rgba(color, 0.85));
-      bodyGrad.addColorStop(1, rgba(color, 0.5));
-      ctx.fillStyle = bodyGrad;
-      // Rounded rect candle body
-      const r = 2;
-      ctx.beginPath();
-      ctx.moveTo(x+r, bodyTop);
-      ctx.lineTo(x+CANDLE_W-r, bodyTop);
-      ctx.quadraticCurveTo(x+CANDLE_W, bodyTop, x+CANDLE_W, bodyTop+r);
-      ctx.lineTo(x+CANDLE_W, bodyTop+bodyH-r);
-      ctx.quadraticCurveTo(x+CANDLE_W, bodyTop+bodyH, x+CANDLE_W-r, bodyTop+bodyH);
-      ctx.lineTo(x+r, bodyTop+bodyH);
-      ctx.quadraticCurveTo(x, bodyTop+bodyH, x, bodyTop+bodyH-r);
-      ctx.lineTo(x, bodyTop+r);
-      ctx.quadraticCurveTo(x, bodyTop, x+r, bodyTop);
-      ctx.closePath();
-      ctx.fill();
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>90% perdent.<br><em>Sois parmi les 10%.</em></h2>
+  <p>Rejoins la YASKA ROOM maintenant. Les places en accès VIP sont limitées pour garantir la qualité du suivi.</p>
+  <div class="cta-btns">
+    <button class="btn-gold" onclick="openModal('lifetime')">ACCÈS À VIE — 999€</button>
+    <button class="btn-outline" onclick="openModal('mensuel')">Abonnement — 99€/mois</button>
+    <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" class="btn-vip">👑 Accès VIP via broker</a>
+  </div>
+</section>
 
-      // Candle border
-      ctx.strokeStyle = rgba(color, 0.35);
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-    });
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:.8rem;">YASKA <em>ROOM</em></div>
+      <p>Signaux live sur Gold &amp; NQ, formations complètes et communauté privée pour devenir un trader profitable.</p>
+      <div class="footer-socials">
+        <a class="f-social" href="https://discord.gg/FP3urjgj" target="_blank" title="Discord">🎮</a>
+        <a class="f-social" href="https://t.me/yaskaroom" target="_blank" title="Telegram">✈️</a>
+        <a class="f-social" href="https://www.instagram.com/yaskafx?igsh=OXFtb213dDI1cHI1&utm_source=qr" target="_blank" title="Instagram">📷</a>
+        <a class="f-social" href="https://www.tiktok.com/@yaska.fx" target="_blank" title="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Offres</h5>
+      <a onclick="openModal('mensuel')">Abonnement — 99€/mois</a>
+      <a onclick="openModal('lifetime')">Accès à vie — 999€</a>
+      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">Room VIP via broker</a>
+      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">Ouvrir compte PU Prime</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contenu</h5>
+      <a href="#programme">Programme Gold &amp; NQ</a>
+      <a href="#resultats">Résultats membres</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#vip">La Room VIP</a>
+      <a href="#about">À propos de YASKA</a>
+    </div>
+    <div class="footer-col">
+      <h5>Communauté</h5>
+      <a >Discord YASKA ROOM</a>
+      <a href="https://t.me/yaskaroom" target="_blank">Telegram gratuit</a>
+      <a href="https://www.instagram.com/yaskafx?igsh=OXFtb213dDI1cHI1&utm_source=qr" target="_blank">Instagram @yaskafx</a>
+      <a href="https://www.tiktok.com/@yaska.fx" target="_blank">TikTok @yaska.fx</a>
+      <a href="#faq">FAQ</a>
+      <a onclick="openModal('contact')">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">CGV</a>
+      <a onclick="openModal('contact')">Contact</a>
+    </div>
+  </div>
+</footer>
+<div class="disclaimer"><p>Les performances passées ne préjugent pas des résultats futurs. Le trading sur les marchés financiers (Gold, NQ100) comporte des risques substantiels de perte en capital. Les résultats et témoignages présentés sur ce site proviennent de membres réels de la YASKA ROOM et ne constituent pas une garantie de gains futurs. Les résultats varient selon les individus, leur capital, leur discipline et leurs conditions de marché. Ne tradez qu'avec des fonds que vous êtes prêt à perdre intégralement. YASKA ROOM ne fournit pas de conseils en investissement financier au sens réglementaire. Les signaux et analyses publiés sont fournis à titre éducatif et informatif uniquement. Le dépôt chez un broker comporte des risques de perte, évaluez votre situation avant tout dépôt.</p></div>
 
-    // ── Moving average line ──
-    const MA = 5;
-    ctx.beginPath();
-    priceLine.forEach((py, i)=>{
-      if(i < MA) return;
-      const avg = priceLine.slice(i-MA,i).reduce((a,b)=>a+b,0)/MA;
-      const x = i*STEP - offset + CANDLE_W/2;
-      if(i===MA) ctx.moveTo(x,avg); else ctx.lineTo(x,avg);
-    });
-    ctx.strokeStyle = rgba(GOLD, 0.35);
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([6,4]);
-    ctx.stroke();
-    ctx.setLineDash([]);
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
 
-    // ── Price labels on right ──
-    const labelPrices = [2280, 2300, 2320, 2340, 2360];
-    ctx.font = '500 10px DM Sans, sans-serif';
-    ctx.fillStyle = rgba(GOLD,0.3);
-    labelPrices.forEach((p,i)=>{
-      const y = H*0.15 + i*(H*0.6/4);
-      ctx.fillText(p.toFixed(0), W-36, y+4);
-      // tick
-      ctx.beginPath();
-      ctx.moveTo(W-42,y); ctx.lineTo(W-38,y);
-      ctx.strokeStyle = rgba(GOLD,0.2);
-      ctx.lineWidth=0.7;
-      ctx.stroke();
-    });
-  }
+    <!-- ÉTAPE 1 : Choix du plan -->
+    <div id="step-plan">
+      <div class="modal-head">
+        <h3>Rejoindre la YASKA ROOM</h3>
+        <p>Choisis ton accès et commence à trader le Gold &amp; NQ avec la room.</p>
+      </div>
+      <div class="plan-cards">
 
-  let offset = 0;
-  let rafId;
-  function animate(){
-    offset += 0.4;
-    // When scrolled past one full candle, shift candles left and regenerate
-    if(offset >= STEP){
-      offset -= STEP;
-      candles.shift(); priceLine.shift();
-      const last = candles[candles.length-1];
-      const nc = generateCandle(last.close, candles.length);
-      candles.push(nc);
-      priceLine.push((nc.open+nc.close)/2);
-    }
-    drawScene(offset);
-    time++;
-    rafId = requestAnimationFrame(animate);
-  }
+        <!-- MENSUEL (premier) -->
+        <div class="plan-card selected" id="plan-mensuel" onclick="selectPlan('mensuel')">
+          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
+          <div class="plan-info">
+            <div class="plan-name">Abonnement Mensuel</div>
+            <div class="plan-desc">Discord privé · Formations · Signaux live · Lives hebdo · Sans engagement</div>
+          </div>
+          <div class="plan-price">99€<small>/mois</small></div>
+        </div>
 
-  function resize(){
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    W = canvas.width; H = canvas.height;
-    buildCandles();
-    drawScene(0);
-  }
+        <!-- ONE TIME -->
+        <div class="plan-card featured-plan" id="plan-lifetime" onclick="selectPlan('lifetime')">
+          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
+          <div class="plan-info">
+            <div class="plan-name">Accès à Vie &nbsp;<span class="plan-badge-mini">⭐ Meilleure valeur</span></div>
+            <div class="plan-desc">Tout inclus pour toujours · Futures formations incluses · Statut Membre Fondateur</div>
+          </div>
+          <div class="plan-price">999€<small>paiement unique</small></div>
+        </div>
 
-  window.addEventListener('resize', ()=>{ cancelAnimationFrame(rafId); resize(); animate(); });
-  resize();
-  animate();
-})();
+        <!-- BROKER VIP -->
+        <div class="plan-card" id="plan-vip" onclick="selectPlan('vip')">
+          <div class="plan-radio"><div class="plan-radio-dot"></div></div>
+          <div class="plan-info">
+            <div class="plan-name">Room VIP &nbsp;<span class="plan-badge-vip">👑 VIP</span></div>
+            <div class="plan-desc">Dépôt sur broker affilié PU Prime = accès VIP offert · Signaux premium · Salon privé</div>
+          </div>
+          <div class="plan-price" style="color:var(--gold);">Dépôt<small>broker affilié</small></div>
+        </div>
 
-// ── HERO PARTICLES (golden dots floating up) ──────────────────────────────────
-(function(){
-  const container = document.getElementById('heroParticles');
-  if(!container) return;
-  for(let i=0;i<35;i++){
-    const s = document.createElement('span');
-    const size = Math.random()*2.5+0.8;
-    s.style.cssText = [
-      'width:'+size+'px',
-      'height:'+size+'px',
-      'left:'+Math.random()*100+'%',
-      'bottom:'+(Math.random()*50)+'%',
-      'animation-duration:'+(Math.random()*10+6)+'s',
-      'animation-delay:'+(Math.random()*10)+'s',
-      'opacity:0'
-    ].join(';');
-    container.appendChild(s);
-  }
-})();
+      </div>
+      <button class="modal-next" onclick="goToForm()">CONTINUER →</button>
+      <p class="modal-note">✓ Réponse sous 24h · Aucun spam · 100% confidentiel</p>
+    </div>
+
+    <!-- ÉTAPE 2 : Formulaire -->
+    <div id="step-form" class="modal-form">
+      <button class="modal-back" onclick="goBack()">← Modifier mon choix</button>
+      <div class="modal-selected-plan" id="selected-plan-recap"></div>
+      <div class="modal-field"><label>Prénom *</label><input type="text" id="modal-name" placeholder="Ton prénom"></div>
+      <div class="modal-field"><label>Email *</label><input type="email" id="modal-email" placeholder="ton@email.com"></div>
+      <div class="modal-field"><label>Telegram / Instagram (optionnel)</label><input type="text" id="modal-contact" placeholder="@ton_pseudo"></div>
+      <div class="modal-field" id="modal-msg-wrap" style="display:none;"><label>Message (optionnel)</label><textarea id="modal-msg" rows="3" placeholder="Tes questions sur le broker affilié, ton niveau, tes objectifs..."></textarea></div>
+      <button class="modal-submit" id="modal-btn" onclick="submitModal()">ENVOYER MA DEMANDE →</button>
+      <p class="modal-note">✓ Réponse sous 24h · Aucun spam · Données confidentielles</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let currentPlan = 'mensuel';
+const PLANS = {
+  mensuel: { name:'Abonnement Mensuel', price:'99€/mois', submitLabel:'ENVOYER MA DEMANDE →', vip:false },
+  lifetime: { name:'Accès à Vie', price:'999€ paiement unique', submitLabel:'ENVOYER MA DEMANDE →', vip:false },
+  vip:     { name:'Room VIP — Broker affilié', price:'Dépôt PU Prime', submitLabel:'RECEVOIR LES INFOS BROKER →', vip:true }
+};
+
+function selectPlan(plan){
+  currentPlan = plan;
+  document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById('plan-'+plan).classList.add('selected');
+}
+
+function goToForm(){
+  const p = PLANS[currentPlan];
+  // Recap du plan choisi
+  document.getElementById('selected-plan-recap').innerHTML =
+    '<span class="msp-name">'+ p.name +'</span><span class="msp-price">'+ p.price +'</span>';
+  // Afficher le champ message si broker VIP
+  document.getElementById('modal-msg-wrap').style.display = p.vip ? 'block' : 'none';
+  // Bouton submit
+  const btn = document.getElementById('modal-btn');
+  btn.textContent = p.submitLabel;
+  btn.className = 'modal-submit' + (p.vip ? ' vip-submit' : '');
+  // Switcher les étapes
+  document.getElementById('step-plan').style.display = 'none';
+  document.getElementById('step-form').classList.add('active');
+  // Reset fields
+  ['modal-name','modal-email','modal-contact','modal-msg'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
+  });
+  btn.style.background=''; btn.style.color='';
+}
+
+function goBack(){
+  document.getElementById('step-plan').style.display = 'block';
+  document.getElementById('step-form').classList.remove('active');
+}
+
+function openModal(type){
+  // Réinitialise à l'étape 1
+  document.getElementById('step-plan').style.display = 'block';
+  document.getElementById('step-form').classList.remove('active');
+  // Présélectionne le bon plan si appelé avec un type précis
+  const planKey = (type==='lifetime'||type==='vip'||type==='mensuel') ? type : 'mensuel';
+  selectPlan(planKey);
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e){if(e.target===document.getElementById('modal'))closeModal();}
+
+function submitModal(){
+  const name  = document.getElementById('modal-name').value.trim();
+  const email = document.getElementById('modal-email').value.trim();
+  if(!name || !email){ alert('Merci de renseigner ton prénom et ton email.'); return; }
+  const btn = document.getElementById('modal-btn');
+  btn.textContent = '✓ Demande envoyée avec succès !';
+  btn.style.background = '#1a5c1a'; btn.style.color = '#fff';
+  // ─── Branche ici ton système d'envoi ───────────────────
+  // EmailJS : emailjs.send('SVC','TPL',{name,email,plan:currentPlan});
+  // Tally   : window.open('https://tally.so/r/TONID','_blank');
+  // Webhook : fetch('/api/contact',{method:'POST',body:JSON.stringify({name,email,plan:currentPlan})});
+  // Si broker VIP → rediriger vers PU Prime après envoi :
+  // if(currentPlan==='vip') setTimeout(()=>window.open('https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=','_blank'),1200);
+  setTimeout(closeModal, 2800);
+}
+
+function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+window.addEventListener('scroll', closeMenu);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+</script>
+</body>
+</html>
