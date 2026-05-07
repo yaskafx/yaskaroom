@@ -2,15 +2,15 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>YASKA ROOM — Trading Gold &amp; NQ, résultats réels</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root{--gold:#C9A84C;--gold-light:#E8D08A;--gold-dark:#8B6914;--black:#0A0A0A;--dark:#111111;--dark2:#181818;--dark3:#222222;--text:#F0EDE6;--muted:#888880;--border:rgba(201,168,76,0.16);--border2:rgba(201,168,76,0.32);}
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6;}
+html{scroll-behavior:smooth;overflow-x:hidden;}body{overflow-x:hidden;}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6;max-width:100vw;}
 h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
@@ -145,9 +145,9 @@ section{padding:6rem 5%;}
 /* RESULTS */
 .results{background:var(--dark);}
 .proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
-.proof-card{background:var(--dark2);aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem;cursor:pointer;transition:background .2s;position:relative;overflow:hidden;}
+.proof-card{background:var(--dark2);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem;cursor:pointer;transition:background .2s;position:relative;overflow:hidden;}
 .proof-card:hover{background:var(--dark3);}
-.proof-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .35s;}
+.proof-card img{width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0;transition:transform .35s;display:block;}
 .proof-card:hover img{transform:scale(1.04);}
 .upload-ph{display:flex;flex-direction:column;align-items:center;gap:.7rem;color:var(--muted);font-size:.76rem;letter-spacing:.03em;position:relative;z-index:1;text-align:center;padding:1rem;}
 .upload-icon{width:42px;height:42px;border:1px dashed rgba(201,168,76,.3);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
@@ -669,10 +669,10 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <div class="hero-float-card"><div class="fc-dot gold"></div>NQ SELL&nbsp;&nbsp;+150 pips ✅</div>
   </div>
   <div class="hero-float hero-float-top">
-    <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;+100 membres actifs</div>
+    <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;Live</div>
   </div>
 
-  <div class="hero-badge">Gold · NQ · Résultats prouvés · +100 membres actifs</div>
+  <div class="hero-badge">Gold · NQ · Résultats prouvés</div>
   <h1>90% des traders perdent.<br><em>Tu n'es pas obligé<br>d'en faire partie.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
   <p>Signaux live sur le Gold et le NQ, formations complètes, stratégies exclusives et accès à une communauté de traders sérieux. Tout ce qu'il faut pour enfin être profitable.</p>
@@ -711,14 +711,14 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <span class="ticker-item">YASKA ROOM <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">Gold · 80 pips TP <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">NQ · 150 pips TP <span class="ticker-sep">✦</span></span>
-  <span class="ticker-item">+100 membres actifs <span class="ticker-sep">✦</span></span>
+  <span class="ticker-item">Résultats prouvés <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">Signaux live quotidiens <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">Prop firm ready <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">99% de satisfaction <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">YASKA ROOM <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">Gold · 80 pips TP <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">NQ · 150 pips TP <span class="ticker-sep">✦</span></span>
-  <span class="ticker-item">+100 membres actifs <span class="ticker-sep">✦</span></span>
+  <span class="ticker-item">Résultats prouvés <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">Signaux live quotidiens <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">Prop firm ready <span class="ticker-sep">✦</span></span>
   <span class="ticker-item">99% de satisfaction <span class="ticker-sep">✦</span></span>
@@ -728,7 +728,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 <div class="stats-bar">
   <div class="stat-item"><div class="stat-num">+19</div><div class="stat-label">Élèves formés</div></div>
   <div class="stat-item"><div class="stat-num">99%</div><div class="stat-label">Satisfaction</div></div>
-  <div class="stat-item"><div class="stat-num">+100</div><div class="stat-label">Membres actifs</div></div>
+
   <div class="stat-item"><div class="stat-num">2 ans</div><div class="stat-label">D'expérience</div></div>
   <div class="stat-item"><div class="stat-num">Daily</div><div class="stat-label">Signaux live</div></div>
 </div>
