@@ -197,7 +197,7 @@ section{padding:6rem 5%;}
 .proof-overlay .p-student{color:var(--gold);font-size:.55rem;letter-spacing:.04em;text-transform:uppercase;}
 .proof-overlay .p-profit{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;} */
 .offers{background:linear-gradient(160deg,#0c0c0c 0%,#111 100%);}
-.offers-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:end;margin-top:1rem;}
+.offers-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch;margin-top:1rem;}
 /* BASE CARD */
 .offer-card{border-radius:20px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:transform .3s;overflow:hidden;}
 .offer-card:hover{transform:translateY(-6px);}
@@ -206,7 +206,7 @@ section{padding:6rem 5%;}
 .offer-card.plan-mensuel:hover{border-color:rgba(201,168,76,.5);box-shadow:0 20px 60px rgba(0,0,0,.4);}
 /* FEATURED / LIFETIME */
 .offer-card.featured{background:linear-gradient(145deg,#C9A84C 0%,#E8D08A 40%,#C9A84C 100%);border:none;transform:scale(1.04);z-index:2;box-shadow:0 30px 80px rgba(201,168,76,.35);}
-.offer-card.featured:hover{transform:scale(1.04) translateY(-6px);}
+.offer-card.featured:hover{transform:translateY(-6px);}
 /* VIP */
 .offer-card.vip{background:#1a1a1a;border:1px solid rgba(201,168,76,.2);}
 .offer-card.vip:hover{border-color:rgba(201,168,76,.5);box-shadow:0 20px 60px rgba(0,0,0,.4);}
@@ -273,14 +273,9 @@ section{padding:6rem 5%;}
 .broker-note a{color:var(--gold);font-weight:500;}
 
 /* RESPONSIVE OFFERS */
-@media(max-width:1200px){
-  .offers-wrap{grid-template-columns:repeat(2,1fr);}
-  .offer-card.featured{transform:none;}
-}
-@media(max-width:700px){
-  .offers-wrap{grid-template-columns:1fr;}
-  .offer-card.featured{transform:none;}
-  .offer-card.featured:hover{transform:translateY(-6px);}
+@media(max-width:900px){
+  .offers-wrap{grid-template-columns:1fr;gap:1rem;}
+  .offer-card.featured{transform:none;box-shadow:0 10px 30px rgba(201,168,76,.15);}
 }
 
 /* YASKA ROOM VIP */
