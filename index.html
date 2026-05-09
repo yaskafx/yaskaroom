@@ -714,7 +714,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();">🏠 Accueil</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();return false;">🏠 Accueil</a>
   <a href="#offres" onclick="closeMenu()">💎 Offres</a>
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
@@ -1181,7 +1181,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
       <div class="s-icon-wrap" style="background:#000;"><svg viewBox="0 0 24 24"><path fill="#69C9D0" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></div>
       <div class="s-name">TikTok</div><div class="s-handle">@yaska.fx</div><div class="s-cta">Contenu gratuit <span>→</span></div>
     </a>
-    <a class="social-card sc-broker" href="#" onclick="openBrokerModal();return false;">
+    <a class="social-card sc-broker" href="#offres" onclick="openBrokerModal();return false;">
       <div class="s-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 6h4v12H3zm6 0h4v12H9zm6 0h4v12h-4z" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 21h22" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       <div class="s-name">Broker Affilié</div><div class="s-handle">PU Prime · VT Markets</div><div class="s-cta">Accès VIP offert <span>→</span></div>
     </a>
@@ -1374,8 +1374,8 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <div class="footer-bottom">
     <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
     <div class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">CGV</a>
+      <a href="#" onclick="openMentions();return false;">Mentions légales</a>
+      <a href="#" onclick="openMentions();return false;">CGV</a>
     </div>
   </div>
 </footer>
@@ -1408,6 +1408,16 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 </div>
 
 <script>
+
+function openMentions(){
+  document.getElementById('mentionsModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMentions(){
+  document.getElementById('mentionsModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
 function openBrokerModal(){
   document.getElementById('brokerModal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -1548,6 +1558,23 @@ function submitApplication(){
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
+
+<!-- MENTIONS LÉGALES MODAL -->
+<div class="modal-overlay" id="mentionsModal" onclick="if(event.target===this)closeMentions()">
+  <div class="modal" style="max-width:600px;max-height:85vh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeMentions()">×</button>
+    <h3 style="margin-bottom:1rem;">Mentions légales & CGV</h3>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8;">
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Éditeur</strong><br>YASKA ROOM — Activité de formation et coaching en trading.<br>Contact : layaska.contact@gmail.com</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Services proposés</strong><br>La YASKA ROOM propose des abonnements à des contenus éducatifs sur le trading (formations, analyses, signaux). Ces services sont fournis à titre éducatif et informatif uniquement.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Conditions générales de vente</strong><br>• Les abonnements mensuels sont sans engagement et résiliables à tout moment.<br>• L'accès à vie est un paiement unique non remboursable après accès au contenu.<br>• L'accès broker affilié est soumis aux conditions du broker partenaire.<br>• Aucun remboursement n'est possible après accès au contenu digital.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Avertissement sur les risques</strong><br>Le trading sur les marchés financiers comporte des risques substantiels de perte en capital. Les performances passées ne préjugent pas des résultats futurs. Les contenus de la YASKA ROOM ne constituent pas des conseils en investissement au sens réglementaire.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Propriété intellectuelle</strong><br>L'ensemble des contenus (formations, stratégies, analyses) est la propriété exclusive de YASKA ROOM. Toute reproduction ou diffusion sans autorisation est interdite.</p>
+      <p><strong style="color:var(--text);">Protection des données</strong><br>Les données collectées via les formulaires sont utilisées uniquement pour traiter les candidatures. Elles ne sont jamais revendues à des tiers. Conformément au RGPD, tu peux demander la suppression de tes données à tout moment.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html/* PROOF CARDS - using inline styles */
 .proof-grid-container{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
@@ -1709,7 +1736,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();">🏠 Accueil</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();return false;">🏠 Accueil</a>
   <a href="#offres" onclick="closeMenu()">💎 Offres</a>
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
@@ -2102,7 +2129,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
       <div class="s-icon-wrap" style="background:#000;"><svg viewBox="0 0 24 24"><path fill="#69C9D0" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></div>
       <div class="s-name">TikTok</div><div class="s-handle">@yaska.fx</div><div class="s-cta">Contenu gratuit <span>→</span></div>
     </a>
-    <a class="social-card sc-broker" href="#" onclick="openBrokerModal();return false;">
+    <a class="social-card sc-broker" href="#offres" onclick="openBrokerModal();return false;">
       <div class="s-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 6h4v12H3zm6 0h4v12H9zm6 0h4v12h-4z" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 21h22" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       <div class="s-name">Broker Affilié</div><div class="s-handle">PU Prime · VT Markets</div><div class="s-cta">Accès VIP offert <span>→</span></div>
     </a>
@@ -2177,8 +2204,8 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <div class="footer-bottom">
     <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
     <div class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">CGV</a>
+      <a href="#" onclick="openMentions();return false;">Mentions légales</a>
+      <a href="#" onclick="openMentions();return false;">CGV</a>
     </div>
   </div>
 </footer>
@@ -2211,6 +2238,16 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 </div>
 
 <script>
+
+function openMentions(){
+  document.getElementById('mentionsModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMentions(){
+  document.getElementById('mentionsModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
 function openBrokerModal(){
   document.getElementById('brokerModal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -2351,6 +2388,23 @@ function submitApplication(){
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
+
+<!-- MENTIONS LÉGALES MODAL -->
+<div class="modal-overlay" id="mentionsModal" onclick="if(event.target===this)closeMentions()">
+  <div class="modal" style="max-width:600px;max-height:85vh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeMentions()">×</button>
+    <h3 style="margin-bottom:1rem;">Mentions légales & CGV</h3>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8;">
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Éditeur</strong><br>YASKA ROOM — Activité de formation et coaching en trading.<br>Contact : layaska.contact@gmail.com</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Services proposés</strong><br>La YASKA ROOM propose des abonnements à des contenus éducatifs sur le trading (formations, analyses, signaux). Ces services sont fournis à titre éducatif et informatif uniquement.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Conditions générales de vente</strong><br>• Les abonnements mensuels sont sans engagement et résiliables à tout moment.<br>• L'accès à vie est un paiement unique non remboursable après accès au contenu.<br>• L'accès broker affilié est soumis aux conditions du broker partenaire.<br>• Aucun remboursement n'est possible après accès au contenu digital.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Avertissement sur les risques</strong><br>Le trading sur les marchés financiers comporte des risques substantiels de perte en capital. Les performances passées ne préjugent pas des résultats futurs. Les contenus de la YASKA ROOM ne constituent pas des conseils en investissement au sens réglementaire.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Propriété intellectuelle</strong><br>L'ensemble des contenus (formations, stratégies, analyses) est la propriété exclusive de YASKA ROOM. Toute reproduction ou diffusion sans autorisation est interdite.</p>
+      <p><strong style="color:var(--text);">Protection des données</strong><br>Les données collectées via les formulaires sont utilisées uniquement pour traiter les candidatures. Elles ne sont jamais revendues à des tiers. Conformément au RGPD, tu peux demander la suppression de tes données à tout moment.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html/* PROOF SLIDER */
 .proof-card{width:170px;height:115px;flex:0 0 170px;border-radius:8px;border:0.5px solid rgba(201,168,76,0.2);position:relative;overflow:hidden;background:#181818;}
@@ -2491,7 +2545,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();">🏠 Accueil</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();return false;">🏠 Accueil</a>
   <a href="#offres" onclick="closeMenu()">💎 Offres</a>
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
@@ -2892,7 +2946,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
       <div class="s-icon-wrap" style="background:#000;"><svg viewBox="0 0 24 24"><path fill="#69C9D0" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></div>
       <div class="s-name">TikTok</div><div class="s-handle">@yaska.fx</div><div class="s-cta">Contenu gratuit <span>→</span></div>
     </a>
-    <a class="social-card sc-broker" href="#" onclick="openBrokerModal();return false;">
+    <a class="social-card sc-broker" href="#offres" onclick="openBrokerModal();return false;">
       <div class="s-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 6h4v12H3zm6 0h4v12H9zm6 0h4v12h-4z" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 21h22" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       <div class="s-name">Broker Affilié</div><div class="s-handle">PU Prime · VT Markets</div><div class="s-cta">Accès VIP offert <span>→</span></div>
     </a>
@@ -2967,8 +3021,8 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <div class="footer-bottom">
     <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
     <div class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">CGV</a>
+      <a href="#" onclick="openMentions();return false;">Mentions légales</a>
+      <a href="#" onclick="openMentions();return false;">CGV</a>
     </div>
   </div>
 </footer>
@@ -3001,6 +3055,16 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 </div>
 
 <script>
+
+function openMentions(){
+  document.getElementById('mentionsModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMentions(){
+  document.getElementById('mentionsModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
 function openBrokerModal(){
   document.getElementById('brokerModal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -3141,6 +3205,23 @@ function submitApplication(){
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
+
+<!-- MENTIONS LÉGALES MODAL -->
+<div class="modal-overlay" id="mentionsModal" onclick="if(event.target===this)closeMentions()">
+  <div class="modal" style="max-width:600px;max-height:85vh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeMentions()">×</button>
+    <h3 style="margin-bottom:1rem;">Mentions légales & CGV</h3>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8;">
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Éditeur</strong><br>YASKA ROOM — Activité de formation et coaching en trading.<br>Contact : layaska.contact@gmail.com</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Services proposés</strong><br>La YASKA ROOM propose des abonnements à des contenus éducatifs sur le trading (formations, analyses, signaux). Ces services sont fournis à titre éducatif et informatif uniquement.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Conditions générales de vente</strong><br>• Les abonnements mensuels sont sans engagement et résiliables à tout moment.<br>• L'accès à vie est un paiement unique non remboursable après accès au contenu.<br>• L'accès broker affilié est soumis aux conditions du broker partenaire.<br>• Aucun remboursement n'est possible après accès au contenu digital.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Avertissement sur les risques</strong><br>Le trading sur les marchés financiers comporte des risques substantiels de perte en capital. Les performances passées ne préjugent pas des résultats futurs. Les contenus de la YASKA ROOM ne constituent pas des conseils en investissement au sens réglementaire.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Propriété intellectuelle</strong><br>L'ensemble des contenus (formations, stratégies, analyses) est la propriété exclusive de YASKA ROOM. Toute reproduction ou diffusion sans autorisation est interdite.</p>
+      <p><strong style="color:var(--text);">Protection des données</strong><br>Les données collectées via les formulaires sont utilisées uniquement pour traiter les candidatures. Elles ne sont jamais revendues à des tiers. Conformément au RGPD, tu peux demander la suppression de tes données à tout moment.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html/* PROOF SLIDER */
 .results{background:var(--dark);padding:4rem 0;position:relative;}
@@ -3318,7 +3399,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();">🏠 Accueil</a>
+  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();return false;">🏠 Accueil</a>
   <a href="#offres" onclick="closeMenu()">💎 Offres</a>
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
@@ -3721,7 +3802,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
       <div class="s-icon-wrap" style="background:#000;"><svg viewBox="0 0 24 24"><path fill="#69C9D0" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg></div>
       <div class="s-name">TikTok</div><div class="s-handle">@yaska.fx</div><div class="s-cta">Contenu gratuit <span>→</span></div>
     </a>
-    <a class="social-card sc-broker" href="#" onclick="openBrokerModal();return false;">
+    <a class="social-card sc-broker" href="#offres" onclick="openBrokerModal();return false;">
       <div class="s-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 6h4v12H3zm6 0h4v12H9zm6 0h4v12h-4z" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 21h22" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       <div class="s-name">Broker Affilié</div><div class="s-handle">PU Prime · VT Markets</div><div class="s-cta">Accès VIP offert <span>→</span></div>
     </a>
@@ -3796,8 +3877,8 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <div class="footer-bottom">
     <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
     <div class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">CGV</a>
+      <a href="#" onclick="openMentions();return false;">Mentions légales</a>
+      <a href="#" onclick="openMentions();return false;">CGV</a>
     </div>
   </div>
 </footer>
@@ -3830,6 +3911,16 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 </div>
 
 <script>
+
+function openMentions(){
+  document.getElementById('mentionsModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeMentions(){
+  document.getElementById('mentionsModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
 function openBrokerModal(){
   document.getElementById('brokerModal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -3970,5 +4061,22 @@ function submitApplication(){
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
+
+<!-- MENTIONS LÉGALES MODAL -->
+<div class="modal-overlay" id="mentionsModal" onclick="if(event.target===this)closeMentions()">
+  <div class="modal" style="max-width:600px;max-height:85vh;overflow-y:auto;">
+    <button class="modal-close" onclick="closeMentions()">×</button>
+    <h3 style="margin-bottom:1rem;">Mentions légales & CGV</h3>
+    <div style="font-size:.82rem;color:var(--muted);line-height:1.8;">
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Éditeur</strong><br>YASKA ROOM — Activité de formation et coaching en trading.<br>Contact : layaska.contact@gmail.com</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Services proposés</strong><br>La YASKA ROOM propose des abonnements à des contenus éducatifs sur le trading (formations, analyses, signaux). Ces services sont fournis à titre éducatif et informatif uniquement.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Conditions générales de vente</strong><br>• Les abonnements mensuels sont sans engagement et résiliables à tout moment.<br>• L'accès à vie est un paiement unique non remboursable après accès au contenu.<br>• L'accès broker affilié est soumis aux conditions du broker partenaire.<br>• Aucun remboursement n'est possible après accès au contenu digital.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Avertissement sur les risques</strong><br>Le trading sur les marchés financiers comporte des risques substantiels de perte en capital. Les performances passées ne préjugent pas des résultats futurs. Les contenus de la YASKA ROOM ne constituent pas des conseils en investissement au sens réglementaire.</p>
+      <p style="margin-bottom:1rem;"><strong style="color:var(--text);">Propriété intellectuelle</strong><br>L'ensemble des contenus (formations, stratégies, analyses) est la propriété exclusive de YASKA ROOM. Toute reproduction ou diffusion sans autorisation est interdite.</p>
+      <p><strong style="color:var(--text);">Protection des données</strong><br>Les données collectées via les formulaires sont utilisées uniquement pour traiter les candidatures. Elles ne sont jamais revendues à des tiers. Conformément au RGPD, tu peux demander la suppression de tes données à tout moment.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
