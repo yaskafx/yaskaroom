@@ -275,26 +275,36 @@ section{padding:6rem 5%;}
 /* RESPONSIVE OFFERS */
 @media(max-width:900px){
   .offers-wrap{
-    display:flex;
-    flex-direction:row;
-    gap:.75rem;
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    scroll-snap-type:x mandatory;
-    padding-bottom:12px;
-    scrollbar-width:none;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:.5rem;
     align-items:stretch;
+    overflow-x:visible;
   }
-  .offers-wrap::-webkit-scrollbar{display:none;}
   .offer-card{
-    flex:0 0 78vw;
-    min-width:260px;
-    scroll-snap-align:start;
+    padding:1.2rem .9rem;
+    border-radius:12px;
   }
-  .offer-card.featured{transform:none;box-shadow:0 10px 30px rgba(201,168,76,.15);}
+  .offer-card.featured{transform:none;box-shadow:0 8px 20px rgba(201,168,76,.15);}
+  .offer-ribbon{font-size:.52rem;padding:.18rem .6rem;}
+  .offer-name{font-size:.7rem;margin-bottom:.3rem;}
+  .offer-tagline{font-size:.68rem;margin-bottom:.8rem;display:none;}
+  .price-big{font-size:1.5rem;}
+  .price-big sub{font-size:.65rem;}
+  .price-alt{font-size:.62rem;}
+  .offer-trial{font-size:.58rem;padding:.22rem .6rem;margin-bottom:.8rem;}
+  .offer-divider{margin:.7rem 0;}
+  .offer-feats{gap:.4rem;margin-bottom:.9rem;}
+  .offer-feats li{font-size:.68rem;}
+  .offer-feats li .feat-icon{width:14px;height:14px;font-size:.5rem;}
+  .offer-icon{width:36px;height:36px;border-radius:10px;margin-bottom:.7rem;}
+  .offer-icon svg{width:20px;height:20px;}
+  .offer-btn{padding:.65rem;font-size:.68rem;border-radius:8px;letter-spacing:.02em;}
 }
-@media(max-width:480px){
-  .offer-card{flex:0 0 85vw;}
+@media(max-width:400px){
+  .offer-card{padding:1rem .7rem;}
+  .price-big{font-size:1.3rem;}
+  .offer-feats li{font-size:.62rem;}
 }
 
 /* YASKA ROOM VIP */
