@@ -662,6 +662,32 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
 .ticker-wrap{box-shadow:0 4px 20px rgba(201,168,76,0.15);}
 /* Float cards on mobile hidden */
 @media(max-width:900px){.hero-float{display:none;}}
+
+/* HERO TICKER BAR */
+.hero-ticker-bar{
+  display:inline-flex;align-items:center;gap:.8rem;
+  background:rgba(10,10,10,0.7);
+  border:0.5px solid rgba(201,168,76,0.25);
+  border-radius:6px;
+  padding:.55rem 1.2rem;
+  backdrop-filter:blur(12px);
+  position:relative;z-index:1;
+  margin-bottom:2rem;
+  font-size:.78rem;
+  font-family:'DM Sans',sans-serif;
+}
+.htb-item{display:flex;align-items:center;gap:.35rem;}
+.htb-asset{font-family:'Syne',sans-serif;font-weight:700;font-size:.75rem;color:var(--text);letter-spacing:.04em;}
+.htb-dir{font-size:.6rem;}
+.htb-dir.buy{color:#50c878;}
+.htb-dir.sell{color:#e05050;}
+.htb-price{font-family:'Syne',sans-serif;font-weight:600;font-size:.75rem;color:var(--text);}
+.htb-change{font-size:.7rem;font-weight:600;}
+.htb-change.green{color:#50c878;}
+.htb-change.red{color:#e05050;}
+.htb-sep{color:rgba(201,168,76,0.3);font-size:.8rem;}
+.htb-live{gap:.4rem;color:var(--gold);font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;}
+.htb-live-dot{width:6px;height:6px;border-radius:50%;background:#ff4444;animation:blink 1.2s infinite;flex-shrink:0;}
 </style>
 </head>
 <body>
@@ -675,6 +701,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <li><a href="#programme">Programme</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#candidature" style="color:var(--gold);font-weight:600;">Postuler</a></li>
   </ul>
   <!-- Logo center -->
   <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">YASKA <em>ROOM</em></div>
@@ -692,6 +719,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
   <a href="#faq" onclick="closeMenu()">❓ FAQ</a>
+  <a href="#candidature" onclick="closeMenu()" style="color:var(--gold);font-weight:600;">✍️ Postuler à l'accompagnement</a>
   <a href="#offres" class="mm-cta" onclick="closeMenu();">REJOINDRE LA YASKA ROOM</a>
 </div></div>
 
@@ -713,7 +741,26 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;Live</div>
   </div>
 
-  <div class="hero-badge">Gold · NQ · Résultats prouvés</div>
+  <div class="hero-ticker-bar">
+    <div class="htb-item">
+      <span class="htb-asset">XAUUSD</span>
+      <span class="htb-dir buy">▲</span>
+      <span class="htb-price">2 318.40</span>
+      <span class="htb-change green">+1.24%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item">
+      <span class="htb-asset">NQ100</span>
+      <span class="htb-dir sell">▼</span>
+      <span class="htb-price">18 142.5</span>
+      <span class="htb-change red">-0.38%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item htb-live">
+      <span class="htb-live-dot"></span>
+      <span>LIVE</span>
+    </div>
+  </div>
   <h1>Pas une question de chance,<br><em>mais une question de structure.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
   <p>Signaux live sur le Gold et le NQ, formations complètes, stratégies exclusives et accès à une communauté de traders sérieux. Tout ce qu'il faut pour enfin être profitable.</p>
@@ -1158,6 +1205,124 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   </div>
 </section>
 
+<!-- CANDIDATURE -->
+<section id="candidature" style="background:#0d0d0d;padding:6rem 5%;">
+  <div style="max-width:680px;margin:0 auto;">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="s-tag" style="justify-content:center;">Rejoindre la YASKA ROOM</div>
+      <h2 class="s-title" style="max-width:100%;text-align:center;">Postule pour <em>l'accompagnement</em></h2>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.75;max-width:520px;margin:0 auto;">YASKA révise chaque candidature personnellement. Réponse sous 24h.</p>
+    </div>
+
+    <!-- Social proof -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:2.5rem;">
+      <div style="display:flex;">
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#8B6914);border:2px solid #0d0d0d;display:flex;align-items:center;justify-content:center;font-family:Syne,sans-serif;font-weight:800;font-size:.65rem;color:#000;margin-left:-6px;">R</div>
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#5865F2,#4752c4);border:2px solid #0d0d0d;display:flex;align-items:center;justify-content:center;font-family:Syne,sans-serif;font-weight:800;font-size:.65rem;color:#fff;margin-left:-6px;">J</div>
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#50c878,#2d8a4e);border:2px solid #0d0d0d;display:flex;align-items:center;justify-content:center;font-family:Syne,sans-serif;font-weight:800;font-size:.65rem;color:#fff;margin-left:-6px;">E</div>
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#e74c3c,#8b0000);border:2px solid #0d0d0d;display:flex;align-items:center;justify-content:center;font-family:Syne,sans-serif;font-weight:800;font-size:.65rem;color:#fff;margin-left:-6px;">N</div>
+      </div>
+      <p style="font-size:.85rem;color:var(--text);">+19 membres accompagnés — traders obtenant leurs <strong style="color:var(--gold);">premiers payouts</strong></p>
+    </div>
+
+    <!-- Form -->
+    <div style="background:#181818;border:0.5px solid rgba(201,168,76,0.2);border-radius:16px;padding:2.5rem 2rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;">Prénom *</label>
+          <input type="text" id="app-prenom" placeholder="Ton prénom" style="width:100%;background:#222;border:0.5px solid rgba(201,168,76,0.15);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:DM Sans,sans-serif;font-size:.9rem;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.15)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;">Email *</label>
+          <input type="email" id="app-email" placeholder="ton@email.com" style="width:100%;background:#222;border:0.5px solid rgba(201,168,76,0.15);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:DM Sans,sans-serif;font-size:.9rem;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.15)'">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;">Telegram / Instagram</label>
+          <input type="text" id="app-contact" placeholder="@ton_pseudo" style="width:100%;background:#222;border:0.5px solid rgba(201,168,76,0.15);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:DM Sans,sans-serif;font-size:.9rem;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.15)'">
+        </div>
+        <div>
+          <label style="display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;">Offre souhaitée *</label>
+          <select id="app-offre" style="width:100%;background:#222;border:0.5px solid rgba(201,168,76,0.15);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:DM Sans,sans-serif;font-size:.9rem;outline:none;box-sizing:border-box;appearance:none;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.15)'">
+            <option value="" style="background:#222;">Choisir une offre</option>
+            <option value="mensuel" style="background:#222;">Abonnement mensuel — 99€/mois</option>
+            <option value="lifetime" style="background:#222;">Accès à vie — 999€ unique</option>
+            <option value="broker" style="background:#222;">Dépôt broker affilié (VIP)</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label style="display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;">Ton niveau en trading *</label>
+        <select id="app-niveau" style="width:100%;background:#222;border:0.5px solid rgba(201,168,76,0.15);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:DM Sans,sans-serif;font-size:.9rem;outline:none;box-sizing:border-box;appearance:none;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.15)'">
+          <option value="" style="background:#222;">Sélectionne ton niveau</option>
+          <option value="debutant" style="background:#222;">Débutant — Je commence</option>
+          <option value="intermediaire" style="background:#222;">Intermédiaire — Je trade mais pas consistant</option>
+          <option value="avance" style="background:#222;">Avancé — Je cherche à optimiser</option>
+          <option value="propfirm" style="background:#222;">Je veux passer une prop firm</option>
+        </select>
+      </div>
+      <div style="margin-bottom:1.5rem;">
+        <label style="display:block;font-size:.7rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;">Pourquoi veux-tu rejoindre la YASKA ROOM ? *</label>
+        <textarea id="app-message" rows="4" placeholder="Décris ta situation actuelle, tes objectifs et ce que tu attends de l'accompagnement..." style="width:100%;background:#222;border:0.5px solid rgba(201,168,76,0.15);border-radius:8px;padding:.75rem 1rem;color:var(--text);font-family:DM Sans,sans-serif;font-size:.9rem;outline:none;box-sizing:border-box;resize:vertical;" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(201,168,76,0.15)'"></textarea>
+      </div>
+      <button id="app-submit-btn" onclick="submitApplication()" style="width:100%;background:var(--gold);color:#000;border:none;padding:1rem;border-radius:8px;font-family:Syne,sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.05em;cursor:pointer;transition:all .2s;">
+        POSTULER MAINTENANT →
+      </button>
+      <p style="font-size:.72rem;color:var(--muted);text-align:center;margin-top:.8rem;">✓ YASKA révise chaque candidature personnellement · Réponse sous 24h</p>
+    </div>
+
+    <!-- 3 features -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1.5rem;">
+      <div style="background:#181818;border:0.5px solid rgba(201,168,76,0.15);border-radius:10px;padding:1.2rem;text-align:center;">
+        <div style="font-size:1.3rem;margin-bottom:.4rem;">📡</div>
+        <div style="font-family:Syne,sans-serif;font-weight:700;font-size:.78rem;color:var(--text);">Signaux live</div>
+        <div style="font-size:.7rem;color:var(--muted);margin-top:.2rem;">Gold &amp; NQ quotidiens</div>
+      </div>
+      <div style="background:#181818;border:0.5px solid rgba(201,168,76,0.15);border-radius:10px;padding:1.2rem;text-align:center;">
+        <div style="font-size:1.3rem;margin-bottom:.4rem;">🎙️</div>
+        <div style="font-family:Syne,sans-serif;font-weight:700;font-size:.78rem;color:var(--text);">Lives hebdo</div>
+        <div style="font-size:.7rem;color:var(--muted);margin-top:.2rem;">Analyses en direct</div>
+      </div>
+      <div style="background:#181818;border:0.5px solid rgba(201,168,76,0.15);border-radius:10px;padding:1.2rem;text-align:center;">
+        <div style="font-size:1.3rem;margin-bottom:.4rem;">🧠</div>
+        <div style="font-family:Syne,sans-serif;font-weight:700;font-size:.78rem;color:var(--text);">Accès direct</div>
+        <div style="font-size:.7rem;color:var(--muted);margin-top:.2rem;">DM illimité à YASKA</div>
+      </div>
+    </div>
+
+    <!-- Urgency -->
+    <div style="margin-top:1.5rem;background:rgba(201,168,76,0.06);border:0.5px solid rgba(201,168,76,0.25);border-radius:10px;padding:1rem 1.2rem;text-align:center;">
+      <p style="font-size:.85rem;color:var(--text);margin:0;">⚡ Places limitées ce mois-ci pour maintenir la qualité du suivi. <strong style="color:var(--gold);">Postule maintenant.</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ ACCOMPAGNEMENT -->
+<section style="background:var(--black);padding:5rem 5%;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="s-tag" style="justify-content:center;">FAQ Accompagnement</div>
+      <h2 class="s-title" style="text-align:center;max-width:100%;">Tes questions sur <em>l'accompagnement</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>À qui s'adresse l'accompagnement YASKA ROOM ?</span><span class="faq-icon">+</span></div><div class="faq-a">L'accompagnement est ouvert à tous les profils — débutants complets ou traders intermédiaires qui veulent structurer leur approche. L'essentiel est d'avoir la motivation d'apprendre et d'appliquer. Si tu cherches juste des signaux sans effort, ce n'est pas pour toi.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Quelle est la différence entre le mensuel et l'accès à vie ?</span><span class="faq-icon">+</span></div><div class="faq-a">L'abonnement mensuel à 99€/mois te donne accès à tout — formations, signaux, lives — sans engagement. L'accès à vie à 999€ c'est le même contenu mais tu ne paies qu'une seule fois. Toutes les futures formations et stratégies sont incluses pour toujours. En moins de 11 mois tu rentabilises.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Est-ce que YASKA est disponible pour répondre à mes questions ?</span><span class="faq-icon">+</span></div><div class="faq-a">Oui. Dans le Discord YASKA ROOM, YASKA est actif chaque jour de trading. Tu peux poser tes questions dans les salons dédiés et obtenir des réponses rapides. Les membres VIP ont en plus accès à un salon privé avec des réponses encore plus personnalisées.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Combien de temps faut-il pour voir des résultats ?</span><span class="faq-icon">+</span></div><div class="faq-a">Ça dépend de ton niveau de départ et du temps que tu investis. En général, les membres qui appliquent sérieusement voient une vraie progression en 4 à 8 semaines. Certains valident des challenges prop firm en 2-3 mois. Il n'y a pas de miracle — c'est du travail, mais avec la bonne méthode.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Sur quels marchés porte l'accompagnement ?</span><span class="faq-icon">+</span></div><div class="faq-a">Exclusivement sur le <strong>Gold (XAUUSD)</strong> et le <strong>NQ100 (Nasdaq)</strong>. Ce choix de spécialisation permet une vraie maîtrise de ces marchés. Les TP visés sont 80 pips sur le Gold et 150 pips sur le NQ.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>L'accompagnement inclut-il le passage de prop firm ?</span><span class="faq-icon">+</span></div><div class="faq-a">Oui. Un module complet est dédié aux prop firms : choix de la firme, règles à respecter, gestion du drawdown journalier et stratégie pour réussir le challenge. Plusieurs membres ont déjà obtenu leur funded account grâce aux méthodes de la YASKA ROOM.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Peut-on résilier l'abonnement mensuel à tout moment ?</span><span class="faq-icon">+</span></div><div class="faq-a">Oui, sans conditions, sans frais, sans justification. Tu résiles quand tu veux depuis ton espace. L'accès reste actif jusqu'à la fin de la période déjà payée.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Comment puis-je contacter YASKA avant de rejoindre ?</span><span class="faq-icon">+</span></div><div class="faq-a">Tu peux rejoindre le <a href="https://t.me/yaskaroom" target="_blank" style="color:var(--gold);">Telegram gratuit</a> pour avoir un aperçu de la room, ou nous contacter directement sur <a href="https://discord.gg/FP3urjgj" target="_blank" style="color:#7289da;">Discord</a>. Tu peux aussi remplir le formulaire de candidature ci-dessus et YASKA te répondra personnellement sous 24h.</div></div>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- CTA FINAL -->
 <section class="cta-final">
   <h2>90% perdent.<br><em>Sois parmi les 10%.</em></h2>
@@ -1299,6 +1464,85 @@ function closeMenu(){
     const walk = (startX - x) * 1.2;
     container.scrollLeft = scrollLeft + walk;
   }, {passive:true});
+})();
+
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
+})();
+
+function submitApplication(){
+  const prenom = document.getElementById('app-prenom').value.trim();
+  const email = document.getElementById('app-email').value.trim();
+  const contact = document.getElementById('app-contact').value.trim();
+  const offre = document.getElementById('app-offre').value;
+  const niveau = document.getElementById('app-niveau').value;
+  const message = document.getElementById('app-message').value.trim();
+  const btn = document.getElementById('app-submit-btn');
+
+  if(!prenom || !email || !offre || !niveau || !message){
+    alert('Merci de remplir tous les champs obligatoires (*)');
+    return;
+  }
+
+  btn.textContent = 'Envoi en cours...';
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+
+  // Option 1: EmailJS (configure sur emailjs.com)
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    to_email: 'layaska.contact@gmail.com',
+    from_name: prenom,
+    from_email: email,
+    contact: contact || 'Non renseigné',
+    offre: offre,
+    niveau: niveau,
+    message: message,
+    reply_to: email
+  }).then(function(){
+    btn.textContent = '✓ Candidature envoyée ! YASKA te répond sous 24h.';
+    btn.style.background = '#1a5c1a';
+    btn.style.color = '#fff';
+    btn.style.opacity = '1';
+    document.getElementById('app-prenom').value = '';
+    document.getElementById('app-email').value = '';
+    document.getElementById('app-contact').value = '';
+    document.getElementById('app-offre').value = '';
+    document.getElementById('app-niveau').value = '';
+    document.getElementById('app-message').value = '';
+  }, function(error){
+    // Fallback: open mail client
+    const subject = encodeURIComponent('Candidature YASKA ROOM - ' + prenom);
+    const body = encodeURIComponent(
+      'Prénom: ' + prenom + '\n' +
+      'Email: ' + email + '\n' +
+      'Contact: ' + (contact||'Non renseigné') + '\n' +
+      'Offre: ' + offre + '\n' +
+      'Niveau: ' + niveau + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:layaska.contact@gmail.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'POSTULER MAINTENANT →';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+  });
+}
+
+
+// Animate ticker prices
+(function(){
+  const prices = {gold: 2318.40, nq: 18142.5};
+  setInterval(()=>{
+    prices.gold += (Math.random()-0.48)*0.8;
+    prices.nq += (Math.random()-0.48)*4;
+    const goldEl = document.querySelector('.htb-item:first-child .htb-price');
+    const nqEl = document.querySelector('.htb-item:nth-child(3) .htb-price');
+    if(goldEl) goldEl.textContent = prices.gold.toFixed(2);
+    if(nqEl) nqEl.textContent = prices.nq.toFixed(1);
+  }, 2000);
 })();
 
 window.addEventListener('scroll', closeMenu);
@@ -1452,6 +1696,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <li><a href="#programme">Programme</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#candidature" style="color:var(--gold);font-weight:600;">Postuler</a></li>
   </ul>
   <!-- Logo center -->
   <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">YASKA <em>ROOM</em></div>
@@ -1469,6 +1714,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
   <a href="#faq" onclick="closeMenu()">❓ FAQ</a>
+  <a href="#candidature" onclick="closeMenu()" style="color:var(--gold);font-weight:600;">✍️ Postuler à l'accompagnement</a>
   <a href="#offres" class="mm-cta" onclick="closeMenu();">REJOINDRE LA YASKA ROOM</a>
 </div></div>
 
@@ -1490,7 +1736,26 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;Live</div>
   </div>
 
-  <div class="hero-badge">Gold · NQ · Résultats prouvés</div>
+  <div class="hero-ticker-bar">
+    <div class="htb-item">
+      <span class="htb-asset">XAUUSD</span>
+      <span class="htb-dir buy">▲</span>
+      <span class="htb-price">2 318.40</span>
+      <span class="htb-change green">+1.24%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item">
+      <span class="htb-asset">NQ100</span>
+      <span class="htb-dir sell">▼</span>
+      <span class="htb-price">18 142.5</span>
+      <span class="htb-change red">-0.38%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item htb-live">
+      <span class="htb-live-dot"></span>
+      <span>LIVE</span>
+    </div>
+  </div>
   <h1>Pas une question de chance,<br><em>mais une question de structure.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
   <p>Signaux live sur le Gold et le NQ, formations complètes, stratégies exclusives et accès à une communauté de traders sérieux. Tout ce qu'il faut pour enfin être profitable.</p>
@@ -2004,6 +2269,85 @@ function closeMenu(){
   }, {passive:true});
 })();
 
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
+})();
+
+function submitApplication(){
+  const prenom = document.getElementById('app-prenom').value.trim();
+  const email = document.getElementById('app-email').value.trim();
+  const contact = document.getElementById('app-contact').value.trim();
+  const offre = document.getElementById('app-offre').value;
+  const niveau = document.getElementById('app-niveau').value;
+  const message = document.getElementById('app-message').value.trim();
+  const btn = document.getElementById('app-submit-btn');
+
+  if(!prenom || !email || !offre || !niveau || !message){
+    alert('Merci de remplir tous les champs obligatoires (*)');
+    return;
+  }
+
+  btn.textContent = 'Envoi en cours...';
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+
+  // Option 1: EmailJS (configure sur emailjs.com)
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    to_email: 'layaska.contact@gmail.com',
+    from_name: prenom,
+    from_email: email,
+    contact: contact || 'Non renseigné',
+    offre: offre,
+    niveau: niveau,
+    message: message,
+    reply_to: email
+  }).then(function(){
+    btn.textContent = '✓ Candidature envoyée ! YASKA te répond sous 24h.';
+    btn.style.background = '#1a5c1a';
+    btn.style.color = '#fff';
+    btn.style.opacity = '1';
+    document.getElementById('app-prenom').value = '';
+    document.getElementById('app-email').value = '';
+    document.getElementById('app-contact').value = '';
+    document.getElementById('app-offre').value = '';
+    document.getElementById('app-niveau').value = '';
+    document.getElementById('app-message').value = '';
+  }, function(error){
+    // Fallback: open mail client
+    const subject = encodeURIComponent('Candidature YASKA ROOM - ' + prenom);
+    const body = encodeURIComponent(
+      'Prénom: ' + prenom + '\n' +
+      'Email: ' + email + '\n' +
+      'Contact: ' + (contact||'Non renseigné') + '\n' +
+      'Offre: ' + offre + '\n' +
+      'Niveau: ' + niveau + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:layaska.contact@gmail.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'POSTULER MAINTENANT →';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+  });
+}
+
+
+// Animate ticker prices
+(function(){
+  const prices = {gold: 2318.40, nq: 18142.5};
+  setInterval(()=>{
+    prices.gold += (Math.random()-0.48)*0.8;
+    prices.nq += (Math.random()-0.48)*4;
+    const goldEl = document.querySelector('.htb-item:first-child .htb-price');
+    const nqEl = document.querySelector('.htb-item:nth-child(3) .htb-price');
+    if(goldEl) goldEl.textContent = prices.gold.toFixed(2);
+    if(nqEl) nqEl.textContent = prices.nq.toFixed(1);
+  }, 2000);
+})();
+
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
@@ -2134,6 +2478,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <li><a href="#programme">Programme</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#candidature" style="color:var(--gold);font-weight:600;">Postuler</a></li>
   </ul>
   <!-- Logo center -->
   <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">YASKA <em>ROOM</em></div>
@@ -2151,6 +2496,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
   <a href="#faq" onclick="closeMenu()">❓ FAQ</a>
+  <a href="#candidature" onclick="closeMenu()" style="color:var(--gold);font-weight:600;">✍️ Postuler à l'accompagnement</a>
   <a href="#offres" class="mm-cta" onclick="closeMenu();">REJOINDRE LA YASKA ROOM</a>
 </div></div>
 
@@ -2172,7 +2518,26 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;Live</div>
   </div>
 
-  <div class="hero-badge">Gold · NQ · Résultats prouvés</div>
+  <div class="hero-ticker-bar">
+    <div class="htb-item">
+      <span class="htb-asset">XAUUSD</span>
+      <span class="htb-dir buy">▲</span>
+      <span class="htb-price">2 318.40</span>
+      <span class="htb-change green">+1.24%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item">
+      <span class="htb-asset">NQ100</span>
+      <span class="htb-dir sell">▼</span>
+      <span class="htb-price">18 142.5</span>
+      <span class="htb-change red">-0.38%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item htb-live">
+      <span class="htb-live-dot"></span>
+      <span>LIVE</span>
+    </div>
+  </div>
   <h1>Pas une question de chance,<br><em>mais une question de structure.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
   <p>Signaux live sur le Gold et le NQ, formations complètes, stratégies exclusives et accès à une communauté de traders sérieux. Tout ce qu'il faut pour enfin être profitable.</p>
@@ -2694,6 +3059,85 @@ function closeMenu(){
   }, {passive:true});
 })();
 
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
+})();
+
+function submitApplication(){
+  const prenom = document.getElementById('app-prenom').value.trim();
+  const email = document.getElementById('app-email').value.trim();
+  const contact = document.getElementById('app-contact').value.trim();
+  const offre = document.getElementById('app-offre').value;
+  const niveau = document.getElementById('app-niveau').value;
+  const message = document.getElementById('app-message').value.trim();
+  const btn = document.getElementById('app-submit-btn');
+
+  if(!prenom || !email || !offre || !niveau || !message){
+    alert('Merci de remplir tous les champs obligatoires (*)');
+    return;
+  }
+
+  btn.textContent = 'Envoi en cours...';
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+
+  // Option 1: EmailJS (configure sur emailjs.com)
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    to_email: 'layaska.contact@gmail.com',
+    from_name: prenom,
+    from_email: email,
+    contact: contact || 'Non renseigné',
+    offre: offre,
+    niveau: niveau,
+    message: message,
+    reply_to: email
+  }).then(function(){
+    btn.textContent = '✓ Candidature envoyée ! YASKA te répond sous 24h.';
+    btn.style.background = '#1a5c1a';
+    btn.style.color = '#fff';
+    btn.style.opacity = '1';
+    document.getElementById('app-prenom').value = '';
+    document.getElementById('app-email').value = '';
+    document.getElementById('app-contact').value = '';
+    document.getElementById('app-offre').value = '';
+    document.getElementById('app-niveau').value = '';
+    document.getElementById('app-message').value = '';
+  }, function(error){
+    // Fallback: open mail client
+    const subject = encodeURIComponent('Candidature YASKA ROOM - ' + prenom);
+    const body = encodeURIComponent(
+      'Prénom: ' + prenom + '\n' +
+      'Email: ' + email + '\n' +
+      'Contact: ' + (contact||'Non renseigné') + '\n' +
+      'Offre: ' + offre + '\n' +
+      'Niveau: ' + niveau + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:layaska.contact@gmail.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'POSTULER MAINTENANT →';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+  });
+}
+
+
+// Animate ticker prices
+(function(){
+  const prices = {gold: 2318.40, nq: 18142.5};
+  setInterval(()=>{
+    prices.gold += (Math.random()-0.48)*0.8;
+    prices.nq += (Math.random()-0.48)*4;
+    const goldEl = document.querySelector('.htb-item:first-child .htb-price');
+    const nqEl = document.querySelector('.htb-item:nth-child(3) .htb-price');
+    if(goldEl) goldEl.textContent = prices.gold.toFixed(2);
+    if(nqEl) nqEl.textContent = prices.nq.toFixed(1);
+  }, 2000);
+})();
+
 window.addEventListener('scroll', closeMenu);
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
@@ -2861,6 +3305,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <li><a href="#programme">Programme</a></li>
     <li><a href="#about">À propos</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#candidature" style="color:var(--gold);font-weight:600;">Postuler</a></li>
   </ul>
   <!-- Logo center -->
   <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">YASKA <em>ROOM</em></div>
@@ -2878,6 +3323,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   <a href="#programme" onclick="closeMenu()">📚 Programme</a>
   <a href="#about" onclick="closeMenu()">👤 À propos</a>
   <a href="#faq" onclick="closeMenu()">❓ FAQ</a>
+  <a href="#candidature" onclick="closeMenu()" style="color:var(--gold);font-weight:600;">✍️ Postuler à l'accompagnement</a>
   <a href="#offres" class="mm-cta" onclick="closeMenu();">REJOINDRE LA YASKA ROOM</a>
 </div></div>
 
@@ -2899,7 +3345,26 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <div class="hero-float-card"><div class="fc-dot green"></div><span style="color:#ff4444;font-size:.65rem;">●</span>&nbsp;Live</div>
   </div>
 
-  <div class="hero-badge">Gold · NQ · Résultats prouvés</div>
+  <div class="hero-ticker-bar">
+    <div class="htb-item">
+      <span class="htb-asset">XAUUSD</span>
+      <span class="htb-dir buy">▲</span>
+      <span class="htb-price">2 318.40</span>
+      <span class="htb-change green">+1.24%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item">
+      <span class="htb-asset">NQ100</span>
+      <span class="htb-dir sell">▼</span>
+      <span class="htb-price">18 142.5</span>
+      <span class="htb-change red">-0.38%</span>
+    </div>
+    <div class="htb-sep">|</div>
+    <div class="htb-item htb-live">
+      <span class="htb-live-dot"></span>
+      <span>LIVE</span>
+    </div>
+  </div>
   <h1>Pas une question de chance,<br><em>mais une question de structure.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
   <p>Signaux live sur le Gold et le NQ, formations complètes, stratégies exclusives et accès à une communauté de traders sérieux. Tout ce qu'il faut pour enfin être profitable.</p>
@@ -3421,6 +3886,85 @@ function closeMenu(){
     const walk = (startX - x) * 1.2;
     container.scrollLeft = scrollLeft + walk;
   }, {passive:true});
+})();
+
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){
+  emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
+})();
+
+function submitApplication(){
+  const prenom = document.getElementById('app-prenom').value.trim();
+  const email = document.getElementById('app-email').value.trim();
+  const contact = document.getElementById('app-contact').value.trim();
+  const offre = document.getElementById('app-offre').value;
+  const niveau = document.getElementById('app-niveau').value;
+  const message = document.getElementById('app-message').value.trim();
+  const btn = document.getElementById('app-submit-btn');
+
+  if(!prenom || !email || !offre || !niveau || !message){
+    alert('Merci de remplir tous les champs obligatoires (*)');
+    return;
+  }
+
+  btn.textContent = 'Envoi en cours...';
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+
+  // Option 1: EmailJS (configure sur emailjs.com)
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    to_email: 'layaska.contact@gmail.com',
+    from_name: prenom,
+    from_email: email,
+    contact: contact || 'Non renseigné',
+    offre: offre,
+    niveau: niveau,
+    message: message,
+    reply_to: email
+  }).then(function(){
+    btn.textContent = '✓ Candidature envoyée ! YASKA te répond sous 24h.';
+    btn.style.background = '#1a5c1a';
+    btn.style.color = '#fff';
+    btn.style.opacity = '1';
+    document.getElementById('app-prenom').value = '';
+    document.getElementById('app-email').value = '';
+    document.getElementById('app-contact').value = '';
+    document.getElementById('app-offre').value = '';
+    document.getElementById('app-niveau').value = '';
+    document.getElementById('app-message').value = '';
+  }, function(error){
+    // Fallback: open mail client
+    const subject = encodeURIComponent('Candidature YASKA ROOM - ' + prenom);
+    const body = encodeURIComponent(
+      'Prénom: ' + prenom + '\n' +
+      'Email: ' + email + '\n' +
+      'Contact: ' + (contact||'Non renseigné') + '\n' +
+      'Offre: ' + offre + '\n' +
+      'Niveau: ' + niveau + '\n\n' +
+      'Message:\n' + message
+    );
+    window.location.href = 'mailto:layaska.contact@gmail.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'POSTULER MAINTENANT →';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+  });
+}
+
+
+// Animate ticker prices
+(function(){
+  const prices = {gold: 2318.40, nq: 18142.5};
+  setInterval(()=>{
+    prices.gold += (Math.random()-0.48)*0.8;
+    prices.nq += (Math.random()-0.48)*4;
+    const goldEl = document.querySelector('.htb-item:first-child .htb-price');
+    const nqEl = document.querySelector('.htb-item:nth-child(3) .htb-price');
+    if(goldEl) goldEl.textContent = prices.gold.toFixed(2);
+    if(nqEl) nqEl.textContent = prices.nq.toFixed(1);
+  }, 2000);
 })();
 
 window.addEventListener('scroll', closeMenu);
