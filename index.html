@@ -274,8 +274,27 @@ section{padding:6rem 5%;}
 
 /* RESPONSIVE OFFERS */
 @media(max-width:900px){
-  .offers-wrap{grid-template-columns:1fr;gap:1rem;}
+  .offers-wrap{
+    display:flex;
+    flex-direction:row;
+    gap:.75rem;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    padding-bottom:12px;
+    scrollbar-width:none;
+    align-items:stretch;
+  }
+  .offers-wrap::-webkit-scrollbar{display:none;}
+  .offer-card{
+    flex:0 0 78vw;
+    min-width:260px;
+    scroll-snap-align:start;
+  }
   .offer-card.featured{transform:none;box-shadow:0 10px 30px rgba(201,168,76,.15);}
+}
+@media(max-width:480px){
+  .offer-card{flex:0 0 85vw;}
 }
 
 /* YASKA ROOM VIP */
