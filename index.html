@@ -57,7 +57,7 @@ nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end
 .mobile-menu .mm-cta{border:none;margin-top:.8rem;background:var(--gold);color:#000;text-align:center;padding:.85rem;border-radius:2px;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.05em;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 5% 6rem;position:relative;overflow:hidden;background:#0A0A0A;}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 5% 4rem;position:relative;overflow:hidden;background:#0A0A0A;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,168,76,0.12) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 80% 80%,rgba(201,168,76,0.04) 0%,transparent 70%),radial-gradient(ellipse 40% 30% at 20% 70%,rgba(201,168,76,0.04) 0%,transparent 70%);pointer-events:none;z-index:0;}
 .hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(201,168,76,0.03) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(201,168,76,0.03) 60px);pointer-events:none;z-index:0;}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.65;}
@@ -341,27 +341,32 @@ section{padding:6rem 5%;}
 .about-stat .n{font-family:'Syne',sans-serif;font-size:1.65rem;font-weight:800;color:var(--gold);line-height:1;}
 .about-stat .l{font-size:.71rem;color:var(--muted);margin-top:.3rem;}
 
-/* TÉMOIGNAGES */
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:1.5rem;}
-.testi-card{background:var(--dark2);border:0.5px solid var(--border);border-radius:4px;padding:2rem;transition:border-color .2s;}
-.testi-card:hover{border-color:var(--border2);}
-.testi-stars{color:var(--gold);font-size:.75rem;letter-spacing:.15em;margin-bottom:.9rem;}
-.testi-text{font-size:.88rem;color:var(--text);line-height:1.78;margin-bottom:1.4rem;font-style:italic;}
-.testi-author{display:flex;align-items:center;gap:.85rem;}
-.testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;color:#000;flex-shrink:0;overflow:hidden;}
-.testi-av img{width:100%;height:100%;object-fit:cover;}
-.testi-name{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;}
-.testi-role{font-size:.71rem;color:var(--muted);}
-.testi-result{font-size:.72rem;color:var(--gold);font-weight:500;margin-top:.1rem;}
 
 /* FAQ */
+
+/* FAQ ACCORDION */
 .faq-list{max-width:780px;margin:0 auto;}
-.faq-item{border-bottom:0.5px solid var(--border);}
-.faq-q{font-family:'Syne',sans-serif;font-size:.93rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.4rem 0;-webkit-tap-highlight-color:transparent;user-select:none;}
-.faq-icon{color:var(--gold);font-size:1.5rem;flex-shrink:0;transition:transform .3s;line-height:1;font-weight:300;}
-.faq-item.open .faq-icon{transform:rotate(45deg);}
-.faq-a{font-size:.86rem;color:var(--muted);line-height:1.78;padding-bottom:1.4rem;display:none;overflow:hidden;}
-.faq-item.open .faq-a{display:block !important;}
+.faq-details{border-bottom:0.5px solid rgba(201,168,76,0.16);margin:0;}
+.faq-summary{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  gap:1rem;padding:1.4rem 0;list-style:none;color:var(--text);
+  -webkit-tap-highlight-color:transparent;
+}
+.faq-summary::-webkit-details-marker{display:none;}
+.faq-summary::marker{display:none;}
+.faq-plus{
+  color:var(--gold);font-size:1.5rem;font-weight:300;flex-shrink:0;
+  transition:transform .3s;line-height:1;
+}
+.faq-details[open] .faq-plus{transform:rotate(45deg);}
+.faq-details[open] .faq-summary{color:var(--gold);}
+.faq-answer{
+  font-size:.87rem;color:var(--muted);line-height:1.78;
+  padding-bottom:1.4rem;padding-right:2rem;
+}
+.faq-answer a{color:var(--gold);}
+
 
 /* SOCIALS */
 .socials-section{background:linear-gradient(180deg,#0f0f0f 0%,var(--dark2) 100%);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:5rem 5%;}
@@ -518,7 +523,7 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   }
 
   /* HERO */
-  .hero{padding:7rem 5% 4rem;min-height:100svh;}
+  .hero{padding:4rem 5% 3rem;min-height:100svh;}
   #heroCanvas{opacity:.5;}
   .hero h1{font-size:clamp(2.2rem,9vw,3.5rem);line-height:1.05;margin-bottom:1.2rem;}
   .hero-sub{font-size:1rem;}
@@ -599,8 +604,8 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   .social-card{padding:1.2rem .8rem;}
 
   /* FAQ */
-  .faq-q{font-size:.88rem;padding:1.2rem 0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
-  .faq-a{font-size:.83rem;}
+  .faq-summary{font-size:.88rem;padding:1.2rem 0;}
+  .faq-answer{font-size:.83rem;}
 
   /* CTA FINAL */
   .cta-final{padding:5rem 5%;}
@@ -672,7 +677,7 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
   padding:.55rem 1.2rem;
   backdrop-filter:blur(12px);
   position:relative;z-index:1;
-  margin-bottom:2rem;
+  margin-bottom:1rem;
   font-size:.78rem;
   font-family:'DM Sans',sans-serif;
 }
@@ -1166,12 +1171,72 @@ nav{box-shadow:0 2px 30px rgba(0,0,0,0.5);}
     <p class="s-sub" style="margin-bottom:3rem;">Tout ce que tu dois savoir avant de rejoindre.</p>
   </div>
   <div class="faq-list">
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" style="cursor:pointer;-webkit-tap-highlight-color:transparent;"><span>Sur quels marchés tradez-vous ?</span><span class="faq-icon">+</span></div><div class="faq-a">Exclusivement sur le <strong>Gold (XAUUSD)</strong> et le <strong>NQ100</strong>. </div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" style="cursor:pointer;-webkit-tap-highlight-color:transparent;"><span>Quelle est la différence entre le mensuel et l'accès à vie ?</span><span class="faq-icon">+</span></div><div class="faq-a">L'abonnement mensuel à 99€/mois donne accès à tout le contenu — résiliable quand tu veux. L'accès à vie à 999€ c'est le même accès complet, sans jamais repayer. Toutes les futures formations sont incluses pour toujours.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" style="cursor:pointer;-webkit-tap-highlight-color:transparent;"><span>Comment fonctionne l'accès VIP via broker affilié ?</span><span class="faq-icon">+</span></div><div class="faq-a">Tu ouvres un compte chez PU Prime ou VT Markets via notre lien affilié et tu effectues un dépôt minimum. En échange, tu obtiens l'accès à la YASKA ROOM VIP sans abonnement mensuel.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" style="cursor:pointer;-webkit-tap-highlight-color:transparent;"><span>Faut-il avoir de l'expérience pour rejoindre ?</span><span class="faq-icon">+</span></div><div class="faq-a">Non. Les formations partent des bases du Gold et du NQ et montent progressivement. Que tu sois débutant complet ou trader avec quelques mois d'expérience, le programme s'adapte.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" style="cursor:pointer;-webkit-tap-highlight-color:transparent;"><span>Peut-on résilier l'abonnement mensuel à tout moment ?</span><span class="faq-icon">+</span></div><div class="faq-a">Oui, sans condition, sans frais, sans justification. Tu résiles quand tu veux.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" style="cursor:pointer;-webkit-tap-highlight-color:transparent;"><span>La YASKA ROOM est-elle adaptée pour les prop firms ?</span><span class="faq-icon">+</span></div><div class="faq-a">Absolument. Un module entier est dédié aux prop firms avec le Gold et le NQ. Plusieurs membres ont déjà validé des challenges comme Rayan (LucidFlex 50K) et Jawad (FTMO).</div></div>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Sur quels marchés tradez-vous dans la YASKA ROOM ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">On trade exclusivement le <strong>Gold (XAUUSD)</strong> et le <strong>NQ100 (Nasdaq)</strong>. Ce choix de spécialisation n'est pas un hasard — deux marchés maîtrisés à fond valent mieux que dix marchés survolés. Ce sont deux des actifs les plus liquides et les plus cohérents techniquement.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Quelle est la différence entre l'abonnement mensuel et l'accès à vie ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">L'abonnement mensuel à <strong>99€/mois</strong> te donne accès à tout le contenu — formations, signaux, lives — sans engagement, résiliable quand tu veux. L'accès à vie à <strong>999€</strong>, c'est exactement le même accès mais tu ne paies qu'une seule fois. Toutes les futures formations, stratégies et mises à jour sont incluses à vie. Si tu te projettes sur plus de 10 mois, l'accès à vie est clairement le plus rentable.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Comment fonctionne l'accès VIP via broker affilié ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Tu ouvres un compte chez l'un de nos brokers partenaires (<strong>PU Prime</strong> ou <strong>VT Markets</strong>) via notre lien affilié et tu effectues un dépôt minimum. En retour, tu accèdes immédiatement à la <strong>YASKA ROOM VIP</strong> sans abonnement mensuel supplémentaire. Tu trades avec ton propre capital sur une plateforme réglementée. Contacte-nous sur Telegram ou Discord pour connaître le montant exact du dépôt minimum requis.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">C'est quoi Whales Capital Funding ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer"><strong>Whales Capital Funding</strong> est une prop firm partenaire. Tu passes un challenge (compte CFD dès 200k$) avec le code <strong>PROMO30</strong> pour -30% sur le prix. Une fois le challenge validé, tu accèdes à la YASKA ROOM VIP et tu trades avec le capital de la firme. C'est une excellente option si tu veux trader avec un gros capital sans risquer le tien.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Faut-il avoir de l'expérience pour rejoindre ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Non. La formation part des bases absolues et monte progressivement. Que tu n'aies jamais ouvert un graphique ou que tu trades depuis quelques mois sans résultats consistants, la YASKA ROOM est faite pour toi. L'essentiel est d'avoir la motivation d'apprendre et d'appliquer ce qu'on enseigne.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Est-ce que YASKA est disponible pour mes questions ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Oui. YASKA est actif dans le Discord chaque jour de trading. Tu poses tes questions dans les salons dédiés et tu obtiens des réponses directes, sans intermédiaire. Les membres VIP ont accès à un salon privé avec des réponses encore plus rapides et personnalisées.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Comment se déroulent les sessions live ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Les lives se font sur Discord en vocal. YASKA analyse le marché en direct avant et pendant les sessions de trading (Londres et New York principalement). Il commente les setups, explique les zones clés, prend les positions en live et répond aux questions des membres en temps réel. Des débriefs sont aussi faits après les moves importants.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Combien de temps pour voir des résultats ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Ça dépend de ton niveau de départ et du temps que tu investis. Les membres qui appliquent sérieusement voient une vraie progression en <strong>4 à 8 semaines</strong>. Certains valident des challenges prop firm en 2-3 mois. Il n'y a pas de miracle — c'est du travail. Mais avec la bonne méthode et le bon suivi, tu progresses beaucoup plus vite qu'en solo.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">La YASKA ROOM est-elle adaptée pour les prop firms ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Oui, c'est même l'un des objectifs principaux de nombreux membres. Un module entier est dédié aux prop firms : comment choisir sa firme, les règles à respecter, comment gérer un compte financé et obtenir ses premiers payouts. Des membres comme Rayan (Lucid Trading), Jawad (FTMO) et Ethan ont déjà obtenu leur funded account.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Peut-on résilier l'abonnement mensuel à tout moment ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Oui, sans condition, sans frais, sans justification. Tu résiles quand tu veux. L'accès reste actif jusqu'à la fin de la période déjà payée. Aucun piège, aucun contrat caché.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Comment rejoindre le Discord après le paiement ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Dès que ton paiement ou ton dépôt est confirmé, tu reçois un lien d'invitation Discord personnalisé par message (Telegram ou email). Tu rejoins le serveur et tu as accès immédiatement à tous les salons correspondant à ton offre. Si tu ne reçois rien sous 1h, contacte-nous directement sur <a href="https://t.me/yaskaroom" target="_blank">Telegram</a>.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Est-ce que je garde accès si je résilie ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Non. Si tu résiles l'abonnement mensuel, tu perds l'accès au Discord et aux contenus à la fin de ta période. C'est pour ça que l'accès à vie est une meilleure option si tu sais que tu veux rester sur le long terme — tu paies une fois et tu gardes tout, pour toujours.</div>
+    </details>
+
+    <details class="faq-details">
+      <summary class="faq-summary">Comment contacter YASKA avant de rejoindre ?<span class="faq-plus">+</span></summary>
+      <div class="faq-answer">Rejoins le <a href="https://t.me/yaskaroom" target="_blank">Telegram gratuit</a> pour avoir un aperçu de la room, ou envoie un message directement sur <a href="https://discord.gg/FP3urjgj" target="_blank">Discord</a>. Tu peux aussi remplir le formulaire de candidature sur cette page et YASKA te répondra personnellement sous 24h.</div>
+    </details>
+
   </div>
 </section>
 
@@ -1280,33 +1345,8 @@ function closeBrokerModal(){
 function closeBrokerModalOutside(e){
   if(e.target===document.getElementById('brokerModal')) closeBrokerModal();
 }
-function toggleFaq(el){
-  try {
-    var item = el;
-    while(item && !item.classList.contains('faq-item')) {
-      item = item.parentElement;
-    }
-    if(!item) return;
-    var wasOpen = item.classList.contains('open');
-    // Close all items
-    var allItems = document.querySelectorAll('.faq-item');
-    for(var i=0;i<allItems.length;i++){
-      allItems[i].classList.remove('open');
-      var ans = allItems[i].querySelector('.faq-a');
-      if(ans) ans.style.display = 'none';
-    }
-    // If was closed, open it
-    if(!wasOpen){
-      item.classList.add('open');
-      var answer = item.querySelector('.faq-a');
-      if(answer) answer.style.display = 'block';
-    }
-  } catch(e){ console.log(e); }
-}s) ans.style.display = 'block';
-  }
-}
-function toggleMenu(){
-  document.getElementById('mobileMenu').classList.toggle('open');
+// FAQ uses native <details> element - no JS needed
+eMenu').classList.toggle('open');
   const h = document.querySelector('.hamburger');
   if(h) h.classList.toggle('open');
 }
