@@ -1356,7 +1356,118 @@ function closeMenu(){
 
 
 <!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+// ── MODAL PLAN PICKER ─────────────────────────────────────────────────────────
+let currentPlan = 'mensuel';
+const PLANS = {
+  mensuel: { name:'Abonnement Mensuel', price:'99€/mois', vip:false },
+  lifetime: { name:'Accès à Vie', price:'999€ paiement unique', vip:false },
+  vip: { name:'Dépôt Broker Affilié', price:'Accès VIP offert', vip:true },
+  whales: { name:'Whales Capital', price:'Challenge -30% PROMO30', vip:true }
+};
+
+function selectPlan(plan){
+  currentPlan = plan;
+  document.querySelectorAll('.plan-card').forEach(c=>c.classList.remove('selected'));
+  const el = document.getElementById('plan-'+plan);
+  if(el) el.classList.add('selected');
+}
+
+function goToForm(){
+  const p = PLANS[currentPlan] || PLANS.mensuel;
+  const recap = document.getElementById('selected-plan-recap');
+  if(recap) recap.innerHTML = '<span class="msp-name">'+p.name+'</span><span class="msp-price">'+p.price+'</span>';
+  const wrap = document.getElementById('modal-msg-wrap');
+  if(wrap) wrap.style.display = p.vip ? 'block' : 'none';
+  const btn = document.getElementById('modal-btn');
+  if(btn){ btn.textContent = 'ENVOYER MA DEMANDE →'; btn.className = 'modal-submit'+(p.vip?' vip-submit':''); btn.style.background=''; btn.style.color=''; }
+  const stepPlan = document.getElementById('step-plan');
+  const stepForm = document.getElementById('step-form');
+  if(stepPlan) stepPlan.style.display='none';
+  if(stepForm) stepForm.classList.add('active');
+  ['modal-name','modal-email','modal-contact','modal-msg'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+}
+
+function goBack(){
+  const stepPlan = document.getElementById('step-plan');
+  const stepForm = document.getElementById('step-form');
+  if(stepPlan) stepPlan.style.display='block';
+  if(stepForm) stepForm.classList.remove('active');
+}
+
+function openModal(type){
+  const stepPlan = document.getElementById('step-plan');
+  const stepForm = document.getElementById('step-form');
+  if(stepPlan) stepPlan.style.display='block';
+  if(stepForm) stepForm.classList.remove('active');
+  const planKey = ['lifetime','vip','mensuel','whales'].includes(type) ? type : 'mensuel';
+  selectPlan(planKey);
+  const modal = document.getElementById('modal');
+  if(modal){ modal.classList.add('open'); document.body.style.overflow='hidden'; }
+}
+
+function closeModal(){
+  const modal = document.getElementById('modal');
+  if(modal){ modal.classList.remove('open'); document.body.style.overflow=''; }
+}
+
+function closeModalOutside(e){
+  if(e.target===document.getElementById('modal')) closeModal();
+}
+
+function submitModal(){
+  const name = document.getElementById('modal-name');
+  const email = document.getElementById('modal-email');
+  if(!name||!email||!name.value.trim()||!email.value.trim()){ alert('Merci de renseigner ton prénom et ton email.'); return; }
+  const btn = document.getElementById('modal-btn');
+  if(btn){ btn.textContent='✓ Demande envoyée !'; btn.style.background='#1a5c1a'; btn.style.color='#fff'; }
+  setTimeout(closeModal, 2800);
+}
+
+// ── APPLICATION FORM ──────────────────────────────────────────────────────────
+function submitApplication(){
+  const prenom = document.getElementById('app-prenom');
+  const email = document.getElementById('app-email');
+  const offre = document.getElementById('app-offre');
+  const niveau = document.getElementById('app-niveau');
+  const message = document.getElementById('app-message');
+  const btn = document.getElementById('app-submit-btn');
+  if(!prenom||!email||!offre||!niveau||!message){ return; }
+  if(!prenom.value.trim()||!email.value.trim()||!offre.value||!niveau.value||!message.value.trim()){
+    alert('Merci de remplir tous les champs obligatoires (*)'); return;
+  }
+  if(btn){ btn.textContent='Envoi en cours...'; btn.style.opacity='0.7'; btn.disabled=true; }
+  const subject = encodeURIComponent('Candidature YASKA ROOM - ' + prenom.value.trim());
+  const body = encodeURIComponent(
+    'Prénom: ' + prenom.value.trim() + '\n' +
+    'Email: ' + email.value.trim() + '\n' +
+    'Contact: ' + (document.getElementById('app-contact')?.value||'Non renseigné') + '\n' +
+    'Offre: ' + offre.value + '\n' +
+    'Niveau: ' + niveau.value + '\n\nMessage:\n' + message.value.trim()
+  );
+  window.location.href = 'mailto:layaska.contact@gmail.com?subject='+subject+'&body='+body;
+  setTimeout(()=>{
+    if(btn){ btn.textContent='✓ Candidature envoyée ! YASKA te répond sous 24h.'; btn.style.background='#1a5c1a'; btn.style.color='#fff'; btn.style.opacity='1'; }
+  }, 1000);
+}
+
+// ── TICKER PRICE ANIMATION ────────────────────────────────────────────────────
+(function(){
+  const prices = {gold:2318.40, nq:18142.5};
+  setInterval(()=>{
+    prices.gold += (Math.random()-0.48)*0.8;
+    prices.nq += (Math.random()-0.48)*4;
+    const goldEl = document.querySelector('.htb-item:first-child .htb-price');
+    const nqEl = document.querySelector('.htb-item:nth-child(3) .htb-price');
+    if(goldEl) goldEl.textContent = prices.gold.toFixed(2);
+    if(nqEl) nqEl.textContent = prices.nq.toFixed(1);
+  }, 2000);
+})();
+
+window.addEventListener('scroll', closeMenu);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); closeBrokerModal(); closeMentions(); } });
+
+</script>
 <script>
 (function(){
   emailjs.init('YOUR_PUBLIC_KEY'); // Remplace par ta clé publique EmailJS
@@ -1433,7 +1544,7 @@ function submitApplication(){
   }, 2000);
 })();
 
-window.addEventListener('scroll', closeMenu);
+
 document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeBrokerModal(); } });
 </script>
 
