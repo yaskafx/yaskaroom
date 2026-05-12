@@ -90,7 +90,7 @@ section{padding:6rem 5%;}
 .center .s-tag::before{display:none;}
 .center .s-title,.center .s-sub{margin-left:auto;margin-right:auto;}
 .offers{background:linear-gradient(160deg,#0c0c0c 0%,#111 100%);}
-.offers-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch;margin-top:1rem;}
+.offers-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;align-items:stretch;margin-top:1rem;max-width:900px;margin-left:auto;margin-right:auto;}
 .offer-card{border-radius:20px;padding:2.2rem 1.8rem;display:flex;flex-direction:column;position:relative;transition:transform .3s;overflow:hidden;}
 .offer-card:hover{transform:translateY(-6px);}
 .offer-card.plan-mensuel{background:#1a1a1a;border:1px solid rgba(201,168,76,.2);}
@@ -150,7 +150,7 @@ section{padding:6rem 5%;}
 .broker-note h4{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;margin-bottom:.3rem;}
 .broker-note p{font-size:.81rem;color:var(--muted);line-height:1.65;}
 .broker-note a{color:var(--gold);font-weight:500;}
-@media(max-width:900px){.offers-wrap{grid-template-columns:1fr;gap:1rem;}.offer-card.featured{transform:none;box-shadow:0 10px 30px rgba(201,168,76,.15);}}
+.offers-wrap{grid-template-columns:1fr 1fr;gap:1rem;}
 .vip-room{background:var(--black);position:relative;overflow:hidden;}
 .vip-room::before{content:'';position:absolute;top:-150px;right:-100px;width:600px;height:600px;background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);pointer-events:none;}
 .vip-features{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
@@ -559,33 +559,9 @@ section{padding:4rem 5%;}
   <div class="center">
     <div class="s-tag">Nos offres</div>
     <h2 class="s-title">Choisis <em>ton accès</em></h2>
-    <p class="s-sub">Trois façons de rejoindre la YASKA ROOM. Adapté à ton budget et tes objectifs.</p>
+    <p class="s-sub">Deux façons de rejoindre la YASKA ROOM. Adapté à ton budget et tes objectifs.</p>
   </div>
   <div class="offers-wrap">
-    <!-- ACCÈS À VIE -->
-    <div class="offer-card plan-mensuel">
-      <div class="offer-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      </div>
-      <div class="offer-name">Accès à Vie</div>
-      <div class="offer-price-wrap">
-        <div class="price-big"><sup>€</sup>999<sub> unique</sub></div>
-      </div>
-      <div class="price-alt">Accès illimité · Toutes mises à jour à vie</div>
-      <div class="offer-trial">Paiement unique · Accès immédiat</div>
-      <hr class="offer-divider">
-      <ul class="offer-feats">
-        <li><span class="feat-icon on">✓</span>Tout ce qui est dans le mensuel</li>
-        <li><span class="feat-icon on">✓</span>Accès à vie — zéro frais récurrents</li>
-        <li><span class="feat-icon on">✓</span>Toutes futures formations incluses</li>
-        <li><span class="feat-icon on">✓</span>Toutes futures stratégies incluses</li>
-        <li><span class="feat-icon on">✓</span>Accès prioritaire aux nouveaux contenus</li>
-        <li><span class="feat-icon on">✓</span>Statut "Membre Fondateur" permanent</li>
-        <li><span class="feat-icon on">✓</span>Support direct prioritaire</li>
-        <li><span class="feat-icon on">✓</span>Coaching 1:1 disponible (tarif membre)</li>
-      </ul>
-      <a href="https://t.me/yaskaroom" target="_blank" class="offer-btn outline-gold">Choisir l'Accès à Vie</a>
-    </div>
     <!-- MENSUEL -->
     <div class="offer-card featured">
       <div class="offer-ribbon white">⭐ PLUS POPULAIRE</div>
