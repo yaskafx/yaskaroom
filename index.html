@@ -553,6 +553,7 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   .hero-sub{font-size:1rem;}
   .hero p{font-size:.92rem;margin-bottom:2rem;}
   .hero-btns{flex-direction:column;align-items:stretch;gap:.75rem;width:100%;max-width:340px;}
+  .hero-comm-cards{margin-top:.9rem!important;}
   .btn-gold,.btn-outline{width:100%;text-align:center;padding:.95rem 1rem;font-size:.9rem;}
   .hero-badge{font-size:.65rem;padding:.3rem .85rem;}
   .hero-float{display:none;}
@@ -706,23 +707,17 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
     <li><a href="#brokers" style="color:var(--gold);font-weight:600;">Brokers</a></li>
   </ul>
   <!-- Logo center -->
-  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="line-height:1;"><svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Candlestick icon -->
-  <rect x="2" y="14" width="4" height="10" rx="1" fill="#4A90D9"/>
-  <rect x="3.5" y="9" width="1" height="5" fill="#4A90D9"/>
-  <rect x="3.5" y="24" width="1" height="4" fill="#4A90D9"/>
-  <rect x="10" y="8" width="4" height="14" rx="1" fill="white" opacity="0.9"/>
-  <rect x="11.5" y="4" width="1" height="4" fill="white" opacity="0.7"/>
-  <rect x="11.5" y="22" width="1" height="5" fill="white" opacity="0.7"/>
-  <rect x="18" y="11" width="4" height="12" rx="1" fill="#4A90D9"/>
-  <rect x="19.5" y="6" width="1" height="5" fill="#4A90D9"/>
-  <rect x="19.5" y="23" width="1" height="4" fill="#4A90D9"/>
-  <!-- YASKA text -->
-  <text x="30" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="white" letter-spacing="2">YASKA</text>
-  <!-- ROOM badge -->
-  <rect x="100" y="12" width="38" height="15" rx="4" fill="#4A90D9" opacity="0.2"/>
-  <rect x="100" y="12" width="38" height="15" rx="4" stroke="#4A90D9" stroke-width="0.8" opacity="0.6"/>
-  <text x="119" y="23.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#4A90D9" letter-spacing="1.5" text-anchor="middle">ROOM</text>
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="line-height:1;"><svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Y mark geometric -->
+  <path d="M4 3 L13 17 L22 3" stroke="#4A90D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="13" y1="17" x2="13" y2="31" stroke="#4A90D9" stroke-width="3" stroke-linecap="round"/>
+  <!-- Thin accent bar under Y -->
+  <rect x="6" y="33" width="14" height="1.5" rx=".75" fill="#4A90D9" opacity=".5"/>
+  <!-- YASKA wordmark -->
+  <text x="31" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" letter-spacing="2.5" fill="#F0F4FF">YASKA</text>
+  <!-- Thin separator + ROOM small tag -->
+  <rect x="31" y="27" width="84" height="1" rx=".5" fill="rgba(74,144,217,0.3)"/>
+  <text x="32" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="7.5" letter-spacing="5" fill="rgba(74,144,217,0.75)">ROOM</text>
 </svg></div>
   <!-- Desktop: CTA right + mobile: 3-dot menu -->
   <div class="nav-right">
@@ -757,7 +752,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
     <a href="#resultats" class="btn-outline">Voir les preuves</a>
   </div>
   <!-- DISCORD + TELEGRAM CARDS -->
-  <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.8rem;position:relative;z-index:1;width:100%;max-width:620px;">
+  <div class="hero-comm-cards" style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1.8rem;position:relative;z-index:1;width:100%;max-width:620px;">
     <a href="https://discord.gg/gnkAkubPeW" target="_blank" style="display:flex;align-items:center;gap:.9rem;background:rgba(88,101,242,0.12);border:0.5px solid rgba(88,101,242,0.45);border-radius:12px;padding:.9rem 1.4rem;text-decoration:none;flex:1;min-width:220px;max-width:300px;transition:all .25s;" onmouseover="this.style.background='rgba(88,101,242,0.22)';this.style.borderColor='rgba(88,101,242,0.8)'" onmouseout="this.style.background='rgba(88,101,242,0.12)';this.style.borderColor='rgba(88,101,242,0.45)'">
       <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4752c4,#5865F2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/></svg>
@@ -1039,23 +1034,17 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="logo" style="margin-bottom:.8rem;line-height:1;"><svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Candlestick icon -->
-  <rect x="2" y="14" width="4" height="10" rx="1" fill="#4A90D9"/>
-  <rect x="3.5" y="9" width="1" height="5" fill="#4A90D9"/>
-  <rect x="3.5" y="24" width="1" height="4" fill="#4A90D9"/>
-  <rect x="10" y="8" width="4" height="14" rx="1" fill="white" opacity="0.9"/>
-  <rect x="11.5" y="4" width="1" height="4" fill="white" opacity="0.7"/>
-  <rect x="11.5" y="22" width="1" height="5" fill="white" opacity="0.7"/>
-  <rect x="18" y="11" width="4" height="12" rx="1" fill="#4A90D9"/>
-  <rect x="19.5" y="6" width="1" height="5" fill="#4A90D9"/>
-  <rect x="19.5" y="23" width="1" height="4" fill="#4A90D9"/>
-  <!-- YASKA text -->
-  <text x="30" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="white" letter-spacing="2">YASKA</text>
-  <!-- ROOM badge -->
-  <rect x="100" y="12" width="38" height="15" rx="4" fill="#4A90D9" opacity="0.2"/>
-  <rect x="100" y="12" width="38" height="15" rx="4" stroke="#4A90D9" stroke-width="0.8" opacity="0.6"/>
-  <text x="119" y="23.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#4A90D9" letter-spacing="1.5" text-anchor="middle">ROOM</text>
+      <div class="logo" style="margin-bottom:.8rem;line-height:1;"><svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Y mark geometric -->
+  <path d="M4 3 L13 17 L22 3" stroke="#4A90D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="13" y1="17" x2="13" y2="31" stroke="#4A90D9" stroke-width="3" stroke-linecap="round"/>
+  <!-- Thin accent bar under Y -->
+  <rect x="6" y="33" width="14" height="1.5" rx=".75" fill="#4A90D9" opacity=".5"/>
+  <!-- YASKA wordmark -->
+  <text x="31" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" letter-spacing="2.5" fill="#F0F4FF">YASKA</text>
+  <!-- Thin separator + ROOM small tag -->
+  <rect x="31" y="27" width="84" height="1" rx=".5" fill="rgba(74,144,217,0.3)"/>
+  <text x="32" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="7.5" letter-spacing="5" fill="rgba(74,144,217,0.75)">ROOM</text>
 </svg></div>
       <p>Signaux live sur Gold &amp; NQ, formations complètes et communauté privée pour devenir un trader profitable.</p>
       <div class="footer-socials">
@@ -1065,12 +1054,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
         <a class="f-social" href="https://www.tiktok.com/@yaska.fx" target="_blank" title="TikTok">🎵</a>
       </div>
     </div>
-    <div class="footer-col">
-      <h5>Offres</h5>
-      <a href="#offres">Abonnement mensuel — 99€/mois</a>
-      <a href="#offres">Accès à vie — 999€</a>
-      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">PU Prime — Broker affilié</a>
-        </div>
+
     <div class="footer-col">
       <h5>Contenu</h5>
       <a href="#programme">Programme Gold &amp; NQ</a>
@@ -1133,23 +1117,17 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
     <li><a href="#programme">Programme</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="line-height:1;"><svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Candlestick icon -->
-  <rect x="2" y="14" width="4" height="10" rx="1" fill="#4A90D9"/>
-  <rect x="3.5" y="9" width="1" height="5" fill="#4A90D9"/>
-  <rect x="3.5" y="24" width="1" height="4" fill="#4A90D9"/>
-  <rect x="10" y="8" width="4" height="14" rx="1" fill="white" opacity="0.9"/>
-  <rect x="11.5" y="4" width="1" height="4" fill="white" opacity="0.7"/>
-  <rect x="11.5" y="22" width="1" height="5" fill="white" opacity="0.7"/>
-  <rect x="18" y="11" width="4" height="12" rx="1" fill="#4A90D9"/>
-  <rect x="19.5" y="6" width="1" height="5" fill="#4A90D9"/>
-  <rect x="19.5" y="23" width="1" height="4" fill="#4A90D9"/>
-  <!-- YASKA text -->
-  <text x="30" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="white" letter-spacing="2">YASKA</text>
-  <!-- ROOM badge -->
-  <rect x="100" y="12" width="38" height="15" rx="4" fill="#4A90D9" opacity="0.2"/>
-  <rect x="100" y="12" width="38" height="15" rx="4" stroke="#4A90D9" stroke-width="0.8" opacity="0.6"/>
-  <text x="119" y="23.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9" fill="#4A90D9" letter-spacing="1.5" text-anchor="middle">ROOM</text>
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="line-height:1;"><svg width="148" height="34" viewBox="0 0 148 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Y mark geometric -->
+  <path d="M4 3 L13 17 L22 3" stroke="#4A90D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="13" y1="17" x2="13" y2="31" stroke="#4A90D9" stroke-width="3" stroke-linecap="round"/>
+  <!-- Thin accent bar under Y -->
+  <rect x="6" y="33" width="14" height="1.5" rx=".75" fill="#4A90D9" opacity=".5"/>
+  <!-- YASKA wordmark -->
+  <text x="31" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" letter-spacing="2.5" fill="#F0F4FF">YASKA</text>
+  <!-- Thin separator + ROOM small tag -->
+  <rect x="31" y="27" width="84" height="1" rx=".5" fill="rgba(74,144,217,0.3)"/>
+  <text x="32" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="7.5" letter-spacing="5" fill="rgba(74,144,217,0.75)">ROOM</text>
 </svg></div>
   <div class="nav-right">
     <a href="#offres" class="nav-cta">REJOINDRE</a>
