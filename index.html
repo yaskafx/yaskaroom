@@ -1047,29 +1047,12 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-
-
-    <div class="footer-col">
-      <h5>Contenu</h5>
-      <a href="#programme">Programme Gold &amp; NQ</a>
-      <a href="#resultats">Résultats membres</a>
-    </div>
-    <div class="footer-col">
-      <h5>Communauté</h5>
-      <a href="https://discord.gg/gnkAkubPeW" target="_blank">Discord YASKA ROOM</a>
-      <a href="https://t.me/yaskaroom" target="_blank">Telegram gratuit</a>
-      <a href="https://www.instagram.com/yaskafx" target="_blank">Instagram @yaskafx</a>
-      <a href="https://www.tiktok.com/@yaska.fx" target="_blank">TikTok @yaska.fx</a>
-      <a href="#faq">FAQ</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="border-top:none;">
     <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
-
   </div>
 </footer>
-<div class="disclaimer"><p>Les performances passées ne préjugent pas des résultats futurs. Le trading sur les marchés financiers comporte des risques substantiels de perte en capital. Les résultats et témoignages présentés proviennent de membres réels et ne constituent pas une garantie de gains futurs. Ne tradez qu'avec des fonds que vous êtes prêt à perdre intégralement. YASKA ROOM ne fournit pas de conseils en investissement financier au sens réglementaire.</p></div>
+
+
 
 <!-- BROKER MODAL -->
 <div class="modal-overlay" id="brokerModal" onclick="closeBrokerModalOutside(event)">
@@ -1102,26 +1085,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
   </div>
 </div>
 
-<nav>
-  <ul class="nav-links" id="nav-left">
-    <li><a href="#resultats">Résultats</a></li>
-    <li><a href="#offres">Offres</a></li>
-    <li><a href="#programme">Programme</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="line-height:1;">YASKA <em>ROOM</em></div>
-  <div class="nav-right">
-    <a href="#offres" class="nav-cta">REJOINDRE</a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu();return false;">🏠 Accueil</a>
-  <a href="#offres" onclick="closeMenu()">💎 Offres</a>
-  <a href="#programme" onclick="closeMenu()">📚 Programme</a>
-  <a href="#faq" onclick="closeMenu()">❓ FAQ</a>
-  <a href="#offres" class="mm-cta" onclick="closeMenu();">REJOINDRE LA YASKA ROOM</a>
-</div>
+
 
 <script>
 function openMentions(){document.getElementById('mentionsModal').classList.add('open');document.body.style.overflow='hidden';}
