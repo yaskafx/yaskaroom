@@ -86,7 +86,7 @@ nav .nav-right{display:flex;align-items:center;gap:1rem;justify-content:flex-end
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;border:0.5px solid var(--border2);border-radius:20px;padding:.38rem 1.1rem;font-size:.75rem;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2rem;background:rgba(74,144,217,0.06);position:relative;z-index:1;}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.2rem,8.5vw,7.5rem);font-weight:800;line-height:.96;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:1.6rem;max-width:900px;position:relative;z-index:1;text-shadow:0 0 60px rgba(0,0,0,0.8);font-style:normal;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.4rem,9vw,8rem);font-weight:800;line-height:.93;letter-spacing:.01em;text-transform:uppercase;margin-bottom:1.6rem;max-width:900px;position:relative;z-index:1;font-style:italic;}
 .hero h1 em{font-style:normal;color:var(--gold);font-weight:800;}
 .hero-sub{font-size:1.25rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--text);letter-spacing:.04em;margin-bottom:.9rem;position:relative;z-index:1;}
 .hero p{font-size:1rem;color:var(--muted);max-width:540px;line-height:1.82;margin-bottom:2.8rem;font-weight:300;position:relative;z-index:1;}
@@ -460,7 +460,7 @@ section{padding:6rem 5%;}
 
 /* FOOTER */
 footer{background:var(--black);border-top:0.5px solid var(--border);}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding:4rem 5% 3rem;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:3rem 5% 2.5rem;justify-content:flex-end;max-width:700px;margin-left:auto;}
 .footer-brand .logo{margin-bottom:.8rem;}
 .footer-brand p{font-size:.8rem;color:var(--muted);line-height:1.72;max-width:240px;}
 .footer-socials{display:flex;gap:.7rem;margin-top:1.1rem;}
@@ -556,8 +556,12 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   .hero-btns{flex-direction:column;align-items:stretch;gap:.75rem;width:100%;max-width:340px;}
   .hero-comm-cards{margin-top:.9rem!important;flex-wrap:nowrap!important;}
   .hero-comm-cards a{min-width:0!important;flex:1!important;padding:1rem .7rem!important;}
-  #proof-bar{flex-wrap:wrap!important;gap:.5rem!important;padding:1rem 5%!important;}
-  #proof-bar > div{padding:0 1.2rem!important;border-right:none!important;}
+  #proof-bar{flex-wrap:nowrap!important;padding:.9rem 3%!important;gap:0!important;overflow-x:auto;}
+  #proof-bar > div{padding:0 1rem!important;flex:1!important;min-width:0!important;}
+  #proof-bar > div:not(:last-child){border-right:0.5px solid rgba(74,144,217,0.15)!important;}
+  #proof-bar .pb-num{font-size:1.1rem!important;}
+  #proof-bar .pb-icon{width:32px!important;height:32px!important;border-radius:8px!important;}
+  #proof-bar .pb-icon svg{width:16px!important;height:16px!important;}
   .btn-gold,.btn-outline{width:100%;text-align:center;padding:.95rem 1rem;font-size:.9rem;}
   .hero-badge{font-size:.65rem;padding:.3rem .85rem;}
   .hero-float{display:none;}
@@ -739,7 +743,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
 
   <h1>+850.000$<br><em>Funded Trader.</em></h1>
   <div class="hero-sub">Rejoins la YASKA ROOM.</div>
-  <p>Formations complètes, signaux live et accès à une communauté de traders sérieux.</p>
+  <p>Formations complètes, accompagnement 1:1, signaux live et accès à une communauté de traders sérieux.</p>
   <div class="hero-btns">
     <a href="#offres" class="btn-gold">REJOINDRE LA YASKA ROOM</a>
     <a href="#resultats" class="btn-outline">Voir les preuves</a>
@@ -766,49 +770,40 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
 </section>
 
 <!-- PROOF BAR -->
-<div style="background:linear-gradient(90deg,#0d0d0d 0%,#111 50%,#0d0d0d 100%);border-top:0.5px solid rgba(74,144,217,0.15);border-bottom:0.5px solid rgba(74,144,217,0.15);padding:1.4rem 5%;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;overflow:hidden;position:relative;">
+<div style="background:linear-gradient(90deg,#0d0d0d 0%,#111 50%,#0d0d0d 100%);border-top:0.5px solid rgba(74,144,217,0.15);border-bottom:0.5px solid rgba(74,144,217,0.15);padding:1.4rem 5%;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:nowrap;overflow:hidden;position:relative;" id="proof-bar">
   <!-- Glow -->
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(74,144,217,0.04) 0%,transparent 70%);pointer-events:none;"></div>
   <!-- Stat 1 -->
   <div style="display:flex;align-items:center;gap:1rem;padding:0 2.5rem;border-right:0.5px solid rgba(74,144,217,0.15);position:relative;z-index:1;">
-    <div style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+    <div class="pb-icon" style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
     </div>
     <div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">+850 000$</div>
+      <div class="pb-num" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">+850 000$</div>
       <div style="font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem;">Funded en Prop Firm</div>
     </div>
   </div>
   <!-- Stat 2 -->
   <div style="display:flex;align-items:center;gap:1rem;padding:0 2.5rem;border-right:0.5px solid rgba(74,144,217,0.15);position:relative;z-index:1;">
-    <div style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+    <div class="pb-icon" style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
     </div>
     <div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">2 ANS</div>
+      <div class="pb-num" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">2 ANS</div>
       <div style="font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem;">D'expérience active</div>
     </div>
   </div>
   <!-- Stat 3 -->
-  <div style="display:flex;align-items:center;gap:1rem;padding:0 2.5rem;border-right:0.5px solid rgba(74,144,217,0.15);position:relative;z-index:1;">
-    <div style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+  <div style="display:flex;align-items:center;gap:1rem;padding:0 2.5rem;position:relative;z-index:1;">
+    <div class="pb-icon" style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
     </div>
     <div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">+19</div>
+      <div class="pb-num" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">+19</div>
       <div style="font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem;">Membres formés</div>
     </div>
   </div>
-  <!-- Stat 4 -->
-  <div style="display:flex;align-items:center;gap:1rem;padding:0 2.5rem;position:relative;z-index:1;">
-    <div style="width:40px;height:40px;border-radius:10px;background:rgba(74,144,217,0.1);border:0.5px solid rgba(74,144,217,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-    </div>
-    <div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.55rem;color:#F0F4FF;line-height:1;letter-spacing:.02em;">GOLD & NQ</div>
-      <div style="font-size:.7rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem;">Marchés exclusifs</div>
-    </div>
-  </div>
+
 </div>
 
 <!-- RÉSULTATS -->
@@ -945,8 +940,8 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
       </ul>
       <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:auto;">
         <p style="font-size:.72rem;color:var(--muted);text-align:center;letter-spacing:.04em;text-transform:uppercase;font-weight:600;">Choisis ton broker :</p>
-        <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:rgba(74,144,217,0.08);border:0.5px solid var(--border2);border-radius:8px;padding:.75rem 1rem;text-decoration:none;">
-          <div style="display:flex;align-items:center;gap:.6rem;"><span style="font-size:1rem;">🏦</span><div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;color:var(--text);">PU Prime</div><div style="font-size:.68rem;color:var(--muted);">Forex · Gold · NQ</div></div></div>
+        <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:linear-gradient(135deg,#1E5C99,#4A90D9);border:none;border-radius:8px;padding:.85rem 1.1rem;text-decoration:none;box-shadow:0 4px 18px rgba(74,144,217,0.35);">
+          <div style="display:flex;align-items:center;gap:.6rem;"><span style="font-size:1rem;">🏦</span><div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;color:var(--text);">PU Prime</div><div style="font-size:.68rem;color:rgba(255,255,255,.7);">Forex · Gold · NQ — Rejoindre</div></div></div>
           <span style="color:var(--gold);font-weight:700;font-size:.8rem;">→</span>
         </a>
         </div>
@@ -965,24 +960,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
   </div>
 </section>
 
-<!-- YASKA ROOM VIP -->
-<section class="vip-room" id="vip" style="padding:6rem 5%;">
-  <div>
-    <div class="s-tag">La Room privée</div>
-    <h2 class="s-title">La <em>YASKA ROOM VIP</em></h2>
-    <p style="color:var(--muted);font-size:.93rem;line-height:1.85;max-width:500px;">Un espace réservé aux traders sérieux. Signaux premium sur le Gold et le NQ, analyses avant session, accès direct à YASKA.</p>
-    <div class="vip-features">
-      <div class="vip-feat"><div class="vip-feat-icon">📡</div><div><h4>Signaux Gold &amp; NQ en temps réel</h4><p>Entrées, TP et SL précis dès que le setup se forme.</p></div></div>
-      <div class="vip-feat"><div class="vip-feat-icon">🎙️</div><div><h4>Calls &amp; analyses live</h4><p>Sessions vocales sur Discord où YASKA analyse le marché avant et pendant les sessions.</p></div></div>
-      <div class="vip-feat"><div class="vip-feat-icon">🧠</div><div><h4>Accès direct à YASKA</h4><p>Pose tes questions directement dans le salon dédié. Réponses rapides, sans intermédiaire.</p></div></div>
-      <div class="vip-feat"><div class="vip-feat-icon">📊</div><div><h4>Débriefs &amp; journal de trades</h4><p>Analyse collective des trades de la semaine avec les erreurs identifiées.</p></div></div>
-    </div>
-    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="#offres" class="btn-vip">👑 ACCÉDER À LA ROOM VIP</a>
-      <a href="https://t.me/yaskaroom" target="_blank" class="btn-outline">Telegram gratuit ✈️</a>
-    </div>
-  </div>
-</section>
+
 
 <!-- PROGRAMME -->
 <section class="program" id="programme">
@@ -1070,10 +1048,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo" style="margin-bottom:.8rem;line-height:1;">YASKA <em>ROOM</em></div>
-      <p>Signaux live Gold &amp; NQ · Formations · Communauté privée</p>
-    </div>
+
 
     <div class="footer-col">
       <h5>Contenu</h5>
@@ -1091,10 +1066,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
   </div>
   <div class="footer-bottom">
     <p>© 2025 YASKA ROOM. Tous droits réservés.</p>
-    <div class="footer-links">
-      <a href="#" onclick="openMentions();return false;">Mentions légales</a>
-      <a href="#" onclick="openMentions();return false;">CGV</a>
-    </div>
+
   </div>
 </footer>
 <div class="disclaimer"><p>Les performances passées ne préjugent pas des résultats futurs. Le trading sur les marchés financiers comporte des risques substantiels de perte en capital. Les résultats et témoignages présentés proviennent de membres réels et ne constituent pas une garantie de gains futurs. Ne tradez qu'avec des fonds que vous êtes prêt à perdre intégralement. YASKA ROOM ne fournit pas de conseils en investissement financier au sens réglementaire.</p></div>
