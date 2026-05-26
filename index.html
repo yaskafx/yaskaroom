@@ -554,8 +554,8 @@ footer{background:var(--black);border-top:0.5px solid var(--border);}
   .hero-sub{font-size:1rem;}
   .hero p{font-size:.92rem;margin-bottom:2rem;}
   .hero-btns{flex-direction:column;align-items:stretch;gap:.75rem;width:100%;max-width:340px;}
-  .hero-comm-cards{margin-top:.9rem!important;flex-wrap:wrap!important;}
-  .hero-comm-cards a{min-width:0!important;flex:1!important;padding:1rem .7rem!important;}
+  .hero-comm-cards{margin-top:.9rem!important;flex-wrap:wrap!important;gap:.6rem!important;}
+  .hero-comm-cards a{min-width:calc(50% - .3rem)!important;max-width:calc(50% - .3rem)!important;flex:0 0 calc(50% - .3rem)!important;padding:.9rem .6rem!important;border-radius:14px!important;}
   #proof-bar > div{padding:.4rem 1rem!important;}
   .btn-gold,.btn-outline{width:100%;text-align:center;padding:.95rem 1rem;font-size:.9rem;}
   .hero-badge{font-size:.65rem;padding:.3rem .85rem;}
@@ -918,7 +918,7 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
     <h2 class="s-title">Choisis <em>ton accès</em></h2>
     <p class="s-sub">Trois façons de rejoindre la YASKA ROOM. Adapté à ton budget et tes objectifs.</p>
   </div>
-  <div class="offers-wrap" style="grid-template-columns:1fr 1fr;max-width:900px;margin:1rem auto 0;gap:1.2rem;">
+  <div class="offers-wrap" style="grid-template-columns:1fr;max-width:520px;margin:1rem auto 0;gap:1.2rem;">
     <!-- ACCÈS UNIQUE 199€ -->
     <div class="offer-card featured" style="transform:none;box-shadow:0 30px 80px rgba(74,144,217,.25);">
       <div class="offer-ribbon white" style="background:#fff;color:#4A90D9;">⚡ ACCÈS DIRECT</div>
@@ -940,46 +940,6 @@ r(--gold);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.
         <li style="color:#000;"><span class="feat-icon on" style="background:rgba(0,0,0,.15);color:#000;">✓</span>Accès à vie — zéro frais récurrents</li>
       </ul>
       <a href="https://t.me/yaskaroom" target="_blank" class="offer-btn dark" style="display:block;text-align:center;margin-top:auto;">S'abonner — 99€/mois</a>
-    </div>
-    <!-- BROKER AFFILIÉ -->
-    <div class="offer-card vip">
-      <div class="offer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4A90D9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-      <div class="offer-name">Dépôt Broker Affilié</div>
-      <div class="offer-tagline">Dépose chez l'un de nos brokers partenaires et accède immédiatement à la YASKA ROOM VIP. Sans abonnement supplémentaire.</div>
-      <div style="margin-bottom:1.2rem;"><div class="price-big" style="font-size:1.55rem;color:var(--gold);line-height:1.3;">Dépôt<br>Broker Affilié</div><div class="price-alt">Dépôt min. requis · <strong>Accès VIP offert</strong></div></div>
-      <div class="offer-divider"></div>
-      <ul class="offer-feats">
-        <li><span class="feat-icon on">✓</span>Accès YASKA ROOM VIP complet</li>
-        <li><span class="feat-icon on">✓</span>Formations Gold &amp; NQ complètes</li>
-        <li><span class="feat-icon on">✓</span>Accompagnement &amp; suivi inclus</li>
-        <li><span class="feat-icon on">✓</span>Signaux premium avant tout le monde</li>
-        <li><span class="feat-icon on">✓</span>Accès direct à YASKA (DM illimité)</li>
-        <li><span class="feat-icon on">✓</span>Salon Discord VIP ultra-privé</li>
-        <li><span class="feat-icon on">✓</span>Calls privés membres VIP</li>
-        <li><span class="feat-icon on">✓</span>Webinaires exclusifs mensuels</li>
-      </ul>
-      <div style="display:flex;flex-direction:column;gap:.7rem;margin-top:auto;">
-        <p style="font-size:.72rem;color:var(--muted);text-align:center;letter-spacing:.04em;text-transform:uppercase;font-weight:600;">Choisis ton broker :</p>
-        <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:linear-gradient(135deg,#1E5C99,#4A90D9);border:none;border-radius:8px;padding:.85rem 1.1rem;text-decoration:none;box-shadow:0 4px 18px rgba(74,144,217,0.35);">
-          <div style="display:flex;align-items:center;gap:.6rem;"><span style="font-size:1rem;">🏦</span><div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;color:#fff;">PU Prime</div><div style="font-size:.68rem;color:rgba(255,255,255,.7);">Forex · Gold · NQ — Rejoindre</div></div></div>
-          <span style="color:#fff;font-weight:700;font-size:.8rem;">→</span>
-        </a>
-        <a href="https://vigco.co/la-com-inv/14EEhSsp" target="_blank" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;background:linear-gradient(135deg,#7c2d12,#dc2626);border:none;border-radius:8px;padding:.85rem 1.1rem;text-decoration:none;box-shadow:0 4px 18px rgba(220,38,38,0.3);">
-          <div style="display:flex;align-items:center;gap:.6rem;"><span style="font-size:1rem;">📈</span><div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.82rem;color:#fff;">Vantage Markets</div><div style="font-size:.68rem;color:rgba(255,255,255,.7);">Broker réglementé — Rejoindre</div></div></div>
-          <span style="color:#fff;font-weight:700;font-size:.8rem;">→</span>
-        </a>
-        </div>
-    </div>
-  </div>
-  <div class="broker-note">
-    <div class="broker-icon">🏦</div>
-    <div>
-      <h4>Comment fonctionne l'accès VIP via broker affilié ?</h4>
-      <p>Dépose chez l'un de nos brokers partenaires via notre lien affilié. Accès à la YASKA ROOM VIP offert immédiatement après dépôt — sans abonnement mensuel supplémentaire.<br><br>
-      <strong style="color:var(--gold);">Choix du broker :</strong>&nbsp;
-      <a href="https://fr.puprime.partners/forex-trading-account/?affid=MjMyMTU4ODI=" target="_blank">PU Prime →</a>&nbsp;ou&nbsp;
-        &nbsp;ou&nbsp;
-        </p>
     </div>
   </div>
 </section>
