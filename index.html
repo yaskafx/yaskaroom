@@ -144,6 +144,7 @@ body{background:#080B12;color:#F0F4FF;font-family:'Inter',sans-serif;min-height:
         </div>
       </div>
     </div>
+    <button class="sp-btn" onclick="enterSite()">Continuer &rarr;</button>
   </div>
 </div>
 <!-- ===== /SPLASH ===== -->
@@ -266,9 +267,18 @@ body{background:#080B12;color:#F0F4FF;font-family:'Inter',sans-serif;min-height:
 
 </div>
 <script>
+function enterSite(){
+  try{sessionStorage.setItem('yr_entered','1');}catch(e){}
+  document.getElementById('splash').classList.add('hide');
+}
 (function(){
-  document.getElementById('sp-arrow').classList.add('show');
-  document.querySelector('.sp-arrow').style.display='block';
+  var arrow=document.getElementById('sp-arrow');
+  if(arrow){arrow.classList.add('show');arrow.style.display='block';}
+  try{
+    if(sessionStorage.getItem('yr_entered')==='1'){
+      document.getElementById('splash').classList.add('hide');
+    }
+  }catch(e){}
 })();
 </script>
 </body>
