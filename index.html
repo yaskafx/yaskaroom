@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07100B">
 <title>YASKA ROOM — Accompagnement trading & prop firms</title>
 <meta name="description" content="La YASKA ROOM — accompagnement en 1:1 et formation complète, avec accès à vie, pour passer funded sur les prop firms.">
 
@@ -41,7 +42,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{
   background:linear-gradient(180deg,var(--bg),var(--bg-2) 65%) fixed;
   color:var(--text);
@@ -203,18 +204,29 @@ section{padding:clamp(28px,4vw,48px) 0}
 /* ───────── OFFRE ───────── */
 .offer-wrap{max-width:620px;margin:34px auto 0}
 .offer{
-  border:1px solid var(--line-strong);border-radius:22px;background:var(--surface);
-  padding:38px 36px;position:relative;overflow:hidden;
-  box-shadow:0 30px 80px -30px rgba(47,163,95,.22);
+  border:1px solid var(--line-strong);border-radius:24px;
+  background:
+    radial-gradient(130% 90% at 50% -12%, rgba(53,208,127,.14), transparent 58%),
+    linear-gradient(180deg, var(--surface), #0B180F);
+  padding:44px 38px 36px;position:relative;overflow:hidden;
+  box-shadow:0 44px 100px -34px rgba(53,208,127,.30), 0 2px 0 rgba(255,255,255,.04) inset;
 }
-.offer::before{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;
-  background:linear-gradient(160deg,rgba(69,192,121,.5),transparent 45%);
+.offer::before{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;
+  background:linear-gradient(155deg,rgba(90,232,156,.65),rgba(53,208,127,.15) 40%,transparent 62%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.offer::after{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:60%;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.8;pointer-events:none}
 .offer-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .pill{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:100px;border:1px solid var(--line-strong);color:var(--gold);display:inline-flex;align-items:center;gap:7px}
 .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
-.offer h3{font-size:1.9rem;margin:0}
+.offer h3{font-size:clamp(2.1rem,5.5vw,2.9rem);margin:0 0 2px;letter-spacing:.06em;line-height:1.05;color:var(--gold-bright);text-shadow:0 0 44px rgba(53,208,127,.28)}
+@supports((-webkit-background-clip:text) or (background-clip:text)){
+  .offer h3{background:linear-gradient(105deg,#EAF4EC,var(--gold-bright) 55%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent}}
+.offer h3::after{content:"";display:block;width:56px;height:3px;margin:16px auto 4px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);box-shadow:0 0 16px rgba(53,208,127,.5)}
 .offer .desc{color:var(--muted);margin-top:12px}
 .feat{list-style:none;margin:26px 0;display:grid;gap:13px}
 .feat li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem}
@@ -236,18 +248,25 @@ section{padding:clamp(28px,4vw,48px) 0}
 .pillar p{font-size:.88rem;color:var(--muted);margin:0}
 
 /* ───────── QUALIFICATION ───────── */
-.quali{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
-.quali-col{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);padding:30px 28px}
-.quali-col.no{background:var(--bg-2)}
-.quali-col h4{font-family:'Inter';font-size:1.1rem;font-weight:600;display:flex;align-items:center;gap:10px;margin:0 0 20px}
-.quali-col h4 svg{width:20px;height:20px}
-.quali-col.yes h4 svg{color:var(--gold)}
-.quali-col.no h4 svg{color:var(--muted-dim)}
-.quali-col ul{list-style:none;display:grid;gap:14px}
-.quali-col li{display:flex;gap:11px;align-items:flex-start;font-size:.94rem;color:var(--muted)}
-.quali-col li svg{width:16px;height:16px;flex:none;margin-top:4px}
-.quali-col.yes li svg{color:var(--gold)}
-.quali-col.no li svg{color:var(--muted-dim)}
+.quali{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.quali-col{border:1px solid var(--line);border-radius:18px;padding:26px 22px;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+.quali-col:hover{transform:translateY(-3px)}
+.quali-col.yes{background:radial-gradient(130% 90% at 50% -10%,rgba(53,208,127,.13),transparent 60%),var(--surface);border-color:var(--line-strong)}
+.quali-col.yes:hover{border-color:var(--gold)}
+.quali-col.no{background:linear-gradient(180deg,var(--bg-2),#0A140E)}
+.quali-col h4{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px;margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.quali-col h4 svg{width:42px;height:42px;padding:11px;border-radius:13px;box-sizing:border-box;flex:none}
+.quali-col.yes h4{color:var(--gold-bright)}
+.quali-col.no h4{color:var(--muted)}
+.quali-col.yes h4 svg{color:#06210F;background:linear-gradient(140deg,var(--gold-bright),var(--gold));box-shadow:0 8px 22px rgba(53,208,127,.30)}
+.quali-col.no h4 svg{color:var(--muted);background:var(--surface-2)}
+.quali-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.quali-col li{font-family:'Inter',sans-serif;font-size:.9rem;line-height:1.4;font-weight:450;text-align:center;padding:10px 12px;border-radius:10px;transition:background .2s ease}
+.quali-col li svg{display:none}
+.quali-col.yes li{color:var(--text);background:rgba(53,208,127,.05)}
+.quali-col.yes li:hover{background:rgba(53,208,127,.10)}
+.quali-col.no li{color:var(--muted);background:rgba(255,255,255,.02)}
+@media(max-width:520px){.quali{gap:10px}.quali-col{padding:18px 11px;border-radius:15px}.quali-col h4{font-size:.66rem;gap:9px;padding-bottom:12px;margin-bottom:12px}.quali-col h4 svg{width:36px;height:36px;padding:9px}.quali-col ul{gap:7px}.quali-col li{font-size:.78rem;padding:8px 8px;line-height:1.32}}
 
 /* ───────── COMMUNAUTÉ ───────── */
 .community{
@@ -320,7 +339,7 @@ footer{padding:52px 0 60px}
   .menu-btn{display:block}
   .stats{grid-template-columns:1fr}
   .pillars{grid-template-columns:1fr 1fr}
-  .quali{grid-template-columns:1fr}
+  .quali{grid-template-columns:1fr 1fr;gap:12px}
 }
 @media(max-width:520px){
   .pillars{grid-template-columns:1fr}
@@ -418,18 +437,12 @@ footer{padding:52px 0 60px}
     <div class="section-head reveal">
       <span class="eyebrow">Formation</span>
       <h2 class="section-title">On avance ensemble.</h2>
-      <p class="section-lead">Une seule offre, complète : la formation de la YASKA ROOM et l'accompagnement en 1:1, avec accès à vie.</p>
+      <p class="section-lead">La formation complète et mon accompagnement en 1:1, avec accès à vie, pour construire ton plan, passer funded et progresser dans un vrai cadre.</p>
     </div>
 
     <div class="offer-wrap reveal">
       <div class="offer">
-        <div class="offer-badges">
-          <span class="pill"><span class="dot"></span>Accompagnement 1:1</span>
-          <span class="pill"><span class="dot"></span>Accès à vie</span>
-          <span class="pill">Places limitées</span>
-        </div>
-        <h3>YASKA ROOM</h3>
-        <p class="desc">La formation complète et mon accompagnement en 1:1, avec accès à vie, pour construire ton plan, passer funded et progresser dans un vrai cadre.</p>
+        <h3 style="text-align:center">YASKA ROOM</h3>
         <ul class="feat">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Accompagnement 1:1 avec suivi personnalisé</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Formation complète : stratégie, psychologie, méthode prop firm…</li>
@@ -450,8 +463,8 @@ footer{padding:52px 0 60px}
 <!-- ══════════ QUALIFICATION ══════════ -->
 <section>
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Qualification</span>
+    <div class="section-head reveal" style="text-align:center">
+      <span class="eyebrow" style="justify-content:center">Qualification</span>
       <h2 class="section-title">On est clairs dès le départ.</h2>
     </div>
     <div class="quali reveal">
@@ -498,16 +511,9 @@ footer{padding:52px 0 60px}
       <div class="foot-links foot-primary" id="footPrimary">
         <a data-link="discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18 18 0 0 1 4.3 1.5c-2.3-1.2-4.9-1.7-7.5-1.7s-5.2.5-7.5 1.7A18 18 0 0 1 8.8 3.5L8.6 3A19.8 19.8 0 0 0 3.7 4.4C.9 8.5.2 12.6.5 16.6a20 20 0 0 0 6 3l.8-1.3c-.7-.3-1.4-.6-2-1l.5-.4a14.3 14.3 0 0 0 12.3 0l.5.4c-.6.4-1.3.7-2 1l.8 1.3a20 20 0 0 0 6-3c.4-4.7-.6-8.8-3.4-12.2ZM8.5 14.2c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8.9 1.7 2c0 1.1-.8 2-1.7 2Zm7 0c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8.9 1.7 2c0 1.1-.8 2-1.7 2Z"/></svg>Discord</a>
         <a data-link="telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13.6l-4.9-1.5c-1-.3-1-1 .2-1.5l19.2-7.4c.9-.3 1.6.2 1.3 1.6Z"/></svg>Telegram</a>
-      </div>
-    </div>
-    <div class="foot-top" style="margin-top:18px">
-      <span></span>
-      <div class="foot-links">
-        <a data-link="instagram">Instagram</a>
-        <a data-link="youtube">YouTube</a>
-        <a data-link="tiktok">TikTok</a>
-        <a href="#offre">Formation</a>
-        <a data-link="mentions">Mentions légales</a>
+        <a data-link="youtube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>YouTube</a>
+        <a data-link="tiktok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12V9.4a5.67 5.67 0 0 0-.77-.05 5.68 5.68 0 1 0 5.68 5.68V8.68a7.35 7.35 0 0 0 4.29 1.38V6.97a4.28 4.28 0 0 1-3.23-1.15z"/></svg>TikTok</a>
+        <a data-link="instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.17.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.17 1.04.36 2.19.41 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.17-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.41-2.19-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.42-.17-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9a3.54 3.54 0 1 1 0-7.08 3.54 3.54 0 0 1 0 7.08zm5.68-9.19a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0z"/></svg>Instagram</a>
       </div>
     </div>
     <div class="footer-line"></div>
@@ -526,11 +532,11 @@ const CONFIG = {
   /* ── 1. TES LIENS ──
      Remplace les "#" par tes vraies URLs. */
   liens: {
-    discord:  "#",   // ex: "https://discord.gg/tonlien"
-    telegram: "#",   // ex: "https://t.me/tonlien"
+    discord:  "https://discord.gg/ykGcq6msCE",
+    telegram: "https://t.me/+lGs6fWmi5a82ZGU0",
     instagram:"https://instagram.com/yaska.fx",
     tiktok:   "https://tiktok.com/@yaskafx",
-    youtube:  "#",   // ex: "https://youtube.com/@yaska"
+    youtube:  "https://www.youtube.com/@YASKAFX",
     mentions: "#"
   },
 
