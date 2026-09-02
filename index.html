@@ -121,6 +121,8 @@ header.nav{
 .btn-dc:hover{filter:brightness(1.06)}
 .btn-tg{background:var(--surface-2);border-color:var(--line-strong);color:var(--text)}
 .btn-tg:hover{border-color:var(--gold);background:var(--surface)}
+.btn-call{background:transparent;border-color:var(--gold);color:var(--gold-bright)}
+.btn-call:hover{background:var(--gold);color:#06210F}
 .btn-lg{padding:15px 26px;font-size:1rem}
 .btn-block{width:100%}
 
@@ -380,6 +382,7 @@ footer{padding:52px 0 60px}
     <div class="hero-cta">
       <a class="btn btn-dc btn-lg" data-link="discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18 18 0 0 1 4.3 1.5c-2.3-1.2-4.9-1.7-7.5-1.7s-5.2.5-7.5 1.7A18 18 0 0 1 8.8 3.5L8.6 3A19.8 19.8 0 0 0 3.7 4.4C.9 8.5.2 12.6.5 16.6a20 20 0 0 0 6 3l.8-1.3c-.7-.3-1.4-.6-2-1l.5-.4a14.3 14.3 0 0 0 12.3 0l.5.4c-.6.4-1.3.7-2 1l.8 1.3a20 20 0 0 0 6-3c.4-4.7-.6-8.8-3.4-12.2ZM8.5 14.2c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8.9 1.7 2c0 1.1-.8 2-1.7 2Zm7 0c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8.9 1.7 2c0 1.1-.8 2-1.7 2Z"/></svg>Rejoindre le Discord</a>
       <a class="btn btn-tg btn-lg" data-link="telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13.6l-4.9-1.5c-1-.3-1-1 .2-1.5l19.2-7.4c.9-.3 1.6.2 1.3 1.6Z"/></svg>Rejoindre le Telegram</a>
+      <a class="btn btn-call btn-lg" data-link="call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>Réserver un appel</a>
     </div>
     <a class="hero-sub-link" href="#offre">Découvrir la formation →</a>
     <p class="hero-note">Candidature libre • Le trading comporte un risque de perte. Aucun résultat garanti.</p>
@@ -461,7 +464,7 @@ footer{padding:52px 0 60px}
           <span class="price-life">accès à vie</span>
         </div>
         <p class="price-sub">Paiement unique — aucun abonnement</p>
-        <a class="btn btn-gold btn-lg btn-block" data-link="discord">Postuler maintenant</a>
+        <a class="btn btn-gold btn-lg btn-block" data-link="call">Postuler maintenant</a>
         <p class="offer-foot">Paiement sécurisé • Candidature validée avant l'accès</p>
       </div>
     </div>
@@ -542,6 +545,7 @@ const CONFIG = {
   liens: {
     discord:  "https://discord.gg/ykGcq6msCE",
     telegram: "https://t.me/+lGs6fWmi5a82ZGU0",
+    call:     "https://app.iclosed.io/e/yaskafx/appel-gratuit",
     instagram:"https://www.instagram.com/yaskafx?igsi=OXFtb213dDI1cHI1&utm_source=qr",
     tiktok:   "https://www.tiktok.com/@yaska.fx?_r=1&_t=ZG-99Il6U3wZnN",
     youtube:  "https://youtube.com/@yaskafx?si=Ph9bkO12G4xcRtCl",
