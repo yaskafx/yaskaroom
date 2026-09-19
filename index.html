@@ -128,6 +128,30 @@ body{
 .offer-cta{display:block;margin-top:1.2rem;text-align:center;background:linear-gradient(135deg,#5AE89C,#35D07F);color:#06210F;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;padding:.85rem;border-radius:11px;text-decoration:none;position:relative;box-shadow:0 8px 24px rgba(53,208,127,.3);transition:.18s;}
 .offer-cta:hover{filter:brightness(1.07);transform:translateY(-1px);}
 
+/* GARANTIE — carte bleutée, mise en avant */
+.guarantee{
+  background:linear-gradient(160deg,rgba(56,140,255,.16),rgba(14,22,40,.6) 60%);
+  border:1px solid rgba(90,160,255,.4);border-radius:18px;
+  padding:1.4rem 1.3rem 1.3rem;margin:0 0 .3rem;position:relative;overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+  text-align:center;
+}
+.guarantee::before{content:'';position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 0%,rgba(70,150,255,.18),transparent 70%);pointer-events:none;}
+.guarantee-badge{
+  display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  color:#06162E;background:linear-gradient(135deg,#7CC0FF,#3B8CFF);padding:.28rem .65rem;border-radius:100px;
+  margin-bottom:.65rem;position:relative;
+}
+.guarantee-icon{width:48px;height:48px;border-radius:13px;margin:0 auto .7rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3B8CFF,#1E5FCC);box-shadow:0 4px 16px rgba(59,140,255,.45);position:relative;z-index:1;}
+.guarantee-icon svg{width:24px;height:24px;stroke:#fff;}
+.guarantee-title{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em;color:#EAF3FF;position:relative;line-height:1.3;}
+.guarantee-feat{list-style:none;margin:1.05rem 0;display:flex;flex-direction:column;gap:.55rem;position:relative;align-items:center;}
+.guarantee-feat li{font-size:.85rem;color:rgba(220,235,255,.85);display:flex;gap:.45rem;align-items:center;justify-content:center;line-height:1.4;text-align:center;}
+.guarantee-feat li svg{width:15px;height:15px;flex-shrink:0;color:#7CC0FF;}
+.guarantee-sub{font-size:.8rem;color:rgba(220,235,255,.68);margin-top:.4rem;line-height:1.5;position:relative;}
+.guarantee-cta{display:block;margin-top:1.1rem;text-align:center;background:linear-gradient(135deg,#7CC0FF,#3B8CFF);color:#06162E;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.05em;text-transform:uppercase;padding:.85rem;border-radius:11px;text-decoration:none;position:relative;box-shadow:0 8px 24px rgba(59,140,255,.35);transition:.18s;}
+.guarantee-cta:hover{filter:brightness(1.07);transform:translateY(-1px);}
+
 /* DIVIDER */
 .divider{display:flex;align-items:center;gap:.7rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,255,244,.32);padding:.9rem 0 .2rem;}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(90,214,148,.16);}
@@ -193,10 +217,6 @@ body{
       <div class="link-icon"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13.6l-4.9-1.5c-1-.3-1-1 .2-1.5l19.2-7.4c.9-.3 1.6.2 1.3 1.6Z"/></svg></div>
       <div class="link-label">Telegram</div>
     </a>
-    <a class="link-btn link-ig" data-link="instagram">
-      <div class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.17.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.17 1.04.36 2.19.41 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.17-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.41-2.19-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.42-.17-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9a3.54 3.54 0 1 1 0-7.08 3.54 3.54 0 0 1 0 7.08zm5.68-9.19a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0z"/></svg></div>
-      <div class="link-label">Instagram</div>
-    </a>
   </div>
 
   <a class="call-btn" data-link="call">
@@ -206,6 +226,7 @@ body{
 
   <div class="divider">Aussi sur</div>
   <div class="social-row">
+    <a data-link="instagram" class="link-ig"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.17.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.17 1.04.36 2.19.41 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.17-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.41-2.19-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.42-.17-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9a3.54 3.54 0 1 1 0-7.08 3.54 3.54 0 0 1 0 7.08zm5.68-9.19a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0z"/></svg></a>
     <a data-link="tiktok" class="card-tt"><svg viewBox="0 0 24 24"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12V9.4a5.67 5.67 0 0 0-.77-.05 5.68 5.68 0 1 0 5.68 5.68V8.68a7.35 7.35 0 0 0 4.29 1.38V6.97a4.28 4.28 0 0 1-3.23-1.15z"/></svg></a>
     <a data-link="youtube" class="card-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
   </div>
@@ -264,7 +285,7 @@ body{
 
   <div class="offer">
     <span class="offer-badge">Offre limitée</span>
-    <div class="offer-title">Formation + accompagnement</div>
+    <div class="offer-title">Accompagnement 1:1</div>
     <ul class="offer-feat">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Accompagnement 1:1 personnalisé</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Formation complète : ma stratégie</li>
@@ -277,6 +298,18 @@ body{
     </div>
     <p class="price-sub">Accès à vie · paiement en 1 ou 2 fois</p>
     <a class="offer-cta" data-link="telegram">Postuler maintenant</a>
+  </div>
+
+  <div class="guarantee">
+    <span class="guarantee-badge">Garantie</span>
+    <div class="guarantee-title">Validation Prop Firm</div>
+    <ul class="guarantee-feat">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Satisfait ou remboursé</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>50k / 100k / 200k éligibles</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Via Smart Trader Funds</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Durée moyenne : 1 semaine</li>
+    </ul>
+    <a class="guarantee-cta" data-link="telegram">Postuler maintenant</a>
   </div>
 
   <p class="legal">Le trading comporte un risque de perte en capital. Contenus à but éducatif, ne constituent pas un conseil en investissement.</p>
