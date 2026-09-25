@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07100B">
 <title>YASKA ROOM</title>
-<meta name="description" content="YASKA ROOM — accompagnement trading & prop firms. 300€, accès à vie.">
+<meta name="description" content="YASKA ROOM — accompagnement trading & prop firms. 499€, accès à vie.">
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
@@ -53,7 +53,8 @@ body{
 }
 
 /* LINK ROW — Discord / Telegram / Instagram */
-.link-row{display:flex;gap:.65rem;}
+.link-row{display:flex;flex-wrap:wrap;gap:.65rem;}
+.link-row .link-btn{flex:1 1 calc(33.333% - .45rem);min-width:100px;}
 .link-btn{
   flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;
   padding:1.1rem .4rem;border-radius:16px;text-decoration:none;border:1px solid;position:relative;overflow:hidden;
@@ -80,6 +81,16 @@ body{
 .link-ig::before{background:radial-gradient(120% 100% at 50% 0%,rgba(225,48,108,.22),transparent 70%);}
 .link-ig:hover{border-color:rgba(225,48,108,.75);box-shadow:0 12px 30px rgba(225,48,108,.2);}
 .link-ig .link-icon{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);box-shadow:0 4px 14px rgba(220,39,67,.4);}
+
+.link-tiktok{background:rgba(254,44,85,.06);border-color:rgba(254,44,85,.25);}
+.link-tiktok::before{background:radial-gradient(120% 100% at 50% 0%,rgba(254,44,85,.18),transparent 70%);}
+.link-tiktok:hover{border-color:rgba(254,44,85,.7);box-shadow:0 12px 30px rgba(254,44,85,.18);}
+.link-tiktok .link-icon{background:#000;border:1px solid rgba(254,44,85,.35);box-shadow:0 4px 14px rgba(254,44,85,.25);}
+
+.link-youtube{background:rgba(255,0,0,.06);border-color:rgba(255,0,0,.25);}
+.link-youtube::before{background:radial-gradient(120% 100% at 50% 0%,rgba(255,0,0,.18),transparent 70%);}
+.link-youtube:hover{border-color:rgba(255,0,0,.7);box-shadow:0 12px 30px rgba(255,0,0,.18);}
+.link-youtube .link-icon{background:linear-gradient(135deg,#cc0000,#ff0000);box-shadow:0 4px 14px rgba(255,0,0,.3);}
 
 /* CALL — bouton secondaire fin */
 .call-btn{
@@ -222,19 +233,24 @@ body{
       <div class="link-icon"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.2 13.6l-4.9-1.5c-1-.3-1-1 .2-1.5l19.2-7.4c.9-.3 1.6.2 1.3 1.6Z"/></svg></div>
       <div class="link-label">Telegram</div>
     </a>
+    <a class="link-btn link-ig" data-link="instagram">
+      <div class="link-icon"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.17.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.17 1.04.36 2.19.41 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.17-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.41-2.19-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.42-.17-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9a3.54 3.54 0 1 1 0-7.08 3.54 3.54 0 0 1 0 7.08zm5.68-9.19a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0z"/></svg></div>
+      <div class="link-label">Instagram</div>
+    </a>
+    <a class="link-btn link-tiktok" data-link="tiktok">
+      <div class="link-icon"><svg viewBox="0 0 24 24"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12V9.4a5.67 5.67 0 0 0-.77-.05 5.68 5.68 0 1 0 5.68 5.68V8.68a7.35 7.35 0 0 0 4.29 1.38V6.97a4.28 4.28 0 0 1-3.23-1.15z"/></svg></div>
+      <div class="link-label">TikTok</div>
+    </a>
+    <a class="link-btn link-youtube" data-link="youtube">
+      <div class="link-icon"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></div>
+      <div class="link-label">YouTube</div>
+    </a>
   </div>
 
   <a class="call-btn" data-link="call">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
     <span>Réserver un appel gratuit</span>
   </a>
-
-  <div class="divider">Aussi sur</div>
-  <div class="social-row">
-    <a data-link="instagram" class="link-ig"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.17.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.17 1.04.36 2.19.41 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.17-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.41-2.19-.21-.55-.47-.94-.88-1.35-.41-.41-.8-.67-1.35-.88-.42-.17-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 0 0 10.92 5.46 5.46 0 0 0 0-10.92zm0 9a3.54 3.54 0 1 1 0-7.08 3.54 3.54 0 0 1 0 7.08zm5.68-9.19a1.27 1.27 0 1 1-2.54 0 1.27 1.27 0 0 1 2.54 0z"/></svg></a>
-    <a data-link="tiktok" class="card-tt"><svg viewBox="0 0 24 24"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12V9.4a5.67 5.67 0 0 0-.77-.05 5.68 5.68 0 1 0 5.68 5.68V8.68a7.35 7.35 0 0 0 4.29 1.38V6.97a4.28 4.28 0 0 1-3.23-1.15z"/></svg></a>
-    <a data-link="youtube" class="card-yt"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
-  </div>
 
   <div class="results-title">
     <div class="eyebrow">Preuves</div>
@@ -297,7 +313,7 @@ body{
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Accès à vie & mises à jour</li>
     </ul>
     <div class="price-row">
-      <span class="price-now">300€</span>
+      <span class="price-now">499€</span>
     </div>
     <p class="price-sub">Accès à vie · paiement en 1 ou 2 fois</p>
     <a class="offer-cta" data-link="telegram">Postuler maintenant</a>
@@ -373,7 +389,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 (function(){
   const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
   const configs = [
-    { el: document.getElementById('resultsTrack'), speedPerItem: 6 },
+    { el: document.getElementById('resultsTrack'), speedPerItem: 2.2 },
     { el: document.getElementById('pfTrack'), speedPerItem: 2.2 }
   ];
   configs.forEach(({el: track, speedPerItem})=>{
