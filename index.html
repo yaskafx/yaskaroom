@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07100B">
 <title>YASKA ROOM</title>
-<meta name="description" content="YASKA ROOM — accompagnement trading & prop firms. 499€, accès à vie.">
+<meta name="description" content="YASKA ROOM — accompagnement trading & prop firms. 300€, accès à vie.">
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
@@ -140,6 +140,10 @@ body{
 .offer-cta:hover{filter:brightness(1.07);transform:translateY(-1px);}
 .offer-cta-secondary{display:block;margin-top:.6rem;text-align:center;background:rgba(53,208,127,.08);color:#5AE89C;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:.92rem;letter-spacing:.05em;text-transform:uppercase;padding:.78rem;border-radius:11px;text-decoration:none;position:relative;border:1px solid rgba(90,214,148,.35);transition:.18s;}
 .offer-cta-secondary:hover{background:rgba(53,208,127,.14);border-color:rgba(90,214,148,.6);transform:translateY(-1px);}
+.offer-links{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.9rem;}
+.offer-links a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:rgba(240,255,244,.55);text-decoration:none;transition:.18s;}
+.offer-links a:hover{color:#5AE89C;}
+.offer-links-sep{color:rgba(240,255,244,.25);font-size:.75rem;}
 
 /* GARANTIE — carte bleutée, mise en avant */
 .guarantee{
@@ -285,11 +289,15 @@ body{
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Accès à vie & mises à jour</li>
     </ul>
     <div class="price-row">
-      <span class="price-now">499€</span>
+      <span class="price-now">300€</span>
     </div>
     <p class="price-sub">Accès à vie · paiement en 1 ou 2 fois</p>
-    <a class="offer-cta" data-link="pay1x">Paiement en 1 fois</a>
-    <a class="offer-cta-secondary" data-link="pay2x">Paiement en 2 fois sans frais</a>
+    <a class="offer-cta" data-link="telegram">Postuler maintenant</a>
+    <div class="offer-links">
+      <a data-link="telegram">Telegram</a>
+      <span class="offer-links-sep">·</span>
+      <a data-link="discord">Discord</a>
+    </div>
   </div>
 
   <div class="results-title">
